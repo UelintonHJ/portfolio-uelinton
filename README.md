@@ -1,4 +1,4 @@
-# [Meu Portfólio - Uelinton Janke](https://uelintonhj.github.io/portfolio-uelinton/)
+# [Meu Portfólio - Uelinton Janke](https://portfolio-uelinton.vercel.app/)
 
 Este é o repositório do meu portfólio pessoal, desenvolvido com foco em apresentar minhas habilidades como **desenvolvedor front-end**, meus projetos, experiências, contatos e trajetória profissional.
 
