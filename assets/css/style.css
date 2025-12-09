@@ -96,6 +96,8 @@ header {
     border-radius: 1rem;
     backdrop-filter: blur(8px);
     transition: 0.3s ease;
+    display: flex;
+    flex-direction: column;
 }
 
 .card:hover {
@@ -118,6 +120,7 @@ header {
 .btns {
     display: flex;
     gap: 1rem;
+    margin-top: auto;
 }
 
 .btn, .btn-outline {
