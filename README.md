@@ -1,67 +1,52 @@
-# [Meu Portfólio - Uelinton Janke](https://portfolio-uelinton.vercel.app/)
+# 📌 [Meu Portfólio - Uelinton Janke](https://portfolio-uelinton.vercel.app/)
 
-Este é o repositório do meu portfólio pessoal, desenvolvido com foco em apresentar minhas habilidades como **desenvolvedor front-end**, meus projetos, experiências, contatos e trajetória profissional.
-
-O objetivo deste portfólio é oferecer uma navegação clara, moderna e responsiva para recrutadores e empresas que desejam conhecer mais sobre meu trabalho.
+Portfólio pessoal criado para apresentar minhas habilidades como desenvolvedor front-end, meus projetos, minha trajetória e formas de contato. O foco é oferecer uma navegação clara, moderna e responsiva voltada para recrutadores.
 
 ---
 
-## 🚀 Tecnologias Utilizadas
+## 🚀 Funcionalidades
 
-- **HTML5**
-- **CSS3**
-
----
-
-## 🎨 Objetivo do Projeto
-
-Criar um portfólio simples, direto e visualmente agradável, destacando:
-
-- Quem sou
-- Minhas habilidades técnicas
-- Projetos desenvolvidos
-- Contato rápido para recrutadores
+- Layout moderno e responsivo
+- Seções organizadas (Sobre, Habilidades, Projetos, Contato)
+- Links diretos para redes sociais
+- Estrutura pensada para recrutadores
 
 ---
 
-## 📌 Funcionalidades
+## 🛠️ Tecnologias utilizadas
 
-- Menu responsivo
-- Layout limpo e moderno
-- Seções organizadas
-- Links de redes sociais
-- Design otimizado para recrutadores
+- HTML5
+- CSS3
+- Git & GitHub
 
 ---
 
-## 🛠 Como executar o projeto
+## 🎥 Demonstração
 
-1. Clone o repositório:
+![Screenshot do projeto](assets/img/screenshot-do-projeto.png)
+
+---
+
+## 📦 Como executar o projeto
+
 ```
 git clone https://github.com/UelintonHJ/portfolio-uelinton.git
-```
-2. Entre no diretório:
-```
 cd portfolio-uelinton
+abrir o index.html no navegador
 ```
-3. Abra o arquivo **index.html** diretamente no navegador.
-   
-Nenhuma instalação adicional é necessária.
-
-Ou acesse: https://uelintonhj.github.io/portfolio-uelinton/
+Ou acesse diretamente:
+https://portfolio-uelinton.vercel.app/
 
 ---
 
-## 📬 Contato
+## 📚 Aprendizados
 
-Caso queira entrar em contato comigo:
-
-* Email: uelinton.h@gmail.com
-* LinkedIn: www.linkedin.com/in/uelinton-janke
+Durante o desenvolvimento deste portfólio aprimorei minha organização visual, estrutura de layout com HTML e CSS e boas práticas para criar uma experiência clara e intuitiva para recrutadores. Também aprendi a estruturar seções de apresentação profissional de forma objetiva.
 
 ---
 
-## 📄 Licença
+## 🧑‍💻 Autor
 
-Este projeto é de uso pessoal e livre para visualização e aprendizado.
-Não é permitido copiar o design completo para fins comerciais.
+**Uelinton Janke**
+
+LinkedIn: https://www.linkedin.com/in/uelinton-janke/
