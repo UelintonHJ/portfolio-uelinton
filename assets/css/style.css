@@ -50,6 +50,11 @@ header {
     opacity: 0.8;
 }
 
+.header-actions {
+    display: flex;
+    gap: 1rem;
+}
+
 .about {
     max-width: 1100px;
     margin: 3rem auto;
@@ -98,6 +103,9 @@ header {
     transition: 0.3s ease;
     display: flex;
     flex-direction: column;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.6s ease forwards;
 }
 
 .card:hover {
@@ -196,4 +204,11 @@ header {
     opacity: 0.7;
     font-size: 0.9rem;
     letter-spacing: 0.5px;
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
