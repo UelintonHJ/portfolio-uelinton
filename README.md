@@ -28,27 +28,27 @@ O foco é oferecer uma navegação clara, moderna e responsiva, pensada especial
 ## 📂 Projetos em destaque
 
 - **Ignite Coffee** <br>
-Landing page moderna com HTML, CSS e JavaScript.
+Landing page moderna com HTML, CSS e JavaScript. <br>
 🔗 https://ignite-coffee-landing-page.vercel.app/
 
 - **DevLinks** <br>
-Interface mobile-first feita do zero, usando boas práticas de responsividade.
+Interface mobile-first feita do zero, usando boas práticas de responsividade. <br>
 🔗 https://devlinks-responsivo.vercel.app/
 
 - **Weather Now** <br>
-Aplicação JavaScript que consome API pública para exibir clima em tempo real.
+Aplicação JavaScript que consome API pública para exibir clima em tempo real. <br>
 🔗 https://weather-now-jade-seven.vercel.app/
 
 - **Aurum Headphones** <br>
-Landing page premium desenvolvida com HTML e CSS, focada em design moderno e responsividade.
+Landing page premium desenvolvida com HTML e CSS, focada em design moderno e responsividade. <br>
 🔗 https://aurum-landing-ebon.vercel.app/
 
 - **To-Do List JS** <br>
-Lista de tarefas interativas com JavaScript puro, manipulação do DOM e persistência com localStorage.
+Lista de tarefas interativas com JavaScript puro, manipulação do DOM e persistência com localStorage. <br>
 🔗 https://to-do-list-js-pi-five.vercel.app/
 
 - **Portfólio Alex Moretti** <br>
-Site de um artista fictício criado para praticar layout, grid, flexbox, estruturação visual e responsividade utilizando Bootstrap.
+Site de um artista fictício criado para praticar layout, grid, flexbox, estruturação visual e responsividade utilizando Bootstrap. <br>
 🔗 https://portfolio-alex-moretti.vercel.app/
 
 ---
