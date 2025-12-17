@@ -28,6 +28,12 @@ header {
     position: sticky;
     top: 0;
     z-index: 100;
+    transition: padding 0.3s ease, background 0.3s ease;;
+}
+
+header.shrink {
+    padding: 0.8rem 1rem;
+    background: rgba(rgba(217, 237, 146, 0.9));
 }
 
 .header-content {
@@ -38,11 +44,19 @@ header {
     justify-content: space-between;
 }
 
+.header.shrink .logo {
+    font-size: 1.2rem;
+}
+
 .logo {
     font-size: 1.5rem;
     font-weight: 600;
     color: var(--accent);
     letter-spacing: 1px;
+}
+
+header.shrink .role {
+    font-size: 0.85rem;
 }
 
 .role {
@@ -215,7 +229,7 @@ header {
 
 @media (max-width: 768px) {
     header {
-        padding: 1.5rem 1rem;
+        padding: 1rem 1rem;
     }
 
     .header-content {
@@ -225,11 +239,11 @@ header {
     }
 
     .logo {
-        font-size: 1.4rem;
+        font-size: 1.25rem;
     }
 
     .role {
-        font-size: 0.95rem;
+        font-size: 0.9rem;
         line-height: 1.4;
     }
 
