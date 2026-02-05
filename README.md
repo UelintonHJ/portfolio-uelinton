@@ -36,7 +36,7 @@ Cada projeto reflete escolhas conscientes, aprendizado prático e evolução em 
 **Aprendizado:** Ganhei prática em design responsivo consciente e estratégia de adaptação de interfaces.
 
 ### Weather Now
-**Contexto:** Aplicação para consumir API púbica de clima em tempo real.
+**Contexto:** Aplicação para consumir API pública de clima em tempo real.
 <br />
 **Objetivo:** Entender controle de estados, carregamento e atualização dinãmica do DOM.
 <br />
@@ -51,7 +51,7 @@ Cada projeto reflete escolhas conscientes, aprendizado prático e evolução em 
 <br />
 **Decisão:** Mantive o projeto apenas com HTML e CSS, explorando responsividade e estilo visual.
 <br />
-**Aprendizados:** Aprimorei percepção de estética e consistência visual, aplicando boas práticas de layout.
+**Aprendizado:** Aprimorei percepção de estética e consistência visual, aplicando boas práticas de layout.
 
 ### To-Do List JS
 **Contexto:** Lista de tarefas interativa para treinar lógica de estado e persistência local.
