@@ -1,10 +1,29 @@
 function handleHeaderShrink(header) {
-    let lastScroll = 0;
-    
+    let isShrunk = false;
+    const shrinkThreshold = 60;
+    const expandThreshold = 20;
+
+    let ticking = false;
+
+    function update() {
+        const scroll = window.scrollY;
+
+        if (!isShrunk && scroll > shrinkThreshold) {
+            header.classList.add('shrink');
+            isShrunk = true;
+        } else if (isShrunk && scroll < expandThreshold) {
+            header.classList.remove('shrink');
+            isShrunk = false;
+        }
+
+        ticking = false;
+    }
+
     window.addEventListener('scroll', () => {
-        if (Math.abs(window.scrollY - lastScroll) < 10) return;
-        header.classList.toggle('shrink', window.scrollY > 50);
-        lastScroll = window.scrollY;
+        if (!ticking) {
+            window.requestAnimationFrame(update);
+            ticking = true;
+        }
     });
 }
 

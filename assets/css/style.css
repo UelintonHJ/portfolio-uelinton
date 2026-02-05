@@ -80,7 +80,7 @@ a:focus-visible {
     padding: 2rem 1.5rem;
 }
 
-.about h1 {
+.about h2 {
     font-size: 1.8rem;
     margin-bottom: 1rem;
     color: var(--accent);
@@ -94,7 +94,7 @@ a:focus-visible {
     max-width: 750px;
 }
 
-.projects h1 {
+.projects h2 {
     font-size: 1.8rem;
     margin-bottom: 2rem;
     color: var(--accent);
@@ -127,7 +127,7 @@ a:focus-visible {
     border-color: var(--accent);
 }
 
-.card h2 {
+.card h3 {
     font-size: 1.4rem;
     margin-bottom: 0.7rem;
     font-weight: 600;
@@ -174,7 +174,7 @@ a:focus-visible {
     text-align: center;
 }
 
-.contact h1 {
+.contact h2 {
     font-size: 1.8rem;
     margin-bottom: 1rem;
     color: var(--accent);
