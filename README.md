@@ -69,7 +69,7 @@ Cada projeto reflete escolhas conscientes, aprendizado prático e evolução em 
 
 ## 🧑‍💻 Autor
 
-**Uelinton Janke**
+**Uelinton Janke** <br />
 🎓 Estudante de Análise e Desenvolvimento de Sistemas <br />
 💻 Foco em Front-End <br />
 📎 LinkedIn: [https://www.linkedin.com/in/uelinton-janke/](https://www.linkedin.com/in/uelinton-janke/)
