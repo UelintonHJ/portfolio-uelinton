@@ -1,85 +1,69 @@
 # 💼 [Portfólio - Uelinton Janke](https://portfolio-uelinton.vercel.app/)
 
-Portfólio pessoal desenvolvido para apresentar minhas habilidades como **Desenvolvedor Front-End**, meus principais projetos e forma de contato.
-O foco é oferecer uma navegação clara, moderna e responsiva, pensada especialmente para **recrutadores e oportunidades de estágio**.
+Este portfólio apresenta minha evolução como desenvolvedor Front-End, destacando projetos que desafiaram minhas decisões de UX, estrutura e código.
+O objetivo é evidenciar raciocínio, aprendizado e postura profissional, não apenas mostrar execução.
+Cada projeto reflete escolhas conscientes, aprendizado prático e evolução em autonomia, clareza de pensamento e resolução de problemas.
 
 ---
 
-## 🚀 Funcionalidades
+## 🚀 Objetivos do portfólio
 
-- Layout moderno, limpo e responsivo
-- Estrutura semântica com HTML5
-- Seções bem definidas: Sobre, Projetos e Contato
-- Cards de projetos com links para **deploy** e **repositório**
-- Animações leves para melhor experiência do usuário
-- Design pensado para leitura rápida por recrutadores
-
----
-
-## 🛠️ Tecnologias utilizadas
-
-- **HTML5**
-- **CSS3**
-- **Git & GitHub**
-- **Vercel** (deploy)
+- Desmonstrar tomada de decisão em projetos reais
+- Evidenciar aprendizado prático e evolução contínua
+- Monstrar clareza e previsibilidade no design e na estrutura de interfaces
+- Facilitar compreensão rápida por recrutadores e líderes técnicos
 
 ---
 
 ## 📂 Projetos em destaque
 
-- **Ignite Coffee** <br>
-Landing page moderna com HTML, CSS e JavaScript. <br>
-🔗 https://ignite-coffee-landing-page.vercel.app/
+### Ignite Coffee
+**Contexto:** Criação de uma landing page para praticar hierarquia visual e condução do usuário até a ação principal.
+**Objetivo:** Evitar abstrações que escondem problemas de layout, focando em fundamentos de estrutura e responsividade.
+**Decisão:** Usei HTML e CSS puros, reforçando fundamentos de layout e hierarquia visual.
+**Aprendizado:** Entendi melhor como organizar visualmente informações e guiar atenção do usuário sem depender de frameworks.
 
-- **DevLinks** <br>
-Interface mobile-first feita do zero, usando boas práticas de responsividade. <br>
-🔗 https://devlinks-responsivo.vercel.app/
+### DevLinks
+**Contexto:** Projeto mobile-first para treinar priorização de conteúdo e adaptação progressiva a diferentes telas.
+**Objetivo:** Evitar começar pelo desktop e depois adaptar; queria pensar na menor tela primeiro.
+**Decisão:** Estruturei o layout para telas pequenas inicialmente, adicionando complexidade progressivamente.
+**Aprendizado:** Ganhei prática em design responsivo consciente e estratégia de adaptação de interfaces.
 
-- **Weather Now** <br>
-Aplicação JavaScript que consome API pública para exibir clima em tempo real. <br>
-🔗 https://weather-now-jade-seven.vercel.app/
+### Weather Now
+**Contexto:** Aplicação para consumir API púbica de clima em tempo real.
+**Objetivo:** Entender controle de estados, carregamento e atualização dinãmica do DOM.
+**Decisão:** JavaScript puro para ter controle total sobre fetch, DOM e tratamento de respostas da API.
+**Aprendizado:** Desenvolvi habilidades de integração com APIs e manipulação de estados sem frameworks.
 
-- **Aurum Headphones** <br>
-Landing page premium desenvolvida com HTML e CSS, focada em design moderno e responsividade. <br>
-🔗 https://aurum-landing-ebon.vercel.app/
+### Aurum Headphones
+**Contexto:** Landing page para explorar identidade visual de um produto premium.
+**Objetivo:** Focar em percepção visual sem distrair com funcionalidades JavaScript.
+**Decisão:** Mantive o projeto apenas com HTML e CSS, explorando responsividade e estilo visual.
+**Aprendizados:** Aprimorei percepção de estética e consistência visual, aplicando boas práticas de layout.
 
-- **To-Do List JS** <br>
-Lista de tarefas interativas com JavaScript puro, manipulação do DOM e persistência com localStorage. <br>
-🔗 https://to-do-list-js-pi-five.vercel.app/
+### To-Do List JS
+**Contexto:** Lista de tarefas interativa para treinar lógica de estado e persistência local.
+**Objetivo:** Entender persistência simples sem backend e manipulação do DOM em JS puro.
+**Decisão:** Usei localStorage e JavaScript puro, reforçando organização e manutenção de código.
+**Aprendizado:** Compreendi fluxo de dados, persistência local e lógica de aplicações interativas.
 
-- **Portfólio Alex Moretti** <br>
-Site de um artista fictício criado para praticar layout, grid, flexbox, estruturação visual e responsividade utilizando Bootstrap. <br>
-🔗 https://portfolio-alex-moretti.vercel.app/
-
----
-
-## 🎥 Demonstração
-
-![Screenshot do projeto](assets/img/screenshot-do-projeto.png)
-
----
-
-## 📦 Como executar o projeto localmente
-
-```
-git clone https://github.com/UelintonHJ/portfolio-uelinton.git
-cd portfolio-uelinton
-```
-Abra o arquivo index.html no navegador
-Ou acesse diretamente:
-https://portfolio-uelinton.vercel.app/
+### Portfólio Alex Moretti
+**Contexto:** Site de um artista fictício para simular um cliente real com identidade visual definida.
+**Objetivo:** Explorar limites e padrões de frameworks para entender quando aplicá-los.
+**Decisão:** Usei Bootstrap para praticar estrutura e padrões impostos por frameworks.
+**Aprendizado:** Aprendi a avaliar trade-offs de frameworks vs código manual, consolidando conhecimento em layouts complexos.
 
 ---
 
-## 📚 Aprendizados
+## 📚 Aprendizados gerais
 
-Durante o desenvolvimento deste portfólio, aprofundei conhecimentos em:
-- Estruturação semântica com HTML
-- Organização e reutilização de estilos CSS
+- Estruturação semântica e reutilização de CSS
 - Layouts responsivos com Flexbox e Grid
-- Animações leves com CSS
-- Boas práticas de versionamento com Git e GitHub
-- Criação de portfólio focado em **recrutadores**
+- Animações leves e microinterações
+- Controle de estados e persistência simples em JavaScript
+- Integração com APIs externas
+- Versionamento eficiente com Git e GitHub
+- Comunicação clara de decisões técnicas e de UX
 
 ---
 
@@ -88,4 +72,4 @@ Durante o desenvolvimento deste portfólio, aprofundei conhecimentos em:
 **Uelinton Janke**
 🎓 Estudante de Análise e Desenvolvimento de Sistemas
 💻 Foco em Front-End
-LinkedIn: https://www.linkedin.com/in/uelinton-janke/
+📎 LinkedIn: [https://www.linkedin.com/in/uelinton-janke/](https://www.linkedin.com/in/uelinton-janke/)
