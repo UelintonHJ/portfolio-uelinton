@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfólio de Uelinton Janke, desenvolvedor front-end focado em interfaces claras, previsíveis e usáveis.">
+    <meta name="description"
+        content="Portfólio de Uelinton Janke, desenvolvedor front-end focado em estrutura, previsibilidade, JavaScript puro e decisões técnicas conscientes.">
     <title>Uelinton Janke - Front-End Developer</title>
     <link rel="shortcut icon" href="/assets/img/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="assets/css/style.css">
@@ -17,37 +18,31 @@
 <body>
     <header>
         <div class="header-content">
-            <div>
-                <h1 class="logo">Uelinton Janke</h1>
-            </div>
-            <div>
-                <p class="role">
-                    Front-End Developer em formação <br>
-                    Foco em interfaces claras e usáveis
-                </p>
-            </div>
+            <h1 class="logo">Uelinton Janke</h1>
 
-            <div class="header-actions">
-                <a 
-                    href="#projects" 
-                    class="btn" 
-                    aria-label="Ver minha seção de projetos"
-                >
+            <nav class="header-actions">
+                <a href="#projects" class="btn" aria-label="Ver minha seção de projetos">
                     Ver projetos
                 </a>
 
-                <a 
-                    href="https://github.com/UelintonHJ" 
-                    target="_blank" 
-                    class="btn-outline"
-                    aria-label="Veja meus projetos no GitHub" 
-                    rel="noopener noreferrer"
-                >
+                <a href="https://github.com/UelintonHJ" target="_blank" class="btn-outline"
+                    aria-label="Veja meus projetos no GitHub" rel="noopener noreferrer">
                     GitHub
                 </a>
-            </div>
+            </nav>
         </div>
     </header>
+
+    <section class="hero">
+        <h2 class="headline">
+            Desenvolvedor Front-End que prioriza estrutura, previsibilidade e boas decisões antes de
+            frameworks.
+        </h2>
+        <p class="subheadline">
+            Experiência com HTML, CSS e JavaScript puro, consumo de APIs e construção de interfaces fáceis
+            de manter.
+        </p>
+    </section>
 
     <section class="about container" id="about">
         <div class="about-content">
@@ -55,7 +50,7 @@
                 Sobre mim
             </h2>
             <p>
-                Sou estudante de Análise e Desenvolvimento de Sistemas com foco em Front-End. 
+                Sou estudante de Análise e Desenvolvimento de Sistemas com foco em Front-End.
                 Busco construir interfaces claras, previsíveis e fáceis de manter, entendendo como layout,
                 estado e estrutura afetam a experiência do usuário.
             </p>
@@ -74,27 +69,19 @@
                         Landing page criada para praticar hierarquia visual e condução do usuário até a ação principal.
                     </p>
                     <p class="decision">
-                        Optei por HTML e CSS puros para fortalecer fundamentos de layout, hierarquia visual e responsividade, evitando abstrações
+                        Optei por HTML e CSS puros para fortalecer fundamentos de layout, hierarquia visual e
+                        responsividade, evitando abstrações
                         que esconderiam problemas reais de estrutura.
                     </p>
                     <div class="btns">
-                        <a 
-                            href="https://ignite-coffee-landing-page.vercel.app/" 
-                            target="_blank" 
-                            class="btn" 
-                            aria-label="Ver a página do projeto Ignite Coffee"
-                            rel="noopener noreferrer"
-                        >
+                        <a href="https://ignite-coffee-landing-page.vercel.app/" target="_blank" class="btn"
+                            aria-label="Ver a página do projeto Ignite Coffee" rel="noopener noreferrer">
                             Ver Projeto
                         </a>
 
-                        <a 
-                            href="https://github.com/UelintonHJ/Ignite-Coffee-Landing-Page" 
-                            target="_blank"
-                            class="btn-outline"
-                            aria-label="Ver o repositório do projeto Ignite Coffee" 
-                            rel="noopener noreferrer"
-                        >
+                        <a href="https://github.com/UelintonHJ/Ignite-Coffee-Landing-Page" target="_blank"
+                            class="btn-outline" aria-label="Ver o repositório do projeto Ignite Coffee"
+                            rel="noopener noreferrer">
                             Código
                         </a>
                     </div>
@@ -103,30 +90,22 @@
                 <div class="card">
                     <h3>DevLinks</h3>
                     <p>
-                        Projeto mobile-first focado em priorização de conteúdo e adaptação progressiva para telas maiores.
+                        Projeto mobile-first focado em priorização de conteúdo e adaptação progressiva para telas
+                        maiores.
                     </p>
                     <p class="decision">
-                        Comecei o layout pensando apenas na menor tela possível, adicionando complexidade progressivamente em vez de adaptar
+                        Comecei o layout pensando apenas na menor tela possível, adicionando complexidade
+                        progressivamente em vez de adaptar
                         em layout desktop.
                     </p>
                     <div class="btns">
-                        <a 
-                            href="https://devlinks-responsivo.vercel.app/" 
-                            target="_blank" 
-                            class="btn" 
-                            aria-label="Ver a página do projeto Devlinks"
-                            rel="noopener noreferrer"
-                        >
+                        <a href="https://devlinks-responsivo.vercel.app/" target="_blank" class="btn"
+                            aria-label="Ver a página do projeto Devlinks" rel="noopener noreferrer">
                             Ver Projeto
                         </a>
 
-                        <a 
-                            href="https://github.com/UelintonHJ/devlinks-responsivo" 
-                            target="_blank" 
-                            class="btn-outline"
-                            aria-label="Ver o repositório do projeto Devlinks" 
-                            rel="noopener noreferrer"
-                        >
+                        <a href="https://github.com/UelintonHJ/devlinks-responsivo" target="_blank" class="btn-outline"
+                            aria-label="Ver o repositório do projeto Devlinks" rel="noopener noreferrer">
                             Código
                         </a>
                     </div>
@@ -135,29 +114,21 @@
                 <div class="card">
                     <h3>Weather Now</h3>
                     <p>
-                        Aplicação criada para trabalhar consumo de API, estados de carregamento e atualização dinâmica da interface.
+                        Aplicação criada para trabalhar consumo de API, estados de carregamento e atualização dinâmica
+                        da interface.
                     </p>
                     <p class="decision">
-                        Usei JavaScript puro para ter controle total sobre fetch, manipulação do DOM e tratamento de respostas da API.
+                        Usei JavaScript puro para ter controle total sobre fetch, manipulação do DOM e tratamento de
+                        respostas da API.
                     </p>
                     <div class="btns">
-                        <a 
-                            href="https://weather-now-jade-seven.vercel.app/" 
-                            target="_blank" 
-                            class="btn" 
-                            aria-label="Ver a página do projeto Weather Now"
-                            rel="noopener noreferrer"
-                        >
+                        <a href="https://weather-now-jade-seven.vercel.app/" target="_blank" class="btn"
+                            aria-label="Ver a página do projeto Weather Now" rel="noopener noreferrer">
                             Ver Projeto
                         </a>
 
-                        <a 
-                            href="https://github.com/UelintonHJ/weather-now" 
-                            target="_blank" 
-                            class="btn-outline" 
-                            aria-label="Ver repositório do projeto Weather Now"
-                            rel="noopener noreferrer"
-                        >
+                        <a href="https://github.com/UelintonHJ/weather-now" target="_blank" class="btn-outline"
+                            aria-label="Ver repositório do projeto Weather Now" rel="noopener noreferrer">
                             Código
                         </a>
                     </div>
@@ -169,26 +140,17 @@
                         Landing page criada para explorar identidade visual e percepção de produto premium.
                     </p>
                     <p class="decision">
-                        Mantive o projeto sem JavaScript para focar exclusivamente em estrutura visual, CSS e responsividade.
+                        Mantive o projeto sem JavaScript para focar exclusivamente em estrutura visual, CSS e
+                        responsividade.
                     </p>
                     <div class="btns">
-                        <a 
-                            href="https://aurum-landing-ebon.vercel.app/" 
-                            target="_blank" 
-                            class="btn" 
-                            aria-label="Ver a página do projeto Aurum Headphones"
-                            rel="noopener noreferrer"
-                        >
+                        <a href="https://aurum-landing-ebon.vercel.app/" target="_blank" class="btn"
+                            aria-label="Ver a página do projeto Aurum Headphones" rel="noopener noreferrer">
                             Ver Projeto
                         </a>
 
-                        <a 
-                            href="https://github.com/UelintonHJ/aurum-landing" 
-                            target="_blank" 
-                            class="btn-outline" 
-                            aria-label="Ver repositório do projeto Aurum Headphones"
-                            rel="noopener noreferrer"
-                        >
+                        <a href="https://github.com/UelintonHJ/aurum-landing" target="_blank" class="btn-outline"
+                            aria-label="Ver repositório do projeto Aurum Headphones" rel="noopener noreferrer">
                             Código
                         </a>
                     </div>
@@ -197,29 +159,21 @@
                 <div class="card">
                     <h3>To-Do List</h3>
                     <p>
-                        Projeto focado em lógica de estado, persistência local e organização de código em JavaScript puro.
+                        Projeto focado em lógica de estado, persistência local e organização de código em JavaScript
+                        puro.
                     </p>
                     <p class="decision">
-                        Usei localStorage para entender persistência simples sem backend e JavaScript puro para dominar manipulação do DOM.
+                        Usei localStorage para entender persistência simples sem backend e JavaScript puro para dominar
+                        manipulação do DOM.
                     </p>
                     <div class="btns">
-                        <a 
-                            href="https://to-do-list-js-pi-five.vercel.app/" 
-                            target="_blank" 
-                            class="btn" 
-                            aria-label="Ver a página do projeto To-Do List"
-                            rel="noopener noreferrer"
-                        >
+                        <a href="https://to-do-list-js-pi-five.vercel.app/" target="_blank" class="btn"
+                            aria-label="Ver a página do projeto To-Do List" rel="noopener noreferrer">
                             Ver Projeto
                         </a>
 
-                        <a 
-                            href="https://github.com/UelintonHJ/to-do-list-js" 
-                            target="_blank" 
-                            class="btn-outline" 
-                            aria-label="Ver repositório do projeto To-Do List"
-                            rel="noopener noreferrer"
-                        >
+                        <a href="https://github.com/UelintonHJ/to-do-list-js" target="_blank" class="btn-outline"
+                            aria-label="Ver repositório do projeto To-Do List" rel="noopener noreferrer">
                             Código
                         </a>
                     </div>
@@ -234,23 +188,14 @@
                         Usei Bootstrap não pela velocidade, mas para entender limites e padrões impostos por frameworks.
                     </p>
                     <div class="btns">
-                        <a 
-                            href="https://portfolio-alex-moretti.vercel.app/" 
-                            target="_blank" 
-                            class="btn" 
-                            aria-label="Ver a página do projeto Portfólio Alex Moretti"
-                            rel="noopener noreferrer"
-                        >
+                        <a href="https://portfolio-alex-moretti.vercel.app/" target="_blank" class="btn"
+                            aria-label="Ver a página do projeto Portfólio Alex Moretti" rel="noopener noreferrer">
                             Ver Projeto
                         </a>
 
-                        <a 
-                            href="https://github.com/UelintonHJ/Portfolio-alex-moretti" 
-                            target="_blank" 
-                            class="btn-outline" 
-                            aria-label="Ver repositório do projeto Portfólio Alex Moretti"
-                            rel="noopener noreferrer"
-                        >
+                        <a href="https://github.com/UelintonHJ/Portfolio-alex-moretti" target="_blank"
+                            class="btn-outline" aria-label="Ver repositório do projeto Portfólio Alex Moretti"
+                            rel="noopener noreferrer">
                             Código
                         </a>
                     </div>
@@ -268,27 +213,17 @@
                 Entre em contato comigo ou confira meus projetos:
             </p>
             <div class="links">
-                <a 
-                    href="mailto:uelinton.h@gmail.com" 
-                    class="contact-link"
-                    aria-label="Entre em contato comigo pelo e-mail"
-                >
+                <a href="mailto:uelinton.h@gmail.com" class="contact-link"
+                    aria-label="Entre em contato comigo pelo e-mail">
                     Email
                 </a>
 
-                <a 
-                    href="https://github.com/UelintonHJ" 
-                    class="contact-link"
-                    aria-label="Veja meus projetos no GitHub"    
-                >
+                <a href="https://github.com/UelintonHJ" class="contact-link" aria-label="Veja meus projetos no GitHub">
                     GitHub
                 </a>
 
-                <a 
-                    href="https://www.linkedin.com/in/uelinton-janke" 
-                    class="contact-link"
-                    aria-label="Veja minha página no LinkedIn"    
-                >
+                <a href="https://www.linkedin.com/in/uelinton-janke" class="contact-link"
+                    aria-label="Veja minha página no LinkedIn">
                     LinkedIn
                 </a>
             </div>
