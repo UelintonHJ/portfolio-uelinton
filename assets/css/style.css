@@ -53,7 +53,9 @@ header.shrink {
     font-size: 1.6rem;
     font-weight: 700;
     background: linear-gradient(90deg, #2a9d8f, #1d6f63);
+    background-clip: text;
     -webkit-background-clip: text;
+    color: transparent;
     -webkit-text-fill-color: transparent;
     letter-spacing: 0.65px;
 }
