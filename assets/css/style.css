@@ -2,6 +2,8 @@
     --bg: #f1faee;
     --text: #0a1128;
     --accent: #2a9d8f;
+
+    --header-offset: 90px;
 }
 
 * {
@@ -106,6 +108,10 @@ header.shrink {
 a:focus-visible {
     outline: 2px solid var(--accent);
     outline-offset: 4px;
+}
+
+section[id] {
+    scroll-margin-top: var(--header-offset);
 }
 
 .hero {
