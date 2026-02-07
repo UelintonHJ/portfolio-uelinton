@@ -20,15 +20,25 @@
         <div class="header-content">
             <h1 class="logo">Uelinton Janke</h1>
 
-            <nav class="header-actions">
-                <a href="#projects" class="btn" aria-label="Ver minha seção de projetos">
-                    Ver projetos
-                </a>
+            <nav class="nav">
+                <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" aria-hidden="true">
+                        <path
+                            d="M 5 8 A 2.0002 2.0002 0 1 0 5 12 L 45 12 A 2.0002 2.0002 0 1 0 45 8 L 5 8 z M 5 23 A 2.0002 2.0002 0 1 0 5 27 L 45 27 A 2.0002 2.0002 0 1 0 45 23 L 5 23 z M 5 38 A 2.0002 2.0002 0 1 0 5 42 L 45 42 A 2.0002 2.0002 0 1 0 45 38 L 5 38 z">
+                        </path>
+                    </svg>
+                </button>
 
-                <a href="https://github.com/UelintonHJ" target="_blank" class="btn-outline"
-                    aria-label="Veja meus projetos no GitHub" rel="noopener noreferrer">
-                    GitHub
-                </a>
+                <ul class="nav-list">
+                    <li><a href="#about">Sobre</a></li>
+                    <li><a href="#projects">Projetos</a></li>
+                    <li><a href="#contact">Contato</a></li>
+                    <li class="nav-external"><a href="https://github.com/UelintonHJ" target="_blank"
+                            rel="noopener noreferrer">
+                            GitHub
+                        </a>
+                    </li>
+                </ul>
             </nav>
         </div>
     </header>
@@ -42,6 +52,10 @@
             Experiência com HTML, CSS e JavaScript puro, consumo de APIs e construção de interfaces fáceis
             de manter.
         </p>
+        <div class="hero-actions">
+            <a href="#projects" class="btn">Ver projetos</a>
+            <a href="#contact" class="btn-outline">Entrar em contato</a>
+        </div>
     </section>
 
     <section class="about container" id="about">

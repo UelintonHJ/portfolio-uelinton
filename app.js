@@ -29,3 +29,13 @@ function handleHeaderShrink(header) {
 
 const header = document.querySelector('header');
 if (header) handleHeaderShrink(header);
+
+const navToggle = document.querySelector('.nav-toggle');
+const navList = document.querySelector('.nav-list');
+
+if (navToggle && navList) {
+    navToggle.addEventListener('click', () => {
+        const isOpen = navList.classList.toggle('open');
+        navToggle.setAttribute('aria-expanded', isOpen);
+    });
+}
