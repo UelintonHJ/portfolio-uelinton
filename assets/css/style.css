@@ -230,9 +230,10 @@ section[id] {
 }
 
 .card h3 {
-    font-size: 1.4rem;
-    margin-bottom: 0.7rem;
+    font-size: 1.5rem;
+    margin-bottom: 0.4rem;
     font-weight: 600;
+    line-height: 1.25;
 }
 
 .card p {
@@ -316,7 +317,7 @@ section[id] {
     display: flex;
     flex-wrap: wrap;
     gap: 0.4rem;
-    margin-bottom: 0.9rem;
+    margin-bottom: 0.8rem;
     list-style: none;
     padding: 0;
 }
@@ -343,6 +344,7 @@ section[id] {
     display: flex;
     gap: 1rem;
     margin-top: auto;
+    padding-top: 0.5rem;
 }
 
 .btn, .btn-outline {
