@@ -307,6 +307,31 @@ section[id] {
     color: var(--text);
 }
 
+.card-institutional .tag {
+    background: rgba(10, 17, 40, 0.06);
+    color: rgba(10, 17, 40, 0.7);
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 0.9rem;
+    list-style: none;
+    padding: 0;
+}
+
+.tag {
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.4rem;
+    background: rgba(10, 17, 40, 0.08);
+    color: rgba(10, 17, 40, 0.75);
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+}
+
 .decision {
     font-size: 0.95rem;
     padding-left: 1rem;
