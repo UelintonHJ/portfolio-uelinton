@@ -241,6 +241,35 @@ section[id] {
     margin-bottom: 1.2rem;
 }
 
+.card-featured {
+    grid-column: span 2;
+    background: rgba(217, 237, 146, 0.85);
+    border-color: var(--accent);
+}
+
+.card-featured h3 {
+    font-size: 1.6rem;
+}
+
+.card-featured p {
+    font-size: 1rem;
+}
+
+.card-featured .decision {
+    font-size: 1rem;
+}
+
+.card-featured::before {
+    content: "Projeto principal";
+    display: inline-block;
+    margin-bottom: 0.6rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+}
+
 .decision {
     font-size: 0.95rem;
     padding-left: 1rem;
@@ -417,5 +446,9 @@ section[id] {
         width: 100%;
         max-width: 260px;
         text-align: center;
+    }
+
+    .card-featured {
+        grid-column: span 1;
     }
 }
