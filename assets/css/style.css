@@ -217,11 +217,14 @@ section[id] {
     backdrop-filter: blur(8px);
     display: flex;
     flex-direction: column;
-    transition: transform 0.3s ease, border-color 0.3s ease;
+    opacity: 0;
+    transform: translateY(12px);
 }
 
 .card.is-visible {
-    animation: fadeUp 0.6s ease forwards;
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
 .card:hover {
@@ -234,6 +237,17 @@ section[id] {
     margin-bottom: 0.4rem;
     font-weight: 600;
     line-height: 1.25;
+}
+
+.card .tags {
+    opacity: 0.25;
+    transform: translateY(4px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.card:hover .tags {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .card p {
@@ -356,8 +370,19 @@ section[id] {
 }
 
 .btn {
+    position: relative;
+    overflow: hidden;
     background: var(--accent);
     color: #f1faee;
+}
+
+.btn-label {
+    display: inline-block;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.btn:hover .btn-label {
+    transform: translateY(-2px);
 }
 
 .btn-outline {
@@ -417,13 +442,6 @@ section[id] {
     opacity: 0.7;
     font-size: 0.9rem;
     letter-spacing: 0.5px;
-}
-
-@keyframes fadeUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
 
 @media (prefers-reduced-motion: reduce) {
