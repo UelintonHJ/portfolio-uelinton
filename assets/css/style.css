@@ -1,9 +1,79 @@
 :root {
-    --bg: #f1faee;
-    --text: #0a1128;
-    --accent: #2a9d8f;
+    --bg: #F1FAEE;
+    --text: #0A1128;
+    --accent: #2A9D8F;
+
+    --surface: rgba(217, 237, 146, 0.6);
+    --surface-strong: rgba(217, 237, 146, 0.9);
+    --border: rgba(112, 224, 0, 0.8);
 
     --header-offset: 90px;
+}
+
+[data-theme="dark"] {
+    --bg: #0A1128;
+    --text: #F1FAEE;
+    --accent: #2A9D8F;
+
+    --surface: rgba(255, 255, 255, 0.04);
+    --surface-strong: rgba(255, 255, 255, 0.07);
+    --border: rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="dark"] header {
+    background: rgba(10, 17, 40, 0.8);
+}
+
+[data-theme="dark"] header.shrink {
+    background: rgba(10, 17, 40, 0.95);
+}
+
+[data-theme="dark"] .card-featured {
+    background: linear-gradient(
+        180deg,
+        rgba(42, 157, 143, 0.15),
+        rgba(255, 255, 255, 0.04)
+    );
+    border-color: rgba(42, 157, 143, 0.4);
+}
+
+[data-theme="dark"] .card-featured::before {
+    color: rgba(241, 250, 238, 0.6);
+}
+
+[data-theme="dark"] .card-institutional {
+    background: rgba(255, 255, 255, 0.03);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .card-institutional::before {
+    color: rgba(241, 250, 238, 0.55);
+}
+
+[data-theme="dark"] .card-institutional .tag {
+    background: rgba(42, 157, 143, 0.1);
+    color: rgba(241, 250, 238, 0.85);
+    border: 1px solid rgba(42, 157, 143, 0.25);
+}
+
+[data-theme="dark"] .card-institutional .btn {
+    background: #F1FAEE;
+    color: var(--bg);
+}
+
+[data-theme="dark"] .card-institutional .decision {
+    border-left-color: rgba(42, 157, 143, 0.7);
+}
+
+[data-theme="dark"] .tag {
+    background: rgba(255, 255, 255, 0.06);
+    color: rgba(241, 250, 238, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="dark"] .footer {
+    background: rgba(10, 17, 40, 0.9);
+    border-top: 1px solid var(--border);
 }
 
 * {
@@ -24,9 +94,9 @@ header {
     padding: 0.9rem 1.5rem;
     display: flex;
     justify-content: center;
-    border-bottom: 1px solid rgba(112, 224, 0, 0.8);
+    border-bottom: 1px solid var(--border);
     backdrop-filter: blur(10px);
-    background: rgba(217, 237, 146, 0.6);
+    background: var(--surface);
     position: sticky;
     top: 0;
     z-index: 100;
@@ -35,7 +105,7 @@ header {
 
 header.shrink {
     padding: 0.6rem 1.5rem;
-    background: rgba(217, 237, 146, 0.9);
+    background: var(--surface-strong);
 }
 
 .header-content {
@@ -62,6 +132,11 @@ header.shrink {
     letter-spacing: 0.65px;
 }
 
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
 
 .nav {
     display: flex;
@@ -112,6 +187,32 @@ a:focus-visible {
 
 section[id] {
     scroll-margin-top: var(--header-offset);
+}
+
+.theme-toggle {
+    width: 2.2rem;
+    height: 2.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    cursor: pointer;
+    border-radius: 0.6rem;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+header.shrink .theme-toggle {
+    transform: scale(0.95);
+}
+
+.theme-toggle svg {
+    width: 1.1rem;
+    height: 1.1rem;
+    color: var(--text);
+}
+
+.theme-toggle:hover {
+    background: rgba(42, 157, 143, 0.15);
 }
 
 .hero {
@@ -210,8 +311,8 @@ section[id] {
 }
 
 .card {
-    background: rgba(217, 237, 146, 0.6);
-    border: 1px solid rgba(112, 224, 0, 0.8);
+    background: var(--surface);
+    border: 1px solid var(--border);
     padding: 1.8rem;
     border-radius: 1rem;
     backdrop-filter: blur(8px);
@@ -264,6 +365,11 @@ section[id] {
 
 .card-featured h3 {
     font-size: 1.6rem;
+}
+
+.card-featured .tag {
+    background: rgba(42, 157, 143, 0.12);
+    border-color: rgba(42, 157, 143, 0.25);
 }
 
 .card-featured p {
@@ -452,6 +558,11 @@ section[id] {
 }
 
 @media (max-width: 768px) {
+    [data-theme="dark"] .nav-list {
+        background: rgba(10, 17, 40, 0.95);
+        border-color: rgba(255, 255, 255, 0.1);
+    }
+
     header {
         padding: 1rem 1rem;
     }
