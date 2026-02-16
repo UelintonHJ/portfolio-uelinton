@@ -80,3 +80,24 @@ themeToggle.addEventListener('click', () => {
     const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
     setTheme(nextTheme);
 });
+
+const filterButtons = document.querySelectorAll('.filter-btn');
+const projectCards = document.querySelectorAll('.card');
+
+filterButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+        filterButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const category = btn.dataset.category;
+
+        projectCards.forEach(card => {
+            const cardCategories = card.dataset.category.split(' ');
+            if (category === 'all' || cardCategories.includes(category)) {
+                card.style.display = 'flex';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    });
+});

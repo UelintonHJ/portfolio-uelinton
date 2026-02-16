@@ -304,6 +304,27 @@ header.shrink .theme-toggle {
     font-weight: 600;
 }
 
+.project-filters {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.filter-btn {
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--accent);
+    background: transparent;
+    border-radius: 0.6rem;
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.2s ease;
+}
+
+.filter-btn.active, .filter-btn:hover {
+    background: var(--accent);
+    color: #F1FAEE;
+}
+
 .cards {
     display: grid;
     gap: 2rem;
