@@ -53,7 +53,7 @@ const observer = new IntersectionObserver(entries => {
 
 cards.forEach(card => observer.observe(card));
 
-const themeToggle  = document.querySelector('.theme-toggle');
+const themeToggle = document.querySelector('.theme-toggle');
 const root = document.documentElement;
 
 const sunIcon = `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="64" height="64" viewBox="0 0 24 24" style="color: rgb(74, 85, 101);"><path fill="currentColor" d="M12.058 20q-3.334 0-5.667-2.333T4.058 12q0-3.039 1.98-5.27t4.904-2.634q.081 0 .159.006t.153.017q-.506.706-.801 1.57T10.158 7.5q0 2.667 1.866 4.533t4.534 1.867q.951 0 1.813-.295t1.548-.801q.012.075.017.153t.006.159q-.384 2.923-2.615 4.903T12.057 20"></path></svg>`;
@@ -68,8 +68,8 @@ function setTheme(theme) {
         'aria-pressed',
         theme === 'dark'
     );
-    themeToggle.innerHTML = theme === 'dark' ? sunIcon : moonIcon; 
-} 
+    themeToggle.innerHTML = theme === 'dark' ? sunIcon : moonIcon;
+}
 
 const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 const savedTheme = localStorage.getItem('theme');
@@ -86,21 +86,23 @@ const projectCards = document.querySelectorAll('.card');
 
 filterButtons.forEach(btn => {
     btn.addEventListener('click', () => {
-        filterButtons.forEach(b => b.classList.remove('active'));
+        filterButtons.forEach(b => {
+            b.classList.remove('active');
+            b.setAttribute('aria-pressed', 'false');
+        });
+
         btn.classList.add('active');
+        btn.setAttribute('aria-pressed', 'true');
 
         const category = btn.dataset.category;
 
         projectCards.forEach(card => {
             const cardCategories = card.dataset.category.split(' ');
             if (category === 'all' || cardCategories.includes(category)) {
-                card.style.display = 'flex';
+                card.classList.remove('is-hidden');
             } else {
-                card.style.display = 'none';
+                card.classList.add('is-hidden');
             }
         });
     });
 });
-
-filterButtons.forEach(b => b.setAttribute('aria-pressed', 'false'));
-btn.setAttribute('aria-pressed', 'true');
