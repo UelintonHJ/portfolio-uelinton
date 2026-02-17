@@ -306,23 +306,40 @@ header.shrink .theme-toggle {
 
 .project-filters {
     display: flex;
-    gap: 1rem;
-    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-bottom: 2.2rem;
+    align-items: center;
+}
+
+.filters-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.6;
+    margin-bottom: 0.8rem;
 }
 
 .filter-btn {
-    padding: 0.5rem 1rem;
-    border: 1px solid var(--accent);
-    background: transparent;
-    border-radius: 0.6rem;
+    padding: 0.4rem 0.9rem;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    border-radius: 999px;
     cursor: pointer;
-    font-weight: 500;
-    transition: 0.2s ease;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+    transition: all 0.2s ease;
 }
 
-.filter-btn.active, .filter-btn:hover {
+.filter-btn.active {
     background: var(--accent);
     color: #F1FAEE;
+    border-color: var(--accent);
+}
+
+.filter-btn:hover {
+    border-color: var(--accent);
 }
 
 .cards {
@@ -660,6 +677,17 @@ header.shrink .theme-toggle {
         width: 100%;
         max-width: 260px;
         text-align: center;
+    }
+
+    .project-filters {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding-bottom: 0.4rem;
+        scrollbar-width: none;
+    }
+
+    .project-filters::-webkit-scrollbar {
+        display: none;
     }
 
     .card-featured {

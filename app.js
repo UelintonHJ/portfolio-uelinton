@@ -101,3 +101,6 @@ filterButtons.forEach(btn => {
         });
     });
 });
+
+filterButtons.forEach(b => b.setAttribute('aria-pressed', 'false'));
+btn.setAttribute('aria-pressed', 'true');
