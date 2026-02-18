@@ -8,7 +8,7 @@ Cada projeto reflete escolhas conscientes, aprendizado prático e evolução em 
 
 ## 🚀 Objetivos do portfólio
 
-- Desmonstrar tomada de decisão em projetos reais
+- Demonstrar tomada de decisão em projetos reais
 - Evidenciar aprendizado prático e evolução contínua
 - Monstrar clareza e previsibilidade no design e na estrutura de interfaces
 - Facilitar compreensão rápida por recrutadores e líderes técnicos
