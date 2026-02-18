@@ -98,11 +98,10 @@ filterButtons.forEach(btn => {
 
         projectCards.forEach(card => {
             const cardCategories = card.dataset.category.split(' ');
-            if (category === 'all' || cardCategories.includes(category)) {
-                card.classList.remove('is-hidden');
-            } else {
-                card.classList.add('is-hidden');
-            }
+            const shouldShow = 
+                category === 'all' || cardCategories.includes(category);
+
+                card.classList.toggle('is-hidden', !shouldShow);
         });
     });
 });
