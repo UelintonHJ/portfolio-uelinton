@@ -98,10 +98,59 @@ filterButtons.forEach(btn => {
 
         projectCards.forEach(card => {
             const cardCategories = card.dataset.category.split(' ');
-            const shouldShow = 
+            const shouldShow =
                 category === 'all' || cardCategories.includes(category);
 
-                card.classList.toggle('is-hidden', !shouldShow);
+            card.classList.toggle('is-hidden', !shouldShow);
         });
     });
 });
+
+const modal = document.querySelector('.modal');
+const modalTitle = document.querySelector('.modal-title');
+const modalProblem = document.querySelector('.modal-problem');
+const modalDecisions = document.querySelector('.modal-decisions');
+const modalLearnings = document.querySelector('.modal-learnings');
+const modalDemo = document.querySelector('.modal-demo');
+const modalRepo = document.querySelector('.modal-repo');
+const modalClose = document.querySelector('.modal-close');
+
+document.querySelectorAll('.details-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        modalTitle.textContent = btn.dataset.title;
+        modalProblem.textContent = btn.dataset.problem;
+        modalDecisions.textContent = btn.dataset.decisions;
+        modalLearnings.textContent = btn.dataset.learnings;
+
+        document.body.style.overflow = 'hidden';
+
+        modalDemo.href = btn.dataset.demo;
+        modalRepo.href = btn.dataset.repo;
+
+        modal.classList.add('open');
+        modal.setAttribute('aria-hidden', 'false');
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.classList.contains('open')) {
+                closeModal();
+            }
+        });
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+    });
+});
+
+modalClose.addEventListener('click', closeModal);
+
+function closeModal() {
+    modal.classList.remove('open');
+    modal.setAttribute('aria-hidden', 'true');
+
+    document.body.style.overflow = '';
+
+
+}

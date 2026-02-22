@@ -56,8 +56,7 @@
 
     <section class="hero">
         <h2 class="headline">
-            Desenvolvedor Front-End que prioriza estrutura, previsibilidade e boas decisões antes de
-            frameworks.
+            Desenvolvedor Front-End focado em estado previsível, arquitetura clara e experiências que escalam.
         </h2>
         <p class="subheadline">
             Experiência com HTML, CSS e JavaScript puro, consumo de APIs e construção de interfaces fáceis
@@ -75,9 +74,9 @@
                 Sobre mim
             </h2>
             <p>
-                Sou estudante de Análise e Desenvolvimento de Sistemas com foco em Front-End.
-                Busco construir interfaces claras, previsíveis e fáceis de manter, entendendo como layout,
-                estado e estrutura afetam a experiência do usuário.
+                Sou desenvolvedor front-end com foco em estrutura, previsibilidade e decisões técnicas conscientes.
+                <br>
+                Construo aplicações pensando em estado, fluxo e manutenção a longo prazo antes de escolher ferramentas.
             </p>
         </div>
     </section>
@@ -123,17 +122,44 @@
                         feedback inline
                         e criar uma base sólida para manutenção e novas features.
                     </p>
-                    <div class="btns">
-                        <a href="https://weather-now-jade-seven.vercel.app/" target="_blank" class="btn"
-                            aria-label="Ver a página do projeto Weather Now" rel="noopener noreferrer">
-                            <span class="btn-label">Ver Projeto</span>
-                        </a>
+                    <button class="btn-details details-btn"
+                        data-title="Weather Now"
+                        data-problem="O projeto começou como prática de consumo de API, mas o código concentrava responsabilidades, utilizava alert() para erros e dificultava evolução segura. Havia risco de acoplamento excessivo entre busca de dados e renderização."
+                        data-decisions="Refatorei de forma incremental sem adicionar frameworks. Separei responsabilidades entre dados e UI, centralizei seletores de DOM, substituí alert() por feedback visual inline e organizei a lógica de tema e PWA para evitar comportamento imprevisível."
+                        data-learnings="Aprendi que código que apenas 'funciona' não é suficiente. Estrutura, separação de responsabilidades e previsibilidade são fundamentais para manutenção e evolução futura. Também aprofundei meu entendimento sobre Service Worker e cache de escopo correto."
+                        data-demo="https://weather-now-jade-seven.vercel.app/"
+                        data-repo="https://github.com/UelintonHJ/weather-now"
+                    >
+                        Ver detalhes
+                    </button>
+                </div>
 
-                        <a href="https://github.com/UelintonHJ/weather-now" target="_blank" class="btn-outline"
-                            aria-label="Ver o repositório do projeto Weather Now" rel="noopener noreferrer">
-                            Código
-                        </a>
-                    </div>
+                <div class="card" data-category="HTML CSS JS API">
+                    <h3>Product List</h3>
+                    <ul class="tags">
+                        <li class="tag">HTML</li>
+                        <li class="tag">CSS</li>
+                        <li class="tag">JS</li>
+                        <li class="tag">API</li>
+                        <li class="tag">UX</li>
+                        <li class="tag">UI</li>
+                    </ul>
+                    <p>
+                        Aplicação que consome API pública com busca, filtros, paginação e sincronização de estado com a URL.
+                    </p>
+                    <p class="decision">
+                        Modelei estado previsível (loading, erro, vazio), implementei debounce configurável e sincronização via query params para navegação real (back/forward).
+                    </p>
+                    <button class="btn-details details-btn"
+                        data-title="Product List"
+                        data-problem="Criar uma listagem de produtos com busca, filtros e paginação mantendo estado previsível e sincronizado com a URL sem usar frameworks."
+                        data-decisions="Separei responsabilidades entre API, estado e UI. Implementei debounce configurável, controle de paginação reutilizável, skeleton loading e tratamento explícito de erro e estado vazio."
+                        data-learnings="Aprendi a estruturar aplicações em JavaScript puro pensando como produto: estado previsível, navegação consistente e feedback claro para o usuário."
+                        data-demo="https://product-list-vanilla-js.vercel.app/"
+                        data-repo="https://github.com/UelintonHJ/product-list-vanilla-js"
+                    >
+                        Ver detalhes
+                    </button>
                 </div>
 
                 <div class="card" data-category="React TailwindCSS TypeScript">
@@ -153,17 +179,16 @@
                         cancelamento
                         e reset automático do fluxo.
                     </p>
-                    <div class="btns">
-                        <a href="https://checkout-flow-liart.vercel.app/" target="_blank" class="btn"
-                            aria-label="Ver a página do projeto Checkout Flow" rel="noopener noreferrer">
-                            <span class="btn-label">Ver Projeto</span>
-                        </a>
-
-                        <a href="https://github.com/UelintonHJ/checkout-flow" target="_blank" class="btn-outline"
-                            aria-label="Ver o repositório do projeto Checkout Flow" rel="noopener noreferrer">
-                            Código
-                        </a>
-                    </div>
+                    <button class="btn-details details-btn"
+                        data-title="Checkout Flow"
+                        data-problem="Simular um fluxo de checkout realista sem backend, garantindo clareza de estados (idle, loading, success, error) e evitando comportamento confuso durante falhas simuladas."
+                        data-decisions="Implementei controle global de estado com Context API, criei estados explícitos para cada fase do fluxo e adicionei possibilidade de cancelar confirmação durante loading. Simulei erros como network, timeout e payment_refused para tornar o fluxo resiliente."
+                        data-learnings="Aprendi a modelar estado de forma explícita e previsível. Entendi como pequenos detalhes de feedback visual reduzem fricção e melhoram percepção de qualidade."
+                        data-demo="https://checkout-flow-liart.vercel.app/"
+                        data-repo="https://github.com/UelintonHJ/checkout-flow"
+                    >
+                        Ver detalhes
+                    </button>
                 </div>
 
                 <div class="card" data-category="React TailwindCSS TypeScript">
@@ -183,18 +208,16 @@
                         progresso
                         e respeito a usuários experientes.
                     </p>
-                    <div class="btns">
-                        <a href="https://saas-onboarding-simulation.vercel.app/" target="_blank" class="btn"
-                            aria-label="Ver a página do projeto SaaS Onboarding Simulation" rel="noopener noreferrer">
-                            <span class="btn-label">Ver Projeto</span>
-                        </a>
-
-                        <a href="https://github.com/UelintonHJ/saas-onboarding-simulation" target="_blank"
-                            class="btn-outline" aria-label="Ver repositório do projeto SaaS Onboarding Simulation"
-                            rel="noopener noreferrer">
-                            Código
-                        </a>
-                    </div>
+                    <button class="btn-details details-btn"
+                        data-title="SaaS Onboarding Simulation"
+                        data-problem="Criar uma experiência de onboarding curta e clara, evitando sobrecarga cognitiva e abandono precoce nos primeiros segundos de uso."
+                        data-decisions="Dividi o fluxo em etapas progressivas, adicionei indicador de progresso discreto, permiti pular onboarding e implementei persistência via localStorage. Usei microcopy estratégica e Framer Motion para transições suaves."
+                        data-learnings="Aprendi que front-end não é apenas layout: decisões de fluxo e microcopy impactam ativação e retenção. Pequenas escolhas alteram a percepção de valor do produto."
+                        data-demo="https://saas-onboarding-simulation.vercel.app/"
+                        data-repo="https://github.com/UelintonHJ/saas-onboarding-simulation"
+                    >
+                        Ver detalhes
+                    </button>
                 </div>
 
                 <div class="card" data-category="React TailwindCSS TypeScript">
@@ -214,17 +237,16 @@
                         reais
                         sem depender de backend.
                     </p>
-                    <div class="btns">
-                        <a href="https://mini-login-system-zeta.vercel.app/" target="_blank" class="btn"
-                            aria-label="Ver a página do projeto Mini Login System" rel="noopener noreferrer">
-                            <span class="btn-label">Ver Projeto</span>
-                        </a>
-
-                        <a href="https://github.com/UelintonHJ/mini-login-system" target="_blank" class="btn-outline"
-                            aria-label="Ver repositório do projeto Mini Login System" rel="noopener noreferrer">
-                            Código
-                        </a>
-                    </div>
+                    <button class="btn-details details-btn"
+                        data-title="Mini Login System"
+                        data-problem="Simular autenticação realista sem backend, garantindo proteção de rotas, expiração de sessão e mensagens contextuais claras."
+                        data-decisions="Implementei  ProtectedRoute, controle de sessão com armazenamento local, mensagens dinâmicas de fluxo e feedback visual para erro de login. Adicionei simulação de expiração para tornar o fluxo mais realista."
+                        data-learnings="Aprendi a estruturar fluxos condicionais baseados em autenticação e a importância de comunicar claramente estados como logout e sessão expirada."
+                        data-demo="https://mini-login-system-zeta.vercel.app/login"
+                        data-repo="https://github.com/UelintonHJ/mini-login-system"
+                    >
+                        Ver detalhes
+                    </button>
                 </div>
 
                 <div class="card" data-category="React TailwindCSS TypeScript">
@@ -243,46 +265,16 @@
                         As métricas usam cores semânticas, animações sutis e skeleton loading para guiar atenção
                         e evitar estados vazios confusos.
                     </p>
-                    <div class="btns">
-                        <a href="https://dashboard-metricas-sepia.vercel.app/" target="_blank" class="btn"
-                            aria-label="Ver a página do projeto Dashboard de Métricas" rel="noopener noreferrer">
-                            <span class="btn-label">Ver Projeto</span>
-                        </a>
-
-                        <a href="https://github.com/UelintonHJ/dashboard-metricas" target="_blank" class="btn-outline"
-                            aria-label="Ver repositório do projeto Dashboard de Métricas" rel="noopener noreferrer">
-                            Código
-                        </a>
-                    </div>
-                </div>
-
-                <div class="card card-institutional" data-category="HTML TailwindCSS JS">
-                    <h3>Metalúrgica Gaspar</h3>
-                    <ul class="tags">
-                        <li class="tag">HTML</li>
-                        <li class="tag">TailwindCSS</li>
-                        <li class="tag">JS</li>
-                        <li class="tag">UX</li>
-                        <li class="tag">UI</li>
-                    </ul>
-                    <p>
-                        Site institucional para empresa industrial com foco em clareza e geração de contato.
-                    </p>
-                    <p class="decision">
-                        Optei por HTML semântico, layout sóbrio e CTA direto, evitando excessos visuais
-                        que atrapalham comunicação em contextos industriais.
-                    </p>
-                    <div class="btns">
-                        <a href="https://metalurgica-gaspar.vercel.app/" target="_blank" class="btn"
-                            aria-label="Ver a página do projeto Metalúrgica Gaspar" rel="noopener noreferrer">
-                            <span class="btn-label">Ver Projeto</span>
-                        </a>
-
-                        <a href="https://github.com/UelintonHJ/metalurgica-gaspar" target="_blank" class="btn-outline"
-                            aria-label="Ver repositório do projeto Metalúrgica Gaspar" rel="noopener noreferrer">
-                            Código
-                        </a>
-                    </div>
+                    <button class="btn-details details-btn"
+                        data-title="Dashboard de Métricas"
+                        data-problem="Simular um painel de métricas com foco em leitura rápida, evitando excesso visual e garantindo interpretação clara dos dados."
+                        data-decisions="Criei componentes desacoplados, utilizei cores semânticas para tendência (positivo/negativo), implementei skeleton loading e construí gráfico em SVG puro para controle total da renderização."
+                        data-learnings="Aprendi a pensar em hierarquia visual, escaneabilidade e percepção de performance. Nem sempre é sobre usar bibliotecas, mas entender como a informação deve ser consumida."
+                        data-demo="https://dashboard-metricas-sepia.vercel.app/"
+                        data-repo="https://github.com/UelintonHJ/dashboard-metricas"
+                    >
+                        Ver detalhes
+                    </button>
                 </div>
             </div>
         </div>
@@ -319,6 +311,35 @@
             © 2025 Uelinton Janke - Front-End Developer
         </p>
     </footer>
+
+    <div class="modal" aria-hidden="true">
+        <div class="modal-overlay"></div>
+        <div class="modal-content" role="dialog" aria-modal="true">
+            <button class="modal-close">x</button>
+
+            <h3 class="modal-title"></h3>
+
+            <section>
+                <h4>Problema</h4>
+                <p class="modal-problem"></p>
+            </section>
+
+            <section>
+                <h4>Decisões</h4>
+                <p class="modal-decisions"></p>
+            </section>
+
+            <section>
+                <h4>Aprendizados</h4>
+                <p class="modal-learnings"></p>
+            </section>
+
+            <div class="modal-links">
+                <a class="modal-demo btn" target="_blank">Ver projeto</a>
+                <a class="modal-repo btn-outline" target="_blank">Código</a>
+            </div>
+        </div>
+    </div>
 
     <script src="app.js" defer></script>
 </body>
