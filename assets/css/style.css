@@ -95,6 +95,18 @@
     border-top: 1px solid var(--border);
 }
 
+[data-theme="dark"] .modal-close {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(0, 0, 0, 0.18);
+    color: rgba(241, 250, 238, 0.85);
+}
+
+[data-theme="dark"] .modal-close:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #0A1128;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -705,9 +717,10 @@ header.shrink .theme-toggle {
     background: transparent;
     border: 1px solid var(--border);
     cursor: pointer;
-    font-size: 0.9rem;
-    font-weight: 600;
+    font-size: 1rem;
+    font-weight: 700;
     transition: all 0.2s ease;
+    line-height: 1;
 }
 
 .modal-close:hover {
