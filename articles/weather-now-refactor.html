@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Como refatorei uma aplicação JavaScript pura melhorar arquitetura, UX e escalabilidade.">
+    <meta property="og:title" content="Refataorando o Weather Now">
+    <meta property="og:description" content="De projeto funcional a produto evolutivo">
+    <meta property="og:image" content="https://github.com/UelintonHJ/weather-now/blob/main/assets/logo-favicon.png">
+    <title>Refatorando o Weather Now | Uelinton Janke</title>
+    <link rel="shortcut icon" href="../assets/img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <h1 class="logo">
+                <a href="../index.html">Uelinton Janke</a>
+            </h1>
+
+            <div class="header-actions">
+                <nav class="nav">
+                    <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" aria-hidden="true">
+                            <path
+                                d="M 5 8 A 2.0002 2.0002 0 1 0 5 12 L 45 12 A 2.0002 2.0002 0 1 0 45 8 L 5 8 z M 5 23 A 2.0002 2.0002 0 1 0 5 27 L 45 27 A 2.0002 2.0002 0 1 0 45 23 L 5 23 z M 5 38 A 2.0002 2.0002 0 1 0 5 42 L 45 42 A 2.0002 2.0002 0 1 0 45 38 L 5 38 z">
+                            </path>
+                        </svg>
+                    </button>
+
+                    <ul class="nav-list">
+                        <li><a href="../index.html#about">Sobre</a></li>
+                        <li><a href="../index.html#projects">Projetos</a></li>
+                        <li><a href="../index.html#articles">Artigos</a></li>
+                        <li><a href="../index.html#contact">Contato</a></li>
+                        <li class="nav-external">
+                            <a href="https://github.com/UelintonHJ" target="_blank" rel="noopener noreferrer">
+                                GitHub
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <button class="theme-toggle" aria-label="Alternar tema" aria-pressed="false">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                        aria-hidden="true" role="img" width="64" height="64" viewBox="0 0 24 24"
+                        style="color: rgb(74, 85, 101);">
+                        <path fill="currentColor"
+                            d="M12.058 20q-3.334 0-5.667-2.333T4.058 12q0-3.039 1.98-5.27t4.904-2.634q.081 0 .159.006t.153.017q-.506.706-.801 1.57T10.158 7.5q0 2.667 1.866 4.533t4.534 1.867q.951 0 1.813-.295t1.548-.801q.012.075.017.153t.006.159q-.384 2.923-2.615 4.903T12.057 20">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+    <div class="reading-progress"></div>
+    <main class="article-wrapper">
+        <section class="article-hero">
+            <p class="article-eyebrow">Case Study</p>
+
+            <h1>Refatorando o Weather Now: de projeto funcional a produto evolutivo</h1>
+
+            <p class="article-summary">
+                Refatorei uma aplicação em JavaScript puro para reduzir acoplamento, melhorar previsibilidade de estado
+                e
+                elevar
+                a experiência do usuário sem introduzir frameworks.
+            </p>
+
+            <p>
+                8 min de leitura
+            </p>
+
+            <p class="article-meta">
+                Publicado em Abril de 2026 • por Uelinton Janke
+            </p>
+
+            <div class="article-highlights">
+                <span>✔ Separação de responsabilidades</span>
+                <span>✔ Estado previsível</span>
+                <span>✔ UX sem alert()</span>
+                <span>✔ PWA confiável</span>
+            </div>
+
+            <div class="article-cta">
+                <a href="https://github.com/UelintonHJ/weather-now" class="btn" target="_blank">Repositório</a>
+                <a href="https://weather-now-jade-seven.vercel.app/" class="btn-outline" target="_blank">Deploy</a>
+            </div>
+
+        </section>
+
+        <section class="article-tldr">
+            <h3>Resumo rápido</h3>
+
+            <ul>
+                <li>Centralização de DOM reduziu duplicação</li>
+                <li>Separação de responsabilidades melhorou manutenção</li>
+                <li>Remoção de alert() melhorou UX</li>
+                <li>Service Worker corrigido para uma PWA confiável</li>
+            </ul>
+        </section>
+
+        <section class="article-content">
+            <h2>Contexto</h2>
+            <p>
+                O Weather Now nasceu como um projeto pessoal com objetivos claros: praticar consumo de API
+                (OpenWeather),
+                construir uma UI moderna com glassmorphism, implementar dark mode, transformar a aplicação em uma
+                Progressive Web App (PWA) e desenvolver tudo utilizando JavaScript puro.
+            </p>
+
+            <p>
+                O aplicativo cumpria bem sua proposta. Permitia busca por cidade, exibia o clima em tempo real com
+                ícones
+                animados, era responsivo, instalável como PWA e possuía dark mode. Estava funcional, bonito e publicado.
+            </p>
+
+            <p class="highlight-quote">
+                Mas funcional não é o mesmo que evolutivo.
+            </p>
+
+            <p>
+                Com o tempo, ficou evidente que, embora nada estivesse quebrado, a estrutura apresentava fragilidades
+                típicas de um projeto que funciona hoje, mas escala mal amanhã. A função getWeather() concentrava
+                responsabilidades demais. Havia chamadas repetidas
+                de document.getElementById() espalhadas pelo arquivo. O uso de alert() quebrava o fluxo da experiência
+                no
+                mobile. A lógica dos ícones dependia de múltiplos if/else. O Service Worker possuía caminhos
+                inconsistentes.
+                Não existia loading state nem persistência do contexto do usuário.
+            </p>
+
+            <p class="highlight-quote">
+                Nada estava errado. Mas estava frágil. E fragilidade é o oposto de produto.
+            </p>
+
+            <p>
+                A refatoração teve um objetivo claro: melhorar a estrutura sem reescrever tudo, sem adicionar frameworks
+                e
+                sem alterar a experiência visual. A meta era tornar o código previsível, reduzir acoplamento, melhorar o
+                feedback ao usuário e preparar o projeto para evolução futura.
+            </p>
+
+            <p class="highlight-quote">
+                Refatorar não é reescrever. É melhorar sem quebrar.
+            </p>
+
+            <h2>Centralização de DOM</h2>
+
+            <p>
+                A primeira melhoria foi a centralização das referências de DOM em um único objeto. Em vez de múltiplas
+                chamadas dispersas, passou a existir um ponto de verdade (const DOM = {...}). Isso reduziu o risco de
+                erro,
+                acelerou a leitura e deixou a estrutura da interface clara em poucos segundos, além de abrir caminho
+                para
+                futura componentização.
+            </p>
+
+            <p>
+                Antes, o código estava espalhado assim:
+            </p>
+
+            <pre>
+            <code>
+                document.getElementById("cityInput")
+                document.getElementById("searchBtn")
+                document.getElementById("cityName")
+            </code>
+        </pre>
+
+            <p>
+                Depois da refatoração, passou a existir um único ponto de verdade:
+            </p>
+
+            <pre>
+            <code>
+                const DOM = {
+                    cityInput: document.getElementById("cityInput"),
+                    searchBtn: document.getElementById("searchBtn"),
+                    cityName: document.getElementById("cityName"),
+                    temperature: document.getElementById("temperature"),
+                    description: document.getElementById("description"),
+                    weatherResult: document.getElementById("weatherResult"),
+                    weatherIcon: document.getElementById("weatherIcon"),
+                    themeBtn: document.getElementById("toggleTheme"),
+                };
+            </code>
+        </pre>
+
+            <h2>Separação de responsabilidades</h2>
+
+            <p>
+                Em seguida, houve a separação de responsabilidades. Antes, uma única função validava dados, chamava a
+                API,
+                tratava erros, manipulava o DOM e controlava estado. Depois da refatoração, cada função passou a ter um
+                papel específico: fetchWeather para dados, renderWeather
+                para interface e getWeather para orquestrar o fluxo. O resultado foi um código mais previsível e menos
+                arriscado para mudanças futuras, uma arquitetura mínima viável.
+            </p>
+
+            <pre>
+            <code>
+                async function fetchWeather(city) { ... }
+                function renderWeather(data) { ... }
+                async function getWeather() { ... }
+            </code>
+        </pre>
+
+            <h2>Substituindo alert() por feedback contextual</h2>
+
+            <p>
+                O alert() foi substituído por feedback contextual dentro da própria interface. O erro passou a aparecer
+                onde
+                o usuário já está interagindo, mantendo a fluidez da experiência e preparando terreno para melhorias
+                futuras
+                de acessibilidade. Uma pequena mudança técnica com grande impacto na percepção de qualidade.
+            </p>
+
+            <p>
+                Antes o alert():
+            </p>
+
+            <ul>
+                <li>Quebrava o fluxo</li>
+                <li>Era agressivo no mobile</li>
+                <li>Não combinava com uma UI moderna</li>
+            </ul>
+
+            <p>
+                Agora, com a substituição por feedback contextual:
+            </p>
+
+            <pre>
+            <code>
+                &lt;p id="errorMessage" class="error hidden"&gt;&lt;/p&gt;
+
+                function showError(message) { ... }
+                function clearError() { ... }
+            </code>
+        </pre>
+
+            <p>
+                O erro aparece no próprio fluxo da interface, sem interrupções desnecessárias.
+            </p>
+
+            <h2>Ícones declarativos</h2>
+
+            <p>
+                A lógica dos ícones deixou de depender de múltiplos condicionais e passou a utilizar um mapeamento
+                declarativo. Isso tornou o código mais explícito, escalável e fácil de expandir.
+            </p>
+
+            <p>
+                Antes:
+            </p>
+
+            <pre>
+            <code>
+                if (condition.includes("clear")) ...
+                else if (condition.includes("cloud")) ...
+            </code>
+        </pre>
+
+            <p>
+                Depois:
+            </p>
+
+            <pre>
+            <code>
+                const WEATHER_ICONS = {
+                    clear: "clear.json",
+                    cloud: "clouds.json",
+                    rain: "rain.json",
+                    storm: "storm.json",
+                    thunder: "storm.json",
+                    snow: "snow.json",
+                    mist: "clouds.json",
+                };
+            </code>
+        </pre>
+
+            <pre>
+            <code>
+                function loadWeatherIcon(condition) {
+                    const key = Object.keys(WEATHER_ICONS)
+                        .find(k => condition.includes(k));
+
+                    if (!key) return;
+
+                    DOM.weatherIcon.innerHTML = `
+                        &lt;lottie-player
+                            src="assets/icons/weatherIcon/${WEATHER_ICONS[key]}"
+                            autoplay
+                            loop&gt;
+                        &lt;/lottie-player&gt;
+                    `;
+                    }
+            </code>
+        </pre>
+
+            <p>
+                Adicionar novos estados climáticos agora é simples e previsível.
+            </p>
+
+            <h2>Tema centralizado e previsível</h2>
+
+            <p>
+                O sistema de tema também foi centralizado em uma função clara (setTheme), com persistência via
+                localStorage. O tema passou a ter contrato definido, permitindo futuras evoluções como tema automático
+                por
+                sistema ou por horário, sem necessidade de reestruturação.
+            </p>
+            <pre>
+                <code>
+                    function setTheme(theme) {
+                        document.body.classList.toggle("dark", theme === "dark");
+                        localStorage.setItem("theme", theme);
+                    }
+                </code>
+            </pre>
+
+            <p>
+                Inicialização:
+            </p>
+
+            <pre>
+            <code>
+                const savedTheme = localStorage.getItem("theme") || "light";
+                setTheme(savedTheme);
+            </code>
+        </pre>
+
+            <h2>Loading state</h2>
+
+            <p>
+                Foi implementado também um loading state. O botão de busca agora comunica quando está processando, evita
+                múltiplos cliques e reduz a ansiedade do usuário. Pequenos detalhes que elevam a maturidade do produto.
+            </p>
+
+            <pre>
+            <code>
+                function setLoading(isLoading) {
+                    DOM.searchBtn.disabled = isLoading;
+                    DOM.searchBtn.innerText = isLoading ? "Buscando..." : "Buscar";
+                }
+            </code>
+        </pre>
+
+            <p>
+                Aplicando com finally, garantindo consistência e eliminando estados inconsistentes de interface.
+            </p>
+
+            <h2>Enter para buscar e persistência da última cidade</h2>
+
+            <p>
+                A experiência foi aprimorada com suporte à tecla Enter para buscar, reaproveitando o fluxo já existente,
+                sem
+                duplicar lógica. Além disso, a aplicação passou a persistir a última cidade pesquisada, restaurando-a
+                automaticamente ao iniciar.
+            </p>
+
+            <p>
+                O fluxo foi reaproveitado para respeitar a expectativa natural do usuário: pressionar Enter durante a
+                busca.
+            </p>
+
+            <pre>
+            <code>
+                DOM.cityInput.addEventListener("keydown", (event) => {
+                    if (event.key === "Enter") {
+                        getWeather();
+                    }
+                });
+            </code>
+        </pre>
+
+            <p>
+                Persistência da última cidade:
+            </p>
+
+            <pre>
+            <code>
+                const LAST_CITY_KEY = "lastCity";
+
+                localStorage.setItem(LAST_CITY_KEY, city);
+
+                const lastCity = localStorage.getItem(LAST_CITY_KEY);
+                if (lastCity) {
+                    DOM.cityInput.value = lastCity;
+                    getWeather();
+                }
+            </code>
+        </pre>
+
+            <h2>Service Worker</h2>
+
+            <p>
+                No nível estrutural, o Service Worker foi corrigido com caminhos absolutos e registro adequado via
+                servidor
+                HTTP. Isso eliminou falhas silenciosas no cache.addAll() e elevou o projeto de uma PWA que "parece
+                funcionar" para uma PWA consistente e confiável.
+            </p>
+
+            <pre>
+            <code>
+                cache.addAll([
+                    "/",
+                    "/index.html",
+                    "/style.css",
+                    "/js/script.js",
+                    "/manifest.json",
+                    "/js/vendor/lottie-player.js"
+                ]);
+            </code>
+        </pre>
+
+            <h2>Remoção de dependência CDN</h2>
+
+            <p>
+                Por fim, foi removida a dependência de CDN do Lottie Player, adotando auto-hospedagem local. Isso
+                resolveu
+                bloqueios de storage causados por Tracking Prevention, melhorou o funcionamento offline e manteve o
+                console
+                limpo, o que demonstra uma postura de dono.
+            </p>
+
+            <p>
+                Solução:
+            </p>
+
+            <ul>
+                <li>Download do lottie-player</li>
+                <li>Hospedagem local (js/vendor)</li>
+            </ul>
+
+            <h2>Conclusão</h2>
+
+            <p>
+                O que mudou de verdade não foi a aparência, mas a base. O projeto deixou de ser apenas funcional e
+                passou a
+                ser evolutivo. O código tornou-se mais previsível, as responsabilidades ficaram claras, a experiência do
+                usuário melhorou, o estado passou a ser persistido e a PWA ganhou consistência real.
+            </p>
+
+            <p>
+                Além da reorganização estrutural, o console ficou limpo, o cache passou a funcionar corretamente offline
+                e o
+                fluxo de erro tornou-se previsível, reduzindo comportamentos inesperados e aumentando a confiabilidade
+                da
+                aplicação.
+            </p>
+
+            <p>
+                O principal aprendizado foi entender que mais importante do que funcionar é ser fácil de entender,
+                evoluir e
+                manter. Código é um sistema vivo. Produto não é apenas interface. Produto é fluxo. Produto é
+                previsibilidade. Produto é confiança para mudar.
+            </p>
+
+            <p class="highlight-quote">
+                Mentalidade que ficou: código bom não é o que funciona hoje, é o que continua funcionando quando você
+                precisa evoluir amanhã.
+            </p>
+        </section>
+
+        <section class="article-project">
+            <p class="article-project-eyebrow">Gostou da leitura?</p>
+
+            <h3>Quer conhecer o projeto na prática?</h3>
+
+            <p>Explore o código-fonte ou veja o seu funcionamento.</p>
+
+            <div class="article-project-actions">
+                <a href="https://github.com/UelintonHJ/weather-now" class="btn" target="_blank">
+                    Repositório
+                </a>
+
+                <a href="https://weather-now-jade-seven.vercel.app/" class="btn-outline" target="_blank">
+                    Deploy
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>
+            © 2026 Uelinton Janke - Front-End Developer
+        </p>
+    </footer>
+    <script src="../app.js"></script>
+</body>
+
+</html>

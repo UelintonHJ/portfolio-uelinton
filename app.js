@@ -81,12 +81,12 @@ themeToggle.addEventListener('click', () => {
     setTheme(nextTheme);
 });
 
-const filterButtons = document.querySelectorAll('.filter-btn');
-const projectCards = document.querySelectorAll('.card');
+const projectFilterButtons = document.querySelectorAll('.project-filters .filter-btn')
+const projectCards = document.querySelectorAll('.projects .card');
 
-filterButtons.forEach(btn => {
+projectFilterButtons.forEach(btn => {
     btn.addEventListener('click', () => {
-        filterButtons.forEach(b => {
+        projectFilterButtons.forEach(b => {
             b.classList.remove('active');
             b.setAttribute('aria-pressed', 'false');
         });
@@ -97,7 +97,7 @@ filterButtons.forEach(btn => {
         const category = btn.dataset.category;
 
         projectCards.forEach(card => {
-            const cardCategories = card.dataset.category.split(' ');
+            const cardCategories = (card.dataset.category || '').split(' ');
             const shouldShow =
                 category === 'all' || cardCategories.includes(category);
 
@@ -106,51 +106,123 @@ filterButtons.forEach(btn => {
     });
 });
 
-const modal = document.querySelector('.modal');
-const modalTitle = document.querySelector('.modal-title');
-const modalProblem = document.querySelector('.modal-problem');
-const modalDecisions = document.querySelector('.modal-decisions');
-const modalLearnings = document.querySelector('.modal-learnings');
-const modalDemo = document.querySelector('.modal-demo');
-const modalRepo = document.querySelector('.modal-repo');
-const modalClose = document.querySelector('.modal-close');
+const articleFilterButtons = document.querySelectorAll('.article-filters .filter-btn');
+const articleCards = document.querySelectorAll('.articles .card');
 
-document.querySelectorAll('.details-btn').forEach(btn => {
+articleFilterButtons.forEach(btn => {
     btn.addEventListener('click', () => {
-        modalTitle.textContent = btn.dataset.title;
-        modalProblem.textContent = btn.dataset.problem;
-        modalDecisions.textContent = btn.dataset.decisions;
-        modalLearnings.textContent = btn.dataset.learnings;
-
-        document.body.style.overflow = 'hidden';
-
-        modalDemo.href = btn.dataset.demo;
-        modalRepo.href = btn.dataset.repo;
-
-        modal.classList.add('open');
-        modal.setAttribute('aria-hidden', 'false');
-
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && modal.classList.contains('open')) {
-                closeModal();
-            }
+        articleFilterButtons.forEach(b => {
+            b.classList.remove('active');
+            b.setAttribute('aria-pressed', 'false');
         });
 
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                closeModal();
-            }
+        btn.classList.add('active');
+        btn.setAttribute('aria-pressed', 'true');
+
+        const category = btn.dataset.category;
+
+        articleCards.forEach(card => {
+            const cardCategories = (card.dataset.category || '').split(' ');
+            const shouldShow =
+                category === 'all' || cardCategories.includes(category);
+
+            card.classList.toggle('is-hidden', !shouldShow);
         });
     });
 });
 
-modalClose.addEventListener('click', closeModal);
+const projectModal = document.querySelector('.modal-project');
+const projectTitle = projectModal.querySelector('.modal-title');
+const projectProblem = projectModal.querySelector('.modal-problem');
+const projectDecisions = projectModal.querySelector('.modal-decisions');
+const projectLearnings = projectModal.querySelector('.modal-learnings');
+const projectDemo = projectModal.querySelector('.modal-demo');
+const projectRepo = projectModal.querySelector('.modal-repo');
+const projectClose = projectModal.querySelector('.modal-close');
 
-function closeModal() {
-    modal.classList.remove('open');
-    modal.setAttribute('aria-hidden', 'true');
+const articleModal = document.querySelector('.modal-article');
+const articleTitle = articleModal.querySelector('.modal-article-title');
+const articleContent = articleModal.querySelector('.modal-article-content');
+const articleClose = articleModal.querySelector('.modal-close');
 
+function openProjetctModal(data) {
+    projectTitle.textContent = data.title;
+    projectProblem.textContent = data.problem;
+    projectDecisions.textContent = data.decisions;
+    projectLearnings.textContent = data.learnings;
+    projectDemo.href = data.demo;
+    projectRepo.href = data.repo;
+
+    document.body.style.overflow = 'hidden';
+    projectModal.classList.add('open');
+    projectModal.setAttribute('aria-hidden', 'false');
+}
+
+function closeProjectModal() {
+    projectModal.classList.remove('open');
+    projectModal.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
+}
 
+function openArticleModal(data) {
+    articleTitle.textContent = data.title;
+    articleContent.innerHTML = data.content;
 
+    document.body.style.overflow = 'hidden';
+    articleModal.classList.add('open');
+    articleModal.setAttribute('aria-hidden', 'false');
+}
+
+function closeArticleModal() {
+    articleModal.classList.remove('open');
+    articleModal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+}
+
+document.querySelectorAll('.projects .details-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        openProjetctModal({
+            title: btn.dataset.title,
+            problem: btn.dataset.problem,
+            decisions: btn.dataset.decisions,
+            learnings: btn.dataset.learnings,
+            demo: btn.dataset.demo,
+            repo: btn.dataset.repo
+        });
+    });
+});
+
+document.querySelectorAll('.articles .details-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        openArticleModal({
+            title: btn.dataset.title,
+            content: btn.dataset.content
+        });
+    });
+});
+
+projectClose.addEventListener('click', closeProjectModal);
+articleClose.addEventListener('click', closeArticleModal);
+
+projectModal.addEventListener('click', (e) => {
+    if (e.target === projectModal) closeProjectModal();
+});
+
+articleModal.addEventListener('click', (e) => {
+    if (e.target === articleModal) closeArticleModal();
+});
+
+const progressBar = document.querySelector(".reading-progress");
+
+if (progressBar) {
+    window.addEventListener("scroll", () => {
+        const scrollTop = window.scrollY;
+        const height =
+            document.documentElement.scrollHeight - window.innerHeight;
+
+        const progress = (scrollTop / height) * 100;
+
+        document.querySelector(".reading-progress").style.width =
+            progress + "%";
+    });
 }

@@ -30,10 +30,11 @@
                     </button>
 
                     <ul class="nav-list">
-                        <li><a href="#about">Sobre</a></li>
-                        <li><a href="#projects">Projetos</a></li>
-                        <li><a href="#contact">Contato</a></li>
-                        <li class="nav-external"><a href="https://github.com/UelintonHJ" target="_blank"
+                        <li><a href="#about" aria-label="Ir para seção sobre mim">Sobre</a></li>
+                        <li><a href="#projects" aria-label="Ir para seção de projetos">Projetos</a></li>
+                        <li><a href="#articles" aria-label="Ir para seção de artigos">Artigos</a></li>
+                        <li><a href="#contact" aria-label="Ir para seção de contatos">Contato</a></li>
+                        <li class="nav-external"><a href="https://github.com/UelintonHJ" aria-label="Ir para meu GitHub" target="_blank"
                                 rel="noopener noreferrer">
                                 GitHub
                             </a>
@@ -122,14 +123,12 @@
                         feedback inline
                         e criar uma base sólida para manutenção e novas features.
                     </p>
-                    <button class="btn-details details-btn"
-                        data-title="Weather Now"
+                    <button class="btn-details details-btn" data-title="Weather Now"
                         data-problem="O projeto começou como prática de consumo de API, mas o código concentrava responsabilidades, utilizava alert() para erros e dificultava evolução segura. Havia risco de acoplamento excessivo entre busca de dados e renderização."
                         data-decisions="Refatorei de forma incremental sem adicionar frameworks. Separei responsabilidades entre dados e UI, centralizei seletores de DOM, substituí alert() por feedback visual inline e organizei a lógica de tema e PWA para evitar comportamento imprevisível."
                         data-learnings="Aprendi que código que apenas 'funciona' não é suficiente. Estrutura, separação de responsabilidades e previsibilidade são fundamentais para manutenção e evolução futura. Também aprofundei meu entendimento sobre Service Worker e cache de escopo correto."
                         data-demo="https://weather-now-jade-seven.vercel.app/"
-                        data-repo="https://github.com/UelintonHJ/weather-now"
-                    >
+                        data-repo="https://github.com/UelintonHJ/weather-now">
                         Ver detalhes
                     </button>
                 </div>
@@ -145,19 +144,19 @@
                         <li class="tag">UI</li>
                     </ul>
                     <p>
-                        Aplicação que consome API pública com busca, filtros, paginação e sincronização de estado com a URL.
+                        Aplicação que consome API pública com busca, filtros, paginação e sincronização de estado com a
+                        URL.
                     </p>
                     <p class="decision">
-                        Modelei estado previsível (loading, erro, vazio), implementei debounce configurável e sincronização via query params para navegação real (back/forward).
+                        Modelei estado previsível (loading, erro, vazio), implementei debounce configurável e
+                        sincronização via query params para navegação real (back/forward).
                     </p>
-                    <button class="btn-details details-btn"
-                        data-title="Product List"
+                    <button class="btn-details details-btn" data-title="Product List"
                         data-problem="Criar uma listagem de produtos com busca, filtros e paginação mantendo estado previsível e sincronizado com a URL sem usar frameworks."
                         data-decisions="Separei responsabilidades entre API, estado e UI. Implementei debounce configurável, controle de paginação reutilizável, skeleton loading e tratamento explícito de erro e estado vazio."
                         data-learnings="Aprendi a estruturar aplicações em JavaScript puro pensando como produto: estado previsível, navegação consistente e feedback claro para o usuário."
                         data-demo="https://product-list-vanilla-js.vercel.app/"
-                        data-repo="https://github.com/UelintonHJ/product-list-vanilla-js"
-                    >
+                        data-repo="https://github.com/UelintonHJ/product-list-vanilla-js">
                         Ver detalhes
                     </button>
                 </div>
@@ -179,14 +178,12 @@
                         cancelamento
                         e reset automático do fluxo.
                     </p>
-                    <button class="btn-details details-btn"
-                        data-title="Checkout Flow"
+                    <button class="btn-details details-btn" data-title="Checkout Flow"
                         data-problem="Simular um fluxo de checkout realista sem backend, garantindo clareza de estados (idle, loading, success, error) e evitando comportamento confuso durante falhas simuladas."
                         data-decisions="Implementei controle global de estado com Context API, criei estados explícitos para cada fase do fluxo e adicionei possibilidade de cancelar confirmação durante loading. Simulei erros como network, timeout e payment_refused para tornar o fluxo resiliente."
                         data-learnings="Aprendi a modelar estado de forma explícita e previsível. Entendi como pequenos detalhes de feedback visual reduzem fricção e melhoram percepção de qualidade."
                         data-demo="https://checkout-flow-liart.vercel.app/"
-                        data-repo="https://github.com/UelintonHJ/checkout-flow"
-                    >
+                        data-repo="https://github.com/UelintonHJ/checkout-flow">
                         Ver detalhes
                     </button>
                 </div>
@@ -208,14 +205,12 @@
                         progresso
                         e respeito a usuários experientes.
                     </p>
-                    <button class="btn-details details-btn"
-                        data-title="SaaS Onboarding Simulation"
+                    <button class="btn-details details-btn" data-title="SaaS Onboarding Simulation"
                         data-problem="Criar uma experiência de onboarding curta e clara, evitando sobrecarga cognitiva e abandono precoce nos primeiros segundos de uso."
                         data-decisions="Dividi o fluxo em etapas progressivas, adicionei indicador de progresso discreto, permiti pular onboarding e implementei persistência via localStorage. Usei microcopy estratégica e Framer Motion para transições suaves."
                         data-learnings="Aprendi que front-end não é apenas layout: decisões de fluxo e microcopy impactam ativação e retenção. Pequenas escolhas alteram a percepção de valor do produto."
                         data-demo="https://saas-onboarding-simulation.vercel.app/"
-                        data-repo="https://github.com/UelintonHJ/saas-onboarding-simulation"
-                    >
+                        data-repo="https://github.com/UelintonHJ/saas-onboarding-simulation">
                         Ver detalhes
                     </button>
                 </div>
@@ -237,14 +232,12 @@
                         reais
                         sem depender de backend.
                     </p>
-                    <button class="btn-details details-btn"
-                        data-title="Mini Login System"
+                    <button class="btn-details details-btn" data-title="Mini Login System"
                         data-problem="Simular autenticação realista sem backend, garantindo proteção de rotas, expiração de sessão e mensagens contextuais claras."
                         data-decisions="Implementei  ProtectedRoute, controle de sessão com armazenamento local, mensagens dinâmicas de fluxo e feedback visual para erro de login. Adicionei simulação de expiração para tornar o fluxo mais realista."
                         data-learnings="Aprendi a estruturar fluxos condicionais baseados em autenticação e a importância de comunicar claramente estados como logout e sessão expirada."
                         data-demo="https://mini-login-system-zeta.vercel.app"
-                        data-repo="https://github.com/UelintonHJ/mini-login-system"
-                    >
+                        data-repo="https://github.com/UelintonHJ/mini-login-system">
                         Ver detalhes
                     </button>
                 </div>
@@ -265,18 +258,40 @@
                         As métricas usam cores semânticas, animações sutis e skeleton loading para guiar atenção
                         e evitar estados vazios confusos.
                     </p>
-                    <button class="btn-details details-btn"
-                        data-title="Dashboard de Métricas"
+                    <button class="btn-details details-btn" data-title="Dashboard de Métricas"
                         data-problem="Simular um painel de métricas com foco em leitura rápida, evitando excesso visual e garantindo interpretação clara dos dados."
                         data-decisions="Criei componentes desacoplados, utilizei cores semânticas para tendência (positivo/negativo), implementei skeleton loading e construí gráfico em SVG puro para controle total da renderização."
                         data-learnings="Aprendi a pensar em hierarquia visual, escaneabilidade e percepção de performance. Nem sempre é sobre usar bibliotecas, mas entender como a informação deve ser consumida."
                         data-demo="https://dashboard-metricas-sepia.vercel.app/"
-                        data-repo="https://github.com/UelintonHJ/dashboard-metricas"
-                    >
+                        data-repo="https://github.com/UelintonHJ/dashboard-metricas">
                         Ver detalhes
                     </button>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <section class="articles container" id="articles">
+        <h2>Artigos</h2>
+
+        <div class="cards">
+            <article class="card article-card">
+                <h3>Refatorando o Weather Now: de projeto funcional a produto evolutivo.</h3>
+
+                <p>
+                    Um mergulho profundo na reformulação arquitetônica do meu aplicativo Weather Now, melhorando a estrutura, o feedback de UX e a confiabilidade do PWA sem introduzir frameworks.
+                </p>
+
+                <ul class="tags">
+                    <li class="tag">JavaScript</li>
+                    <li class="tag">Arquitetura</li>
+                    <li class="tag">PWA</li>
+                </ul>
+
+                <a href="articles/weather-now-refactor.html" class="btn article-btn">
+                    Ler artigo
+                </a>
+            </article>
         </div>
     </section>
 
@@ -308,13 +323,12 @@
 
     <footer class="footer">
         <p>
-            © 2025 Uelinton Janke - Front-End Developer
+            © 2026 Uelinton Janke - Front-End Developer
         </p>
     </footer>
 
-    <div class="modal" aria-hidden="true">
-        <div class="modal-overlay"></div>
-        <div class="modal-content" role="dialog" aria-modal="true">
+    <div class="modal modal-project" aria-hidden="true">
+        <div class="modal-content">
             <button class="modal-close" aria-label="Fechar modal">&times;</button>
 
             <h3 class="modal-title"></h3>
@@ -338,6 +352,16 @@
                 <a class="modal-demo btn" target="_blank">Ver projeto</a>
                 <a class="modal-repo btn-outline" target="_blank">Código</a>
             </div>
+        </div>
+    </div>
+
+    <div class="modal modal-article" aria-hidden="true">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Fechar modal">&times;</button>
+
+            <h3 class="modal-article-title"></h3>
+
+            <article class="modal-article-content"></article>
         </div>
     </div>
 
