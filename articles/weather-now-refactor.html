@@ -171,32 +171,24 @@
                 Antes, o código estava espalhado assim:
             </p>
 
-            <pre>
-            <code>
-                document.getElementById("cityInput")
-                document.getElementById("searchBtn")
-                document.getElementById("cityName")
-            </code>
-        </pre>
+            <pre><code>document.getElementById("cityInput")
+document.getElementById("searchBtn")
+document.getElementById("cityName")</code></pre>
 
             <p>
                 Depois da refatoração, passou a existir um único ponto de verdade:
             </p>
 
-            <pre>
-            <code>
-                const DOM = {
-                    cityInput: document.getElementById("cityInput"),
-                    searchBtn: document.getElementById("searchBtn"),
-                    cityName: document.getElementById("cityName"),
-                    temperature: document.getElementById("temperature"),
-                    description: document.getElementById("description"),
-                    weatherResult: document.getElementById("weatherResult"),
-                    weatherIcon: document.getElementById("weatherIcon"),
-                    themeBtn: document.getElementById("toggleTheme"),
-                };
-            </code>
-        </pre>
+            <pre><code>const DOM = {
+    cityInput: document.getElementById("cityInput"),
+    searchBtn: document.getElementById("searchBtn"),
+    cityName: document.getElementById("cityName"),
+    temperature: document.getElementById("temperature"),
+    description: document.getElementById("description"),
+    weatherResult: document.getElementById("weatherResult"),
+    weatherIcon: document.getElementById("weatherIcon"),
+    themeBtn: document.getElementById("toggleTheme"),
+};</code></pre>
 
             <h2>Separação de responsabilidades</h2>
 
@@ -209,13 +201,9 @@
                 arriscado para mudanças futuras, uma arquitetura mínima viável.
             </p>
 
-            <pre>
-            <code>
-                async function fetchWeather(city) { ... }
-                function renderWeather(data) { ... }
-                async function getWeather() { ... }
-            </code>
-        </pre>
+            <pre><code>async function fetchWeather(city) { ... }
+function renderWeather(data) { ... }
+async function getWeather() { ... }</code></pre>
 
             <h2>Substituindo alert() por feedback contextual</h2>
 
@@ -241,14 +229,10 @@
                 Agora, com a substituição por feedback contextual:
             </p>
 
-            <pre>
-            <code>
-                &lt;p id="errorMessage" class="error hidden"&gt;&lt;/p&gt;
+            <pre><code>&lt;p id="errorMessage" class="error hidden"&gt;&lt;/p&gt;
 
-                function showError(message) { ... }
-                function clearError() { ... }
-            </code>
-        </pre>
+function showError(message) { ... }
+function clearError() { ... }</code></pre>
 
             <p>
                 O erro aparece no próprio fluxo da interface, sem interrupções desnecessárias.
@@ -265,49 +249,37 @@
                 Antes:
             </p>
 
-            <pre>
-            <code>
-                if (condition.includes("clear")) ...
-                else if (condition.includes("cloud")) ...
-            </code>
-        </pre>
+            <pre><code>if (condition.includes("clear")) ...
+else if (condition.includes("cloud")) ...</code></pre>
 
             <p>
                 Depois:
             </p>
 
-            <pre>
-            <code>
-                const WEATHER_ICONS = {
-                    clear: "clear.json",
-                    cloud: "clouds.json",
-                    rain: "rain.json",
-                    storm: "storm.json",
-                    thunder: "storm.json",
-                    snow: "snow.json",
-                    mist: "clouds.json",
-                };
-            </code>
-        </pre>
+            <pre><code>const WEATHER_ICONS = {
+    clear: "clear.json",
+    cloud: "clouds.json",
+    rain: "rain.json",
+    storm: "storm.json",
+    thunder: "storm.json",
+    snow: "snow.json",
+    mist: "clouds.json",
+};</code></pre>
 
-            <pre>
-            <code>
-                function loadWeatherIcon(condition) {
-                    const key = Object.keys(WEATHER_ICONS)
-                        .find(k => condition.includes(k));
+            <pre><code>function loadWeatherIcon(condition) {
+    const key = Object.keys(WEATHER_ICONS)
+        .find(k => condition.includes(k));
 
-                    if (!key) return;
+    if (!key) return;
 
-                    DOM.weatherIcon.innerHTML = `
-                        &lt;lottie-player
-                            src="assets/icons/weatherIcon/${WEATHER_ICONS[key]}"
-                            autoplay
-                            loop&gt;
-                        &lt;/lottie-player&gt;
-                    `;
-                    }
-            </code>
-        </pre>
+    DOM.weatherIcon.innerHTML = `
+        &lt;lottie-player
+            src="assets/icons/weatherIcon/${WEATHER_ICONS[key]}"
+            autoplay
+            loop&gt;
+        &lt;/lottie-player&gt;
+    `;
+}</code></pre>
 
             <p>
                 Adicionar novos estados climáticos agora é simples e previsível.
@@ -321,25 +293,18 @@
                 por
                 sistema ou por horário, sem necessidade de reestruturação.
             </p>
-            <pre>
-                <code>
-                    function setTheme(theme) {
-                        document.body.classList.toggle("dark", theme === "dark");
-                        localStorage.setItem("theme", theme);
-                    }
-                </code>
-            </pre>
+
+            <pre><code>function setTheme(theme) {
+    document.body.classList.toggle("dark", theme === "dark");
+    localStorage.setItem("theme", theme);
+}</code></pre>
 
             <p>
                 Inicialização:
             </p>
 
-            <pre>
-            <code>
-                const savedTheme = localStorage.getItem("theme") || "light";
-                setTheme(savedTheme);
-            </code>
-        </pre>
+            <pre><code>const savedTheme = localStorage.getItem("theme") || "light";
+setTheme(savedTheme);</code></pre>
 
             <h2>Loading state</h2>
 
@@ -348,14 +313,10 @@
                 múltiplos cliques e reduz a ansiedade do usuário. Pequenos detalhes que elevam a maturidade do produto.
             </p>
 
-            <pre>
-            <code>
-                function setLoading(isLoading) {
-                    DOM.searchBtn.disabled = isLoading;
-                    DOM.searchBtn.innerText = isLoading ? "Buscando..." : "Buscar";
-                }
-            </code>
-        </pre>
+            <pre><code>function setLoading(isLoading) {
+    DOM.searchBtn.disabled = isLoading;
+    DOM.searchBtn.innerText = isLoading ? "Buscando..." : "Buscar";
+}</code></pre>
 
             <p>
                 Aplicando com finally, garantindo consistência e eliminando estados inconsistentes de interface.
@@ -375,33 +336,25 @@
                 busca.
             </p>
 
-            <pre>
-            <code>
-                DOM.cityInput.addEventListener("keydown", (event) => {
-                    if (event.key === "Enter") {
-                        getWeather();
-                    }
-                });
-            </code>
-        </pre>
+            <pre><code>DOM.cityInput.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+        getWeather();
+    }
+});</code></pre>
 
             <p>
                 Persistência da última cidade:
             </p>
 
-            <pre>
-            <code>
-                const LAST_CITY_KEY = "lastCity";
+            <pre><code>const LAST_CITY_KEY = "lastCity";
 
-                localStorage.setItem(LAST_CITY_KEY, city);
+localStorage.setItem(LAST_CITY_KEY, city);
 
-                const lastCity = localStorage.getItem(LAST_CITY_KEY);
-                if (lastCity) {
-                    DOM.cityInput.value = lastCity;
-                    getWeather();
-                }
-            </code>
-        </pre>
+const lastCity = localStorage.getItem(LAST_CITY_KEY);
+if (lastCity) {
+    DOM.cityInput.value = lastCity;
+    getWeather();
+}</code></pre>
 
             <h2>Service Worker</h2>
 
@@ -412,18 +365,14 @@
                 funcionar" para uma PWA consistente e confiável.
             </p>
 
-            <pre>
-            <code>
-                cache.addAll([
-                    "/",
-                    "/index.html",
-                    "/style.css",
-                    "/js/script.js",
-                    "/manifest.json",
-                    "/js/vendor/lottie-player.js"
-                ]);
-            </code>
-        </pre>
+            <pre><code>cache.addAll([
+    "/",
+    "/index.html",
+    "/style.css",
+    "/js/script.js",
+    "/manifest.json",
+    "/js/vendor/lottie-player.js"
+]);</code></pre>
 
             <h2>Remoção de dependência CDN</h2>
 
