@@ -4,10 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Como refatorei uma aplicação JavaScript pura para melhorar arquitetura, UX e escalabilidade.">
+    <meta name="description" content="Case study: como refatorei uma aplicação JavaScript pura para melhorar arquitetura, UX e escalabilidade sem frameworks.">
     <meta property="og:title" content="Refatorando o Weather Now">
     <meta property="og:description" content="De projeto funcional a produto evolutivo">
-    <meta property="og:image" content="https://github.com/UelintonHJ/weather-now/blob/main/assets/logo-favicon.png">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://portfolio-uelinton.vercel.app/articles/weather-now-refactor.html">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="og:image" content="https://portfolio-uelinton.vercel.app/assets/og/weather-now.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <title>Refatorando o Weather Now | Uelinton Janke</title>
     <link rel="shortcut icon" href="../assets/img/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="../assets/css/style.css">
@@ -20,13 +25,13 @@
 <body>
     <header>
         <div class="header-content">
-            <h1 class="logo">
+            <div class="logo">
                 <a href="../index.html">Uelinton Janke</a>
-            </h1>
+            </div>
 
             <div class="header-actions">
                 <nav class="nav">
-                    <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
+                    <button type="button" class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" aria-hidden="true">
                             <path
                                 d="M 5 8 A 2.0002 2.0002 0 1 0 5 12 L 45 12 A 2.0002 2.0002 0 1 0 45 8 L 5 8 z M 5 23 A 2.0002 2.0002 0 1 0 5 27 L 45 27 A 2.0002 2.0002 0 1 0 45 23 L 5 23 z M 5 38 A 2.0002 2.0002 0 1 0 5 42 L 45 42 A 2.0002 2.0002 0 1 0 45 38 L 5 38 z">
@@ -47,7 +52,7 @@
                     </ul>
                 </nav>
 
-                <button class="theme-toggle" aria-label="Alternar tema" aria-pressed="false">
+                <button type="button" class="theme-toggle" aria-label="Alternar tema" aria-pressed="false">
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                         aria-hidden="true" role="img" width="64" height="64" viewBox="0 0 24 24"
                         style="color: rgb(74, 85, 101);">
@@ -106,7 +111,7 @@
             </ul>
         </section>
 
-        <section class="article-content">
+        <article class="article-content">
             <h2>Contexto</h2>
             <p>
                 O Weather Now nasceu como um projeto pessoal com objetivos claros: praticar consumo de API
@@ -467,7 +472,7 @@
                 Mentalidade que ficou: código bom não é o que funciona hoje, é o que continua funcionando quando você
                 precisa evoluir amanhã.
             </p>
-        </section>
+        </article>
 
         <section class="article-project">
             <p class="article-project-eyebrow">Gostou da leitura?</p>
