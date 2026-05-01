@@ -994,7 +994,8 @@ header.shrink .theme-toggle {
 }
 
 .article-content pre {
-    margin: 1.8rem 0;
+    margin: 1.8rem auto;
+    width: fit-content;
     border: 1px solid rgba(255, 255, 255, 0.08);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
     padding: 1.4rem;
