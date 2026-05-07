@@ -226,3 +226,17 @@ if (progressBar) {
             progress + "%";
     });
 }
+
+document.addEventListener('keydown', (event) => {
+    if (event.key !== 'Escape') {
+        return;
+    }
+
+    if (projectModal.classList.contains('open')) {
+        closeProjectModal();
+    }
+
+    if (articleModal.classList.contains('open')) {
+        closeArticleModal();
+    }
+});
