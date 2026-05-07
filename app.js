@@ -145,6 +145,37 @@ const articleTitle = articleModal.querySelector('.modal-article-title');
 const articleContent = articleModal.querySelector('.modal-article-content');
 const articleClose = articleModal.querySelector('.modal-close');
 
+let lastFocusedElement = null;
+
+function trapFocus(modal, event) {
+    if (event.key !== 'Tab') {
+        return;
+    }
+
+    const focusableElements = modal.querySelectorAll(
+        'button, a[href], input, textarea, select, [tabindex]:not([tabindex="-1"])'
+    );
+
+    if (focusableElements.length === 0) {
+        return;
+    }
+
+    const firstElement = focusableElements[0];
+    const lastElement = focusableElements[focusableElements.length - 1];
+
+    if (event.shiftKey) {
+        if (document.activeElement === firstElement) {
+            event.preventDefault();
+            lastElement.focus();
+        }
+    } else {
+        if (document.activeElement === lastElement) {
+            event.preventDefault();
+            firstElement.focus();
+        }
+    }
+}
+
 function openProjetctModal(data) {
     projectTitle.textContent = data.title;
     projectProblem.textContent = data.problem;
@@ -153,16 +184,37 @@ function openProjetctModal(data) {
     projectDemo.href = data.demo;
     projectRepo.href = data.repo;
 
+    lastFocusedElement = document.activeElement;
+    
     document.body.style.overflow = 'hidden';
+
     projectModal.classList.add('open');
     projectModal.setAttribute('aria-hidden', 'false');
+
+    const firstFocusableElement = projectModal.querySelector(
+        'button, a[href], input, textarea, select, [tabindex]:not([tabindex="-1"])'
+    );
+
+    firstFocusableElement?.focus();
 }
 
 function closeProjectModal() {
     projectModal.classList.remove('open');
     projectModal.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
+
+    lastFocusedElement?.focus();
 }
+
+document.addEventListener('keydown', (event) => {
+    if (projectModal.classList.contains('open')) {
+        trapFocus(projectModal, event);
+    }
+
+    if (articleModal.classList.contains('open')) {
+        trapFocus(articleModal, event);
+    }
+});
 
 function openArticleModal(data) {
     articleTitle.textContent = data.title;
