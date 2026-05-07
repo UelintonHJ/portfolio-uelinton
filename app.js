@@ -176,7 +176,7 @@ function trapFocus(modal, event) {
     }
 }
 
-function openProjetctModal(data) {
+function openProjectModal(data) {
     projectTitle.textContent = data.title;
     projectProblem.textContent = data.problem;
     projectDecisions.textContent = data.decisions;
@@ -233,7 +233,7 @@ function closeArticleModal() {
 
 document.querySelectorAll('.projects .details-btn').forEach(btn => {
     btn.addEventListener('click', () => {
-        openProjetctModal({
+        openProjectModal({
             title: btn.dataset.title,
             problem: btn.dataset.problem,
             decisions: btn.dataset.decisions,
