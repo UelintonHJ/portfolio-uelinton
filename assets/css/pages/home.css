@@ -82,6 +82,36 @@
     max-width: 750px;
 }
 
+/* ENGINEERING */
+
+.engineering h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.engineering-intro {
+    max-width: 760px;
+    line-height: 1.7;
+    opacity: 0.9;
+    margin-bottom: 2.2rem;
+    font-size: 1.05rem;
+}
+
+.engineering .card {
+    min-height: 100%;
+}
+
+.engineering .card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+}
+
+.engineering .decision {
+    margin-top: auto;
+}
+
 /* PROJECTS */
 
 .projects h2 {
