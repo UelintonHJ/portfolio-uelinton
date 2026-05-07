@@ -1,0 +1,17 @@
+body {
+    font-family: "Nunito", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    padding: 0;
+}
+
+section[id] {
+    scroll-margin-top: var(--header-offset);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none;
+        transition: none;
+    }
+}

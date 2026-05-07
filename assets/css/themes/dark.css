@@ -1,0 +1,98 @@
+[data-theme="dark"] header {
+    background: rgba(10, 17, 40, 0.8);
+}
+
+[data-theme="dark"] header.shrink {
+    background: rgba(10, 17, 40, 0.95);
+}
+
+[data-theme="dark"] .filter-btn {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: rgba(241, 250, 238, 0.85);
+    backdrop-filter: blur(6px);
+}
+
+[data-theme="dark"] .filter-btn.active {
+    background: var(--accent);
+    color: #F1FAEE;
+    border-color: var(--accent);
+    box-shadow: 0 4px 12px rgba(42, 157, 143, 0.35);
+}
+
+[data-theme="dark"] .filter-btn:hover {
+    border-color: var(--accent);
+    background: rgba(42, 157, 143, 0.15);
+}
+
+[data-theme="dark"] .card-featured {
+    background: linear-gradient(
+        180deg,
+        rgba(42, 157, 143, 0.15),
+        rgba(255, 255, 255, 0.04)
+    );
+    border-color: rgba(42, 157, 143, 0.4);
+}
+
+[data-theme="dark"] .card-featured::before {
+    color: rgba(241, 250, 238, 0.6);
+}
+
+[data-theme="dark"] .card-institutional {
+    background: rgba(255, 255, 255, 0.03);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .card-institutional::before {
+    color: rgba(241, 250, 238, 0.55);
+}
+
+[data-theme="dark"] .card-institutional .tag {
+    background: rgba(42, 157, 143, 0.1);
+    color: rgba(241, 250, 238, 0.85);
+    border: 1px solid rgba(42, 157, 143, 0.25);
+}
+
+[data-theme="dark"] .card-institutional .btn {
+    background: #F1FAEE;
+    color: var(--bg);
+}
+
+[data-theme="dark"] .card-institutional .decision {
+    border-left-color: rgba(42, 157, 143, 0.7);
+}
+
+[data-theme="dark"] .tag {
+    background: rgba(255, 255, 255, 0.06);
+    color: rgba(241, 250, 238, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="dark"] .footer {
+    background: rgba(10, 17, 40, 0.9);
+    border-top: 1px solid var(--border);
+}
+
+[data-theme="dark"] .modal-content {
+    background: rgba(15, 23, 42, 0.95);
+    border-color: rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="dark"] .modal-close {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(0, 0, 0, 0.18);
+    color: rgba(241, 250, 238, 0.85);
+}
+
+[data-theme="dark"] .modal-close:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #0A1128;
+}
+
+@media (max-width: 768px) {
+     [data-theme="dark"] .nav-list {
+        background: rgba(10, 17, 40, 0.95);
+        border-color: rgba(255, 255, 255, 0.1);
+    }
+}

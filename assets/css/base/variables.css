@@ -1,0 +1,21 @@
+:root {
+    --bg: #F1FAEE;
+    --text: #0A1128;
+    --accent: #2A9D8F;
+
+    --surface: rgba(217, 237, 146, 0.6);
+    --surface-strong: rgba(217, 237, 146, 0.9);
+    --border: rgba(112, 224, 0, 0.8);
+
+    --header-offset: 90px;
+}
+
+[data-theme="dark"] {
+    --bg: #0A1128;
+    --text: #F1FAEE;
+    --accent: #2A9D8F;
+
+    --surface: rgba(255, 255, 255, 0.04);
+    --surface-strong: rgba(255, 255, 255, 0.07);
+    --border: rgba(255, 255, 255, 0.08);
+}
