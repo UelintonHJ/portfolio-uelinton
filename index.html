@@ -191,6 +191,9 @@
                         feedback inline
                         e criar uma base sólida para manutenção e novas features.
                     </p>
+                    <p class="tradeoff">
+                        Preferi refatorar incrementalmente sem migrar para frameworks, priorizando evolução controlada da arquitetura e entendimento profundo da base existente.
+                    </p>
                     <p class="project-update">
                         Última atualização: Fevereiro 2026
                     </p>
@@ -240,6 +243,9 @@
                         Modelei estado previsível (loading, erro, vazio), implementei debounce configurável e
                         sincronização via query params para navegação real (back/forward).
                     </p>
+                    <p class="tradeoff">
+                        Escolhi evitar frameworks para exercitar organização de estado e UI de forma explícita, mesmo com maior responsabilidade manual.
+                    </p>
                     <p class="project-update">
                         Última atualização: Janeiro 2026
                     </p>
@@ -287,6 +293,9 @@
                         Modelei estados reais de produto (idle, loading, success, error), incluindo falhas simuladas,
                         cancelamento
                         e reset automático do fluxo.
+                    </p>
+                    <p class="tradeoff">
+                        Simulei toda a lógica sem backend real para focar na modelagem de estados e experiência do usuário, sacrificando persistência e integração real em favor de clareza arquitetural.
                     </p>
                     <p class="project-update">
                         Última atualização: Fevereiro 2026
@@ -336,6 +345,9 @@
                         progresso
                         e respeito a usuários experientes.
                     </p>
+                    <p class="tradeoff">
+                        Priorizei redução de fricção e fluxo rápido de ativação, abrindo mão de personalizações complexas para manter a experiência simples e objetiva.
+                    </p>
                     <p class="project-update">
                         Última atualização: Janeiro 2026
                     </p>
@@ -384,6 +396,9 @@
                         reais
                         sem depender de backend.
                     </p>
+                    <p class="tradeoff">
+                        Mantive autenticação totalmente simulada para concentrar o projeto em fluxo, proteção de rotas e UX, sem adicionar complexidade desnecessária de backend.
+                    </p>
                     <p class="project-update">
                         Última atualização: Fevereiro 2026
                     </p>
@@ -430,6 +445,9 @@
                     <p class="decision">
                         As métricas usam cores semânticas, animações sutis e skeleton loading para guiar atenção
                         e evitar estados vazios confusos.
+                    </p>
+                    <p class="tradeoff">
+                        Escolhi construir gráficos com SVG puro para ter controle total da renderização e reduzir dependências externas, aceitando maior esforço de implementação manual.
                     </p>
                     <p class="project-update">
                         Última atualização: Janeiro 2026
