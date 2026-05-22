@@ -139,6 +139,7 @@ const projectLearnings = projectModal.querySelector('.modal-learnings');
 const projectDemo = projectModal.querySelector('.modal-demo');
 const projectRepo = projectModal.querySelector('.modal-repo');
 const projectClose = projectModal.querySelector('.modal-close');
+const projectRoadmap = projectModal.querySelector('.modal-roadmap');
 
 const articleModal = document.querySelector('.modal-article');
 const articleTitle = articleModal.querySelector('.modal-article-title');
@@ -181,8 +182,17 @@ function openProjectModal(data) {
     projectProblem.textContent = data.problem;
     projectDecisions.textContent = data.decisions;
     projectLearnings.textContent = data.learnings;
+    projectRoadmap.innerHTML = '';
     projectDemo.href = data.demo;
     projectRepo.href = data.repo;
+
+    if (data.roadmap) {
+        data.roadmap.split('|').forEach(item => {
+            const li = document.createElement('li');
+            li.textContent = item;
+            projectRoadmap.appendChild(li);
+        });
+    }
 
     lastFocusedElement = document.activeElement;
     
@@ -238,6 +248,7 @@ document.querySelectorAll('.projects .details-btn').forEach(btn => {
             problem: btn.dataset.problem,
             decisions: btn.dataset.decisions,
             learnings: btn.dataset.learnings,
+            roadmap: btn.dataset.roadmap,
             demo: btn.dataset.demo,
             repo: btn.dataset.repo
         });

@@ -96,6 +96,28 @@
     opacity: 0.9;
 }
 
+.modal-roadmap {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.modal-roadmap li {
+    position: relative;
+    padding-left: 1.4rem;
+    line-height: 1.5;
+    opacity: 0.9;
+}
+
+.modal-roadmap li::before {
+    content: "↗";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: 700;
+}
+
 .modal-links {
     display: flex;
     gap: 1rem;
