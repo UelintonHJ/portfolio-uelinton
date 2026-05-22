@@ -144,6 +144,13 @@
     opacity: 0.85;
 }
 
+.project-update {
+    margin-top: auto;
+    margin-bottom: 1rem;
+    font-size: 0.78rem;
+    opacity: 0.55;
+}
+
 .card h3 {
     font-size: 1.5rem;
     margin-bottom: 0.4rem;
