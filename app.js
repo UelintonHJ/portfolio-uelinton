@@ -136,6 +136,7 @@ const projectTitle = projectModal.querySelector('.modal-title');
 const projectProblem = projectModal.querySelector('.modal-problem');
 const projectDecisions = projectModal.querySelector('.modal-decisions');
 const projectLearnings = projectModal.querySelector('.modal-learnings');
+const projectMistakes = projectModal.querySelector('.modal-mistakes');
 const projectDemo = projectModal.querySelector('.modal-demo');
 const projectRepo = projectModal.querySelector('.modal-repo');
 const projectClose = projectModal.querySelector('.modal-close');
@@ -182,6 +183,7 @@ function openProjectModal(data) {
     projectProblem.textContent = data.problem;
     projectDecisions.textContent = data.decisions;
     projectLearnings.textContent = data.learnings;
+    projectMistakes.textContent = data.mistakes;
     projectRoadmap.innerHTML = '';
     projectDemo.href = data.demo;
     projectRepo.href = data.repo;
@@ -248,6 +250,7 @@ document.querySelectorAll('.projects .details-btn').forEach(btn => {
             problem: btn.dataset.problem,
             decisions: btn.dataset.decisions,
             learnings: btn.dataset.learnings,
+            mistakes: btn.dataset.mistakes,
             roadmap: btn.dataset.roadmap,
             demo: btn.dataset.demo,
             repo: btn.dataset.repo
