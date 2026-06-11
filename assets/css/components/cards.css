@@ -152,6 +152,44 @@
     text-transform: uppercase;
 }
 
+.persona {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    opacity: 0.75;
+    padding-left: 0.9rem;
+    border-left: 2px solid rgba(74, 85, 101, 0.35);
+    margin-bottom: 0.8rem;
+}
+
+.persona::before {
+    content: "Persona";
+    display: block;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    opacity: 0.5;
+    margin-bottom: 0.3rem;
+}
+
+.user-story {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    opacity: 0.8;
+    padding-left: 0.9rem;
+    border-left: 2px solid rgba(42, 157, 143, 0.5);
+    margin-bottom: 1rem;
+}
+
+.user-story::before {
+    content: "User Story";
+    display: block;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    opacity: 0.5;
+    margin-bottom: 0.3rem;
+}
+
 .decision {
     font-size: 0.95rem;
     padding-left: 1rem;

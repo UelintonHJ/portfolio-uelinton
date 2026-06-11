@@ -175,6 +175,7 @@
                     >
 
                     <h3>Weather Now</h3>
+
                     <ul class="tags">
                         <li class="tag">HTML</li>
                         <li class="tag">CSS</li>
@@ -183,26 +184,40 @@
                         <li class="tag">UX</li>
                         <li class="tag">UI</li>
                     </ul>
+
                     <p>
                         Aplicação de clima em JavaScript puro com foco em estado previsível e feedback claro.
                     </p>
+
+                    <p class="persona">
+                        Usuário que precisa consultar o clima rapidamente antes de sair de casa, sem distrações ou excesso de informação.
+                    </p>
+
+                    <p class="user-story">
+                        Como usuário com pouco tempo, quero ver a previsão do tempo de forma imediata para decidir como me vestir e planejar minha saída.
+                    </p>
+
                     <p class="decision">
                         O projeto foi refatorado incrementalmente para separar dados, UI e estado, subsituir alertas por
                         feedback inline
                         e criar uma base sólida para manutenção e novas features.
                     </p>
+
                     <p class="tradeoff">
                         Preferi refatorar incrementalmente sem migrar para frameworks, priorizando evolução controlada da arquitetura e entendimento profundo da base existente.
                     </p>
+
                     <p class="metrics">
                         <strong>Performance & Impacto:</strong><br>
                         • Reduzi reflows ao centralizar updates de UI<br>
                         • Eliminei bloqueios de UX removendo alert() síncrono<br>
                         • Melhor fluidez percebida em mobile após refatoração de renderização<br>
                     </p>
+
                     <p class="project-update">
                         Última atualização: Fevereiro 2026
                     </p>
+
                     <button class="btn-details details-btn" data-title="Weather Now"
                         data-problem="O projeto começou como prática de consumo de API, mas o código concentrava responsabilidades, utilizava alert() para erros e dificultava evolução segura. Havia risco de acoplamento excessivo entre busca de dados e renderização."
                         data-decisions="Refatorei de forma incremental sem adicionar frameworks. Separei responsabilidades entre dados e UI, centralizei seletores de DOM, substituí alert() por feedback visual inline e organizei a lógica de tema e PWA para evitar comportamento imprevisível."
@@ -234,6 +249,7 @@
                     >
 
                     <h3>Product List</h3>
+
                     <ul class="tags">
                         <li class="tag">HTML</li>
                         <li class="tag">CSS</li>
@@ -242,26 +258,40 @@
                         <li class="tag">UX</li>
                         <li class="tag">UI</li>
                     </ul>
+
                     <p>
                         Aplicação que consome API pública com busca, filtros, paginação e sincronização de estado com a
                         URL.
                     </p>
+
+                    <p class="persona">
+                        Usuário que pesquisa produtos online e precisa comparar opções rapidamente sem perder tempo navegando entre páginas.
+                    </p>
+
+                    <p class="user-story">
+                        Como usuário que está buscando produtos, quero filtrar e encontrar itens rapidamente para tomar decisões de compra com mais eficiência.
+                    </p>
+
                     <p class="decision">
                         Modelei estado previsível (loading, erro, vazio), implementei debounce configurável e
                         sincronização via query params para navegação real (back/forward).
                     </p>
+
                     <p class="tradeoff">
                         Escolhi evitar frameworks para exercitar organização de estado e UI de forma explícita, mesmo com maior responsabilidade manual.
                     </p>
+
                     <p class="metrics">
                         <strong>Performance & Impacto:</strong><br>
                         • Centralização do fluxo de renderização reduziu reflows desnecessários<br>
                         • Debounce evitou múltiplas requisições em inputs de busca<br>
                         • Estrutura sem framework forçou separação clara entre estado, UI e API<br>
                     </p>
+
                     <p class="project-update">
                         Última atualização: Janeiro 2026
                     </p>
+
                     <button class="btn-details details-btn" data-title="Product List"
                         data-problem="Criar uma listagem de produtos com busca, filtros e paginação mantendo estado previsível e sincronizado com a URL sem usar frameworks."
                         data-decisions="Separei responsabilidades entre API, estado e UI. Implementei debounce configurável, controle de paginação reutilizável, skeleton loading e tratamento explícito de erro e estado vazio."
@@ -293,6 +323,7 @@
                     >
 
                     <h3>Checkout Flow</h3>
+
                     <ul class="tags">
                         <li class="tag">React</li>
                         <li class="tag">TailwindCSS</li>
@@ -300,26 +331,40 @@
                         <li class="tag">UX</li>
                         <li class="tag">UI</li>
                     </ul>
+
                     <p>
                         Simulação de fluxo de checkout com foco em controle de estado e redução de fricção.
                     </p>
+
+                    <p class="persona">
+                        Usuário em processo de compra online que precisa de um fluxo claro, previsível e sem fricção para finalizar o pagamento.
+                    </p>
+
+                    <p class="user-story">
+                        Como comprador, quero concluir o checkout de forma simples e segura para finalizar minha compra sem dúvidas o interrupções.
+                    </p>
+
                     <p class="decision">
                         Modelei estados reais de produto (idle, loading, success, error), incluindo falhas simuladas,
                         cancelamento
                         e reset automático do fluxo.
                     </p>
+
                     <p class="tradeoff">
                         Simulei toda a lógica sem backend real para focar na modelagem de estados e experiência do usuário, sacrificando persistência e integração real em favor de clareza arquitetural.
                     </p>
+
                     <p class="metrics">
                         <strong>Performance & Impacto:</strong><br>
                         • Modelagem explícita de estados reduziu ambiguidades no fluxo de compra<br>
                         • Cancelamento de ações durante loading melhorou controle do usuário<br>
                         • Feedback visual contínuo aumentou clareza em cenários de erro e sucesso<br>
                     </p>
+
                     <p class="project-update">
                         Última atualização: Fevereiro 2026
                     </p>
+
                     <button class="btn-details details-btn" data-title="Checkout Flow"
                         data-problem="Simular um fluxo de checkout realista sem backend, garantindo clareza de estados (idle, loading, success, error) e evitando comportamento confuso durante falhas simuladas."
                         data-decisions="Implementei controle global de estado com Context API, criei estados explícitos para cada fase do fluxo e adicionei possibilidade de cancelar confirmação durante loading. Simulei erros como network, timeout e payment_refused para tornar o fluxo resiliente."
@@ -351,6 +396,7 @@
                     >
 
                     <h3>SaaS Onboarding Simulation</h3>
+
                     <ul class="tags">
                         <li class="tag">React</li>
                         <li class="tag">TailwindCSS</li>
@@ -358,26 +404,40 @@
                         <li class="tag">UX</li>
                         <li class="tag">UI</li>
                     </ul>
+
                     <p>
                         Simulação de onboarding para SaaS com foco em ativação do usuário.
                     </p>
+
+                    <p class="persona">
+                         Novo usuário de um SaaS que precisa entender rapidamente o valor da ferramenta sem se sentir sobrecarregado.
+                    </p>
+
+                    <p class="user-story">
+                        Como novo usuário, quero ser guiado por um onboarding simples para entender o produto e começar a usá-lo rapidamente.
+                    </p>
+
                     <p class="decision">
                         As decisões de UX priorizam progressão curta, microcopy orientada à ação, persistência de
                         progresso
                         e respeito a usuários experientes.
                     </p>
+
                     <p class="tradeoff">
                         Priorizei redução de fricção e fluxo rápido de ativação, abrindo mão de personalizações complexas para manter a experiência simples e objetiva.
                     </p>
+
                     <p class="metrics">
                         <strong>Performance & Impacto:</strong><br>
                         • Estrutura de onboarding focada em ativação rápida do usuário<br>
                         • Redução de abandono ao permitir skip de etapas para usuários experientes<br>
                         • Persistência de progresso melhora continuidade da jornada<br>
                     </p>
+
                     <p class="project-update">
                         Última atualização: Janeiro 2026
                     </p>
+
                     <button class="btn-details details-btn" data-title="SaaS Onboarding Simulation"
                         data-problem="Criar uma experiência de onboarding curta e clara, evitando sobrecarga cognitiva e abandono precoce nos primeiros segundos de uso."
                         data-decisions="Dividi o fluxo em etapas progressivas, adicionei indicador de progresso discreto, permiti pular onboarding e implementei persistência via localStorage. Usei microcopy estratégica e Framer Motion para transições suaves."
@@ -409,6 +469,7 @@
                     >
 
                     <h3>Mini Login System</h3>
+
                     <ul class="tags">
                         <li class="tag">React</li>
                         <li class="tag">TailwindCSS</li>
@@ -416,26 +477,40 @@
                         <li class="tag">UX</li>
                         <li class="tag">UI</li>
                     </ul>
+
                     <p>
                         Sistema de login fictício em React com foco em controle de sessão e proteção de rotas.
                     </p>
+
+                    <p class="persona">
+                        Usuário que precisa acessar uma aplicação de forma segura e entender claramente o estado da sua sessão.
+                    </p>
+
+                    <p class="user-story">
+                        Como usuário autenticado, quero fazer login e manter minha sessão ativa para acessar áreas protegidas sem interrupções.
+                    </p>
+
                     <p class="decision">
                         Simulei expiração de sessão, restauração automática e erros de autenticação para refletir fluxos
                         reais
                         sem depender de backend.
                     </p>
+
                     <p class="tradeoff">
                         Mantive autenticação totalmente simulada para concentrar o projeto em fluxo, proteção de rotas e UX, sem adicionar complexidade desnecessária de backend.
                     </p>
+
                     <p class="metrics">
                         <strong>Performance & Impacto:</strong><br>
                         • Controle de sessão baseado em estado melhora previsibilidade da navegação<br>
                         • Simulação de autenticação expõe comportamento real de aplicações modernas<br>
                         • Tratamento de erros reforça clareza de feedback ao usuário<br>
                     </p>
+
                     <p class="project-update">
                         Última atualização: Fevereiro 2026
                     </p>
+
                     <button class="btn-details details-btn" data-title="Mini Login System"
                         data-problem="Simular autenticação realista sem backend, garantindo proteção de rotas, expiração de sessão e mensagens contextuais claras."
                         data-decisions="Implementei  ProtectedRoute, controle de sessão com armazenamento local, mensagens dinâmicas de fluxo e feedback visual para erro de login. Adicionei simulação de expiração para tornar o fluxo mais realista."
@@ -467,6 +542,7 @@
                     >
 
                     <h3>Dashboard de Métricas</h3>
+
                     <ul class="tags">
                         <li class="tag">React</li>
                         <li class="tag">TailwindCSS</li>
@@ -474,25 +550,39 @@
                         <li class="tag">UX</li>
                         <li class="tag">UI</li>
                     </ul>
+
                     <p>
                         Dashboard de indicadores de negócio com foco em leitura rápida e hierarquia visual.
                     </p>
+
+                    <p class="persona">
+                        Usuário que precisa analisar indicadores de negócio rapidamente para tomar decisões baseadas em dados.
+                    </p>
+
+                    <p class="user-story">
+                        Como analista ou gestor, quero visualizar métricas de forma clara para interpretar o desempenho do sistema rapidamente.
+                    </p>
+
                     <p class="decision">
                         As métricas usam cores semânticas, animações sutis e skeleton loading para guiar atenção
                         e evitar estados vazios confusos.
                     </p>
+
                     <p class="tradeoff">
                         Escolhi construir gráficos com SVG puro para ter controle total da renderização e reduzir dependências externas, aceitando maior esforço de implementação manual.
                     </p>
+
                     <p class="metrics">
                         <strong>Performance & Impacto:</strong><br>
                         • Estrutura visual prioriza leitura rápida de KPIs críticos<br>
                         • Uso de SVG puro reduz dependências e aumenta controle de renderização<br>
                         • Animações sutis orientam atenção sem sobrecarga cognitiva<br>
                     </p>
+
                     <p class="project-update">
                         Última atualização: Janeiro 2026
                     </p>
+
                     <button class="btn-details details-btn" data-title="Dashboard de Métricas"
                         data-problem="Simular um painel de métricas com foco em leitura rápida, evitando excesso visual e garantindo interpretação clara dos dados."
                         data-decisions="Criei componentes desacoplados, utilizei cores semânticas para tendência (positivo/negativo), implementei skeleton loading e construí gráfico em SVG puro para controle total da renderização."
