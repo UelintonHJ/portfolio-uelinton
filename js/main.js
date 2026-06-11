@@ -6,6 +6,7 @@ import { initProgress } from './core/progress.js';
 import { initFilters } from './features/filters.js';
 import { initModals } from './features/modals.js';
 import { initNavigation } from './features/navigation.js';
+import { initProjects } from './features/projects.js';
 
 initHeader();
 initTheme();
@@ -14,3 +15,4 @@ initProgress();
 initFilters();
 initModals();
 initNavigation();
+initProjects();

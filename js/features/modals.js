@@ -1,162 +1,147 @@
+import { UI } from '../core/ui.js'
+
+const modals = { project: null, article: null }
+
+let lastFocusedElement = null
+
+export const Modal = {
+    open(type, data) {
+        UI.setState({
+            modal: {
+                isOpen: true,
+                type,
+                data
+            }
+        })
+    },
+
+    close() {
+        UI.setState({
+            modal: {
+                isOpen: false,
+                type: null,
+                data: null
+            }
+        })
+    }
+}
+
 export function initModals() {
-    const projectModal = document.querySelector('.modal-project');
-    const projectTitle = projectModal.querySelector('.modal-title');
-    const projectProblem = projectModal.querySelector('.modal-problem');
-    const projectDecisions = projectModal.querySelector('.modal-decisions');
-    const projectLearnings = projectModal.querySelector('.modal-learnings');
-    const projectMistakes = projectModal.querySelector('.modal-mistakes');
-    const projectDemo = projectModal.querySelector('.modal-demo');
-    const projectRepo = projectModal.querySelector('.modal-repo');
-    const projectClose = projectModal.querySelector('.modal-close');
-    const projectRoadmap = projectModal.querySelector('.modal-roadmap');
+    modals.project = document.querySelector('.modal-project')
+    modals.article = document.querySelector('.modal-article')
 
-    const articleModal = document.querySelector('.modal-article');
-    const articleTitle = articleModal.querySelector('.modal-article-title');
-    const articleContent = articleModal.querySelector('.modal-article-content');
-    const articleClose = articleModal.querySelector('.modal-close');
-
-    let lastFocusedElement = null;
-
-    function trapFocus(modal, event) {
-        if (event.key !== 'Tab') {
-            return;
-        }
-
-        const focusableElements = modal.querySelectorAll(
-            'button, a[href], input, textarea, select, [tabindex]:not([tabindex="-1"])'
-        );
-
-        if (focusableElements.length === 0) {
-            return;
-        }
-
-        const firstElement = focusableElements[0];
-        const lastElement = focusableElements[focusableElements.length - 1];
-
-        if (event.shiftKey) {
-            if (document.activeElement === firstElement) {
-                event.preventDefault();
-                lastElement.focus();
-            }
-        } else {
-            if (document.activeElement === lastElement) {
-                event.preventDefault();
-                firstElement.focus();
-            }
-        }
+    if (!modals.project || !modals.article) {
+        console.error('Modal elements not found')
+        return
     }
 
-    function openProjectModal(data) {
-        projectTitle.textContent = data.title;
-        projectProblem.textContent = data.problem;
-        projectDecisions.textContent = data.decisions;
-        projectLearnings.textContent = data.learnings;
-        projectMistakes.textContent = data.mistakes;
-        projectRoadmap.innerHTML = '';
-        projectDemo.href = data.demo;
-        projectRepo.href = data.repo;
+    const projectClose = modals.project.querySelector('.modal-close')
+    const articleClose = modals.article.querySelector('.modal-close')
 
-        if (data.roadmap) {
-            data.roadmap.split('|').forEach(item => {
-                const li = document.createElement('li');
-                li.textContent = item;
-                projectRoadmap.appendChild(li);
-            });
-        }
+    projectClose?.addEventListener('click', () => {
+        Modal.close()
+    })
 
-        lastFocusedElement = document.activeElement;
-
-        document.body.style.overflow = 'hidden';
-
-        projectModal.classList.add('open');
-        projectModal.setAttribute('aria-hidden', 'false');
-
-        const firstFocusableElement = projectModal.querySelector(
-            'button, a[href], input, textarea, select, [tabindex]:not([tabindex="-1"])'
-        );
-
-        firstFocusableElement?.focus();
-    }
-
-    function closeProjectModal() {
-        projectModal.classList.remove('open');
-        projectModal.setAttribute('aria-hidden', 'true');
-        document.body.style.overflow = '';
-
-        lastFocusedElement?.focus();
-    }
+    articleClose?.addEventListener('click', () => {
+        Modal.close()
+    })
 
     document.addEventListener('keydown', (event) => {
-        if (projectModal.classList.contains('open')) {
-            trapFocus(projectModal, event);
+        if (event.key === 'Escape' && UI.state.modal.isOpen) {
+            Modal.close()
         }
+    })
 
-        if (articleModal.classList.contains('open')) {
-            trapFocus(articleModal, event);
+    modals.project.addEventListener('click', (event) => {
+        if (event.target === modals.project) {
+            Modal.close()
         }
-    });
+    })
 
-    function openArticleModal(data) {
-        articleTitle.textContent = data.title;
-        articleContent.innerHTML = data.content;
+    modals.article.addEventListener('click', (event) => {
+        if (event.target === modals.article) {
+            Modal.close()
+        }
+    })
+}
 
-        document.body.style.overflow = 'hidden';
-        articleModal.classList.add('open');
-        articleModal.setAttribute('aria-hidden', 'false');
+UI.subscribe(({ modal }) => {
+    if (!modals.project || !modals.article) {
+        return
     }
 
-    function closeArticleModal() {
-        articleModal.classList.remove('open');
-        articleModal.setAttribute('aria-hidden', 'true');
-        document.body.style.overflow = '';
+    if (!modal.isOpen) {
+        closeAll()
+        return
     }
 
-    document.querySelectorAll('.projects .details-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-            openProjectModal({
-                title: btn.dataset.title,
-                problem: btn.dataset.problem,
-                decisions: btn.dataset.decisions,
-                learnings: btn.dataset.learnings,
-                mistakes: btn.dataset.mistakes,
-                roadmap: btn.dataset.roadmap,
-                demo: btn.dataset.demo,
-                repo: btn.dataset.repo
-            });
-        });
-    });
+    const el = modals[modal.type]
 
-    document.querySelectorAll('.articles .details-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-            openArticleModal({
-                title: btn.dataset.title,
-                content: btn.dataset.content
-            });
-        });
-    });
+    if (!el) return
 
-    projectClose.addEventListener('click', closeProjectModal);
-    articleClose.addEventListener('click', closeArticleModal);
+    switch (modal.type) {
+        case 'project':
+            renderProject(el, modal.data)
+            break
 
-    projectModal.addEventListener('click', (e) => {
-        if (e.target === projectModal) closeProjectModal();
-    });
+        case 'article':
+            renderArticle(el, modal.data)
+            break
+    }
 
-    articleModal.addEventListener('click', (e) => {
-        if (e.target === articleModal) closeArticleModal();
-    });
+    open(el)
+})
 
-    document.addEventListener('keydown', (event) => {
-        if (event.key !== 'Escape') {
-            return;
-        }
+function renderProject(el, data) {
+    el.querySelector('.modal-title').textContent = data.title
+    el.querySelector('.modal-problem').textContent = data.problem
+    el.querySelector('.modal-decisions').textContent = data.decisions
+    el.querySelector('.modal-learnings').textContent = data.learnings
+    el.querySelector('.modal-mistakes').textContent = data.mistakes
 
-        if (projectModal.classList.contains('open')) {
-            closeProjectModal();
-        }
+    el.querySelector('.modal-demo').href = data.demo
+    el.querySelector('.modal-repo').href = data.repo
 
-        if (articleModal.classList.contains('open')) {
-            closeArticleModal();
-        }
-    });
+    const roadmap = el.querySelector('.modal-roadmap')
+    roadmap.innerHTML = ''
+
+    if (data.roadmap) {
+        data.roadmap.split('|').forEach(item => {
+            const li = document.createElement('li')
+            li.textContent = item
+            roadmap.appendChild(li)
+        })
+    }
+}
+
+function renderArticle(el, data) {
+    el.querySelector('.modal-article-title').textContent = data.title
+    el.querySelector('.modal-article-content').innerHTML = data.content
+}
+
+function open(el) {
+    lastFocusedElement = document.activeElement
+
+    document.body.style.overflow = 'hidden'
+
+    el.classList.add('open')
+    el.setAttribute('aria-hidden', 'false')
+
+    const first = el.querySelector(
+        'button, a[href], input, textarea, select, [tabindex]:not([tabindex="-1"])'
+    )
+
+    first?.focus()
+}
+
+function closeAll() {
+    Object.values(modals).forEach(el => {
+        if (!el) return
+
+        el.classList.remove('open')
+        el.setAttribute('aria-hidden', 'true')
+    })
+
+    document.body.style.overflow = ''
+    lastFocusedElement?.focus()
 }
