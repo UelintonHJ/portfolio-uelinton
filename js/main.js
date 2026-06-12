@@ -8,6 +8,8 @@ import { initModals } from './features/modals.js';
 import { initNavigation } from './features/navigation.js';
 import { initProjects } from './features/projects.js';
 
+import { runTests } from './tests/run-tests.js';
+
 initHeader();
 initTheme();
 initObservers();
@@ -16,3 +18,10 @@ initFilters();
 initModals();
 initNavigation();
 initProjects();
+
+if (
+    location.hostname === 'localhost' ||
+    location.hostname === '127.0.0.1'
+) {
+    runTests()
+}

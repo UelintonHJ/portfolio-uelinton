@@ -1,3 +1,5 @@
+import { shouldShowCard } from "../utils/filter-utils.js";
+
 function setupFilter(buttonsSelector, cardsSelector) {
     const buttons = document.querySelectorAll(buttonsSelector);
     const cards = document.querySelectorAll(cardsSelector);
@@ -17,8 +19,9 @@ function setupFilter(buttonsSelector, cardsSelector) {
             const category = btn.dataset.category;
 
             cards.forEach(card => {
-                const categories = (card.dataset.category || '').split(' ');
-                const shouldShow = category === 'all' || categories.includes(category);
+                const shouldShow = shouldShowCard(
+                    card.dataset.category || '', category
+                )
 
                 card.classList.toggle('is-hidden', !shouldShow);
             });
