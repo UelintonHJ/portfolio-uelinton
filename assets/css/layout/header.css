@@ -94,11 +94,6 @@ header.shrink .logo {
     width: 100%;
 }
 
-a:focus-visible {
-    outline: 2px solid var(--accent);
-    outline-offset: 4px;
-}
-
 @media (max-width: 768px) {
      header {
         padding: 1rem 1rem;

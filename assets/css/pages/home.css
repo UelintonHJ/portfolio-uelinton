@@ -66,6 +66,13 @@
     background: rgba(42, 157, 143, 0.1);
 }
 
+section.container > h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.8rem;
+    color: var(--accent);
+    font-weight: 600;
+}
+
 /* ABOUT */
 
 .about h2 {
@@ -80,6 +87,133 @@
     line-height: 1.7;
     opacity: 0.9;
     max-width: 750px;
+}
+
+/* FEATURED-PROJECT */
+
+.featured-project {
+    margin-top: 5rem;
+}
+
+.featured-project-content{
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 2rem;
+    align-items: center;
+    padding: 2rem;
+    border: 1px solid var(--border);
+    border-radius: 1.5rem;
+    background: var(--surface);
+    transition: 
+        transform .35s ease,
+        border-color .35s ease,
+        box-shadow .35s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.featured-project-content:hover {
+    transform: translateY(-8px);
+    border-color: var(--accent);
+    box-shadow: 
+        0 25px 50px rgba(0, 0, 0, .18),
+        0 0 0 1px rgba(42, 157, 143, .15);      
+}
+
+.featured-project-content::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,.04),
+        transparent
+    );
+    transform: translateX(-100%);
+    transition: transform .8s ease;
+    pointer-events: none;
+}
+
+.featured-project-content:hover::before {
+    transform: translateX(100%);
+}
+
+.featured-project-content img {
+    width: 100%;
+    display: block;
+    border-radius: 1rem;
+    border: 1px solid rgba(255, 255, 255, .08);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .2);
+    transition: 
+        transform .45s ease,
+        box-shadow .45s ease;
+}
+
+.featured-project-content:hover img {
+    transform: scale(1.03);
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, .25);
+}
+
+.featured-badge {
+    display: inline-flex;
+    padding: .35rem .75rem;
+    border-radius: 999px;
+    background: rgba(42, 157, 143, .12);
+    color: var(--accent);
+    font-size: .8rem;
+    font-weight: 700;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    box-shadow: 
+        0 0 0 1px rgba(42, 157, 143, .15),
+        0 8px 20px rgba(42, 157, 143, .12);
+    transition: transform .3s ease;
+}
+
+.featured-project-content:hover .featured-badge {
+    transform: translateY(-2px);
+}
+
+.featured-project h3 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.1;
+    margin-bottom: 1rem;
+}
+
+.featured-project p {
+    max-width: 600px;
+    line-height: 1.7;
+    opacity: .85;
+    margin-bottom: 1.5rem;
+}
+
+.featured-highlights {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .75rem;
+}
+
+.featured-highlights li {
+    padding: .5rem .75rem;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+}
+
+.featured-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.case-studies > p,
+.experiments > p {
+    opacity: .8;
+    line-height: 1.8;
+    margin-bottom: 2rem;
 }
 
 /* ENGINEERING */
@@ -110,31 +244,6 @@
 
 .engineering .decision {
     margin-top: auto;
-}
-
-/* PROJECTS */
-
-.projects h2 {
-    font-size: 1.8rem;
-    margin-bottom: 2rem;
-    color: var(--accent);
-    font-weight: 600;
-}
-
-.project-filters {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.6rem;
-    margin-bottom: 2.2rem;
-    align-items: center;
-}
-
-.filters-label {
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    opacity: 0.6;
-    margin-bottom: 0.8rem;
 }
 
 /* CONTACT */
@@ -185,22 +294,20 @@
         text-align: center;
     }
 
-    .project-filters {
-        overflow-x: auto;
-        flex-wrap: nowrap;
-        padding-bottom: 0.4rem;
-        scrollbar-width: none;
+    .featured-project-content {
+        grid-template-columns: 1fr;
     }
 
-    .project-filters::-webkit-scrollbar {
-        display: none;
+    .featured-project h3 {
+        font-size: 2rem;
     }
 
-    .card-featured {
-        grid-column: span 1;
+    .featured-actions {
+        flex-direction: column;
     }
 
-    .card-institutional {
-        grid-column: span 1;
+    .featured-actions a {
+        width: 100%;
+        text-align: center;
     }
 }

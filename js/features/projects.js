@@ -1,7 +1,7 @@
 import { Modal } from './modals.js'
 
 export function initProjects() {
-    document.querySelectorAll('.projects .details-btn').forEach(btn => {
+    document.querySelectorAll('.details-btn').forEach(btn => {
         btn.addEventListener('click', () => {
             Modal.open('project', {
                 title: btn.dataset.title,
