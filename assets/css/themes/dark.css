@@ -68,6 +68,10 @@
     border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
+[data-theme="dark"] .architecture code {
+    background: rgba(255, 255, 255, .04);
+}
+
 [data-theme="dark"] .footer {
     background: rgba(10, 17, 40, 0.9);
     border-top: 1px solid var(--border);

@@ -269,3 +269,29 @@
     letter-spacing: 0.5px;
     text-transform: uppercase;
 }
+
+.architecture .card {
+    position: relative;
+    overflow: hidden;
+}
+
+.architecture .card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--accent);
+}
+
+.architecture code {
+    display: inline-block;
+    margin-top: auto;
+    padding: .8rem 1rem;
+    border-radius: .6rem;
+    background: rgba(0, 0, 0, .08);
+    font-family: monospace;
+    font-size: .85rem;
+    border: 1px solid var(--border);
+}

@@ -59,7 +59,7 @@
 
     <section class="hero">
         <h2 class="headline">
-            Desenvolvedor Front-End focado em estado previsível, arquitetura clara e experiências que escalam.
+            Desenvolvedor Front-End focado em construir interfaces previsíveis e escaláveis através de arquitetura modular, gerenciamento de estado e decisões técnicas conscientes.
         </h2>
         <p class="hero-availability">
             Buscando oportunidade como Desenvolvedor Front-End Júnior ou Estagiário.
@@ -71,7 +71,8 @@
         <div class="hero-actions">
             <a href="#featured-project" class="btn">Ver projeto principal</a>
             <a href="#contact" class="btn-outline">Entrar em contato</a>
-            <a href="assets/docs/Uelinton_Janke_Dev_Full_Stack_Jr.pdf" class="btn-outline" target="_blank">Baixar currículo</a>
+            <a href="assets/docs/Uelinton_Janke_Dev_Full_Stack_Jr.pdf" class="btn-outline" target="_blank">Baixar
+                currículo</a>
         </div>
     </section>
 
@@ -102,7 +103,8 @@
                 <h3>Weather Now</h3>
 
                 <p>
-                    Aplicação de clima construída em JavaScript puro com foco em estado previsível, feedback imediato ao usuário e arquitetura escalável.
+                    Aplicação de clima construída em JavaScript puro com foco em estado previsível, feedback imediato ao
+                    usuário e arquitetura escalável.
                 </p>
 
                 <ul class="featured-highlights">
@@ -242,8 +244,8 @@
                     </span>
                 </div>
 
-                <img src="assets/img/saas-onboarding-simulation-preview.png" alt="Preview do projeto SaaS Onboarding Simulation"
-                    class="project-preview">
+                <img src="assets/img/saas-onboarding-simulation-preview.png"
+                    alt="Preview do projeto SaaS Onboarding Simulation" class="project-preview">
 
                 <h3>SaaS Onboarding Simulation</h3>
 
@@ -407,6 +409,139 @@
                         Pequenos detalhes de fluxo e comunicação reduzem fricção e tornam a experiência mais intuitiva.
                     </p>
                 </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="architecture container" id="architecture">
+        <h2>Arquitetura deste portfólio</h2>
+
+        <p>
+            Este projeto foi desenvolvido utilizando JavaScript puro, com foco em previsibilidade, separação de
+            responsabilidades e facilidade de manutenção.
+        </p>
+
+        <div class="architecture-flow">
+            <div>Usuário</div>
+            <div>Features</div>
+            <div>UI State</div>
+            <div>Subscribers</div>
+            <div>Renderização</div>
+        </div>
+
+        <div class="architecture-highlight">
+            <strong>Objetivo:</strong>
+            <p>
+                Construir um portfólio escalável utilizando os mesmos princípios de arquitetura que utilizo em aplicações reais.
+            </p>
+        </div>
+
+        <div class="cards">
+            <article class="card">
+                <h3>Estado centralizado</h3>
+
+                <p>
+                    Modais e comportamentos globais são controlados através de um estado observável próprio inspirado no padrão Pub/Sub.
+                </p>
+
+                <code>
+                    UI → State → Subscribers → Interface
+                </code>
+            </article>
+
+            <article class="card">
+                <h3>Arquitetura modular</h3>
+
+                <p>
+                    O projeto é dividido entre Core, Features e Utils, reduzindo acoplamento e facilitando evolução
+                    futura.
+                </p>
+
+                <code>
+                    core/ • features/ • utils/
+                </code>
+            </article>
+
+            <article class="card">
+                <h3>Eventos desacoplados</h3>
+
+                <p>
+                    Componentes não manipulam diretamente outros componentes. Alterações acontecem através do estado
+                    compartilhado.
+                </p>
+
+                <code>
+                    Modal.open() → UI.setState()
+                </code>
+            </article>
+
+            <article class="card">
+                <h3>Testes automatizados</h3>
+
+                <p>
+                    Regras críticas de negócio são validadas através de testes executados automaticamente em ambiente de
+                    desenvolvimento.
+                </p>
+
+                <code>
+                    shouldShowCard()
+                </code>
+            </article>
+
+            <article class="card">
+                <h3>Separação de responsabilidades</h3>
+
+                <p>
+                    Cada módulo possui uma responsabilidade específica: comportamento global, funcionalidades, utilitários e testes.
+                </p>
+
+                <code>
+                    Core → Features → Utils
+                </code>
+            </article>
+
+            <article class="card">
+                <h3>Performance consciente</h3>
+
+                <p>
+                    Uso de requestAnimationFrame, IntersectionObserver e renderização sob demanda para reduzir trabalho desnecessário da interface.
+                </p>
+
+                <code>
+                    requestAnimationFrame() • IntersectionObserver
+                </code>
+            </article>
+        </div>
+
+        <div class="architecture-metrics">
+            <div>
+                <strong>16</strong>
+                <span>módulos JS</span>
+            </div>
+
+            <div>
+                <strong>1</strong>
+                <span>store observável</span>
+            </div>
+
+            <div>
+                <strong>3</strong>
+                <span>testes automatizados</span>
+            </div>
+
+            <div>
+                <strong>0</strong>
+                <span>frameworks</span>
+            </div>
+
+            <div>
+                <strong>+1200 </strong>
+                <span>linhas de código</span>
+            </div>
+
+            <div>
+                <strong>6</strong>
+                <span>projetos publicados</span>
             </div>
         </div>
     </section>
