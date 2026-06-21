@@ -96,6 +96,7 @@ function renderProject(el, data) {
     el.querySelector('.modal-title').textContent = data.title
     el.querySelector('.modal-problem').textContent = data.problem
     el.querySelector('.modal-decisions').textContent = data.decisions
+    el.querySelector('.modal-impact').textContent = data.impact
     el.querySelector('.modal-learnings').textContent = data.learnings
     el.querySelector('.modal-mistakes').textContent = data.mistakes
 

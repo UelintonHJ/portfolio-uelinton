@@ -7,6 +7,7 @@ export function initProjects() {
                 title: btn.dataset.title,
                 problem: btn.dataset.problem,
                 decisions: btn.dataset.decisions,
+                impact: btn.dataset.impact,
                 learnings: btn.dataset.learnings,
                 mistakes: btn.dataset.mistakes,
                 roadmap: btn.dataset.roadmap,
