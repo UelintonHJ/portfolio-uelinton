@@ -79,35 +79,56 @@ UI.subscribe(({ modal }) => {
 
     if (!el) return
 
-    switch (modal.type) {
-        case 'project':
-            renderProject(el, modal.data)
-            break
-
-        case 'article':
-            renderArticle(el, modal.data)
-            break
+    const renderers = {
+        project: renderProject,
+        article: renderArticle
     }
+
+    renderers[modal.type]?.(
+        el,
+        modal.data
+    )
 
     open(el)
 })
 
 function renderProject(el, data) {
-    el.querySelector('.modal-title').textContent = data.title
-    el.querySelector('.modal-problem').textContent = data.problem
-    el.querySelector('.modal-decisions').textContent = data.decisions
-    el.querySelector('.modal-impact').textContent = data.impact
-    el.querySelector('.modal-learnings').textContent = data.learnings
-    el.querySelector('.modal-mistakes').textContent = data.mistakes
 
-    el.querySelector('.modal-demo').href = data.demo
-    el.querySelector('.modal-repo').href = data.repo
+    const textFields = {
+        '.modal-title': 'title',
+        '.modal-problem': 'problem',
+        '.modal-decisions': 'decisions',
+        '.modal-impact': 'impact',
+        '.modal-learnings': 'learnings',
+        '.modal-mistakes': 'mistakes'
+    }
+
+    const linkFields = {
+        '.modal-demo': 'demo',
+        '.modal-repo': 'repo'
+    }
+
+    Object.entries(textFields).forEach(([selector, key]) => {
+        const element = el.querySelector(selector)
+
+        if (!element) return
+
+        element.textContent = data[key]
+    })
+
+    Object.entries(linkFields).forEach(([selector, key]) => {
+        const element = el.querySelector(selector)
+
+        if (!element) return
+
+        element.href = data[key]
+    })
 
     const roadmap = el.querySelector('.modal-roadmap')
     roadmap.innerHTML = ''
 
-    if (data.roadmap) {
-        data.roadmap.split('|').forEach(item => {
+    if (data.roadmap?.length) {
+        data.roadmap.forEach(item => {
             const li = document.createElement('li')
             li.textContent = item
             roadmap.appendChild(li)

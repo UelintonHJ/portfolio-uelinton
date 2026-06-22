@@ -167,15 +167,7 @@
                     URL.
                 </p>
 
-                <button class="btn-details details-btn" data-title="Product List"
-                    data-problem="Criar uma listagem de produtos com busca, filtros e paginação mantendo estado previsível e sincronizado com a URL sem usar frameworks."
-                    data-decisions="Separei responsabilidades entre API, estado e UI. Implementei debounce configurável, controle de paginação reutilizável, skeleton loading e tratamento explícito de erro e estado vazio."
-                    data-learnings="Aprendi a estruturar aplicações em JavaScript puro pensando como produto: estado previsível, navegação consistente e feedback claro para o usuário."
-                    data-impact="Reduzi chamadas desnecessárias à API durante busca, melhorando a fluidez da interação e tornando o sistema mais responsivo em uso real."
-                    data-mistakes="Hoje eu teria abstraído parte da lógica de paginação e filtros em módulos reutilizáveis mais cedo. Também organizaria melhor a sincronização entre URL e estado global para reduzir responsabilidade concentrada."
-                    data-roadmap="Cache inteligente|Persistência de filtros|Testes E2E|Virtualização da lista"
-                    data-demo="https://product-list-vanilla-js.vercel.app/"
-                    data-repo="https://github.com/UelintonHJ/product-list-vanilla-js">
+                <button class="btn-details details-btn" data-project-id="product-list">
                     Ver estudo de caso
                 </button>
             </div>
@@ -209,15 +201,7 @@
                     Simulação de fluxo de checkout com foco em controle de estado e redução de fricção.
                 </p>
 
-                <button class="btn-details details-btn" data-title="Checkout Flow"
-                    data-problem="Simular um fluxo de checkout realista sem backend, garantindo clareza de estados (idle, loading, success, error) e evitando comportamento confuso durante falhas simuladas."
-                    data-decisions="Implementei controle global de estado com Context API, criei estados explícitos para cada fase do fluxo e adicionei possibilidade de cancelar confirmação durante loading. Simulei erros como network, timeout e payment_refused para tornar o fluxo resiliente."
-                    data-impact="Estruturei um fluxo de checkout com estados explícitos e previsíveis, melhorando a clareza do comportamento da interface em diferentes cenários (sucesso, erro, timeout e cancelamento). Isso reduziu ambiguidades no fluxo e aumentou a consistência da experiência do usuário durante interações críticas."
-                    data-learnings="Aprendi a modelar estado de forma explícita e previsível. Entendi como pequenos detalhes de feedback visual reduzem fricção e melhoram percepção de qualidade."
-                    data-mistakes="Hoje eu centralizaria ainda mais as transições de estado em uma máquina de estados explicíta para reduzir condicionais espalhadas e tornar o fluxo mais previsível."
-                    data-roadmap="Integração com Stripe mock|Retry automático de requisições|Analytics de abandono de checkout|Validação avançada de formulário"
-                    data-demo="https://checkout-flow-liart.vercel.app/"
-                    data-repo="https://github.com/UelintonHJ/checkout-flow">
+                <button class="btn-details details-btn" data-project-id="checkout-flow">
                     Ver estudo de caso
                 </button>
             </div>
@@ -261,15 +245,7 @@
                     Simulação de onboarding para SaaS com foco em ativação do usuário.
                 </p>
 
-                <button class="btn-details details-btn" data-title="SaaS Onboarding Simulation"
-                    data-problem="Criar uma experiência de onboarding curta e clara, evitando sobrecarga cognitiva e abandono precoce nos primeiros segundos de uso."
-                    data-decisions="Dividi o fluxo em etapas progressivas, adicionei indicador de progresso discreto, permiti pular onboarding e implementei persistência via localStorage. Usei microcopy estratégica e Framer Motion para transições suaves."
-                    data-impact="Estruturei um onboarding em etapas progressivas para reduzir sobrecarga cognitiva e melhorar a clareza da jornada inicial do usuário. A inclusão de progresso visual, opção de pular e persistência de estado aumentou a previsibilidade do fluxo e reduziu fricção na ativação."
-                    data-learnings="Aprendi que front-end não é apenas layout: decisões de fluxo e microcopy impactam ativação e retenção. Pequenas escolhas alteram a percepção de valor do produto."
-                    data-mistakes="Hoje eu estruturaria melhor eventos de tracking desde o início para medir abandono e comportamento de navegação sem precisar adaptar o fluxo posterior."
-                    data-roadmap="Tracking de abandono por etapa|Testes de fluxo com usuários|Personalização de onboarding|Feature flags para experimentos A/B"
-                    data-demo="https://saas-onboarding-simulation.vercel.app/"
-                    data-repo="https://github.com/UelintonHJ/saas-onboarding-simulation">
+                <button class="btn-details details-btn" data-project-id="saas-onboarding-simulation">
                     Ver estudo de caso
                 </button>
             </div>
@@ -303,15 +279,7 @@
                     Sistema de login fictício em React com foco em controle de sessão e proteção de rotas.
                 </p>
 
-                <button class="btn-details details-btn" data-title="Mini Login System"
-                    data-problem="Simular autenticação realista sem backend, garantindo proteção de rotas, expiração de sessão e mensagens contextuais claras."
-                    data-decisions="Implementei  ProtectedRoute, controle de sessão com armazenamento local, mensagens dinâmicas de fluxo e feedback visual para erro de login. Adicionei simulação de expiração para tornar o fluxo mais realista."
-                    data-impact="Estruturei um sistema de autenticação simulado com estados claros de sessão, incluindo login, logout e expiração. Isso aumentou a previsibilidade do fluxo e melhorou a comunicação visual de estados críticos como falha de login e sessão expirada."
-                    data-learnings="Aprendi a estruturar fluxos condicionais baseados em autenticação e a importância de comunicar claramente estados como logout e sessão expirada."
-                    data-mistakes="Hoje eu isolaria melhor a lógica de autenticação simulada da camada visual para facilitar futura integração com backend real."
-                    data-roadmap="Refresh token simulado|Integração com backend mockado|Remember me persistente|Rate limiting de tentativas"
-                    data-demo="https://mini-login-system-zeta.vercel.app"
-                    data-repo="https://github.com/UelintonHJ/mini-login-system">
+                <button class="btn-details details-btn" data-project-id="mini-login-system">
                     Ver estudo de caso
                 </button>
             </div>
@@ -345,15 +313,7 @@
                     Dashboard de indicadores de negócio com foco em leitura rápida e hierarquia visual.
                 </p>
 
-                <button class="btn-details details-btn" data-title="Dashboard de Métricas"
-                    data-problem="Simular um painel de métricas com foco em leitura rápida, evitando excesso visual e garantindo interpretação clara dos dados."
-                    data-decisions="Criei componentes desacoplados, utilizei cores semânticas para tendência (positivo/negativo), implementei skeleton loading e construí gráfico em SVG puro para controle total da renderização."
-                    data-impact="Estruturei um dashboard com foco em leitura rápida e hierarquia visual clara, utilizando cores semânticas, skeleton loading e gráficos otimizados em SVG para melhorar a percepção e interpretação dos dados."
-                    data-learnings="Aprendi a pensar em hierarquia visual, escaneabilidade e percepção de performance. Nem sempre é sobre usar bibliotecas, mas entender como a informação deve ser consumida."
-                    data-mistakes="Hoje eu criaria uma camada de transformação de dados antes da renderização dos gráficos para evitar acoplamento entre visualização e estrutura de dados."
-                    data-roadmap="Filtros avançados por período|Exportação CSV|Atualização em tempo real|Dark mode"
-                    data-demo="https://dashboard-metricas-sepia.vercel.app/"
-                    data-repo="https://github.com/UelintonHJ/dashboard-metricas">
+                <button class="btn-details details-btn" data-project-id="dashboard-de-metricas">
                     Ver estudo de caso
                 </button>
             </div>
