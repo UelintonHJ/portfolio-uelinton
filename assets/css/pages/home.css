@@ -153,25 +153,90 @@
     background: rgba(42, 157, 143, 0.1);
 }
 
-section.container > h2 {
+section.container > h2,
+.engineering h2,
+.contact h2 {
     font-size: 1.8rem;
     margin-bottom: 1.8rem;
     color: var(--accent);
     font-weight: 600;
 }
 
-.about h2 {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-    color: var(--accent);
-    font-weight: 600;
+.about-content h2 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
-.about p {
-    font-size: 1.05rem;
-    line-height: 1.7;
+.about-content h2::after {
+    content: "";
+    height: 1px;
+    flex: 1;
+    background: var(--border);
+    opacity: 0.6;
+}
+
+.who-i-am {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    background: linear-gradient(
+        180deg,
+        var(--surface),
+        rgba(255, 255, 255, 0.02)
+    );
+    position: relative;
+    overflow: hidden;
+}
+
+.who-i-am::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        var(--accent),
+        transparent
+    );
+    opacity: 0.6;
+}
+
+.info-block {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.8rem 1rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.info-block:last-child {
+    border-bottom: none;
+}
+
+.label {
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 700;
     opacity: 0.9;
-    max-width: 750px;
+}
+
+.info-block p {
+    font-size: 0.95rem;
+    margin: 0;
+    color: var(--text);
+    opacity: 0.85;
+    line-height: 1.5;
 }
 
 .featured-project {
@@ -299,13 +364,6 @@ section.container > h2 {
     margin-bottom: 2rem;
 }
 
-.engineering h2 {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-    color: var(--accent);
-    font-weight: 600;
-}
-
 .engineering-intro {
     max-width: 760px;
     line-height: 1.7;
@@ -383,13 +441,6 @@ section.container > h2 {
     font-size: 2rem;
     color: var(--accent);
     margin-bottom: .3rem;
-}
-
-.contact h2 {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-    color: var(--accent);
-    font-weight: 600;
 }
 
 .contact p {
