@@ -1,6 +1,15 @@
 export const projects = [
     {
         id: 'product-list',
+        image: 'assets/img/product-list-preview.png',
+        tags: [
+            'HTML',
+            'CSS',
+            'JS',
+            'API',
+            'UX',
+            'UI',
+        ],
         title: 'Product List',
         problem: 'Criar uma listagem de produtos com busca, filtros e paginação mantendo estado previsível e sincronizado com a URL sem usar frameworks.',
         decisions: 'Separei responsabilidades entre API, estado e UI. Implementei debounce configurável, controle de paginação reutilizável, skeleton loading e tratamento explícito de erro e estado vazio.',
@@ -18,6 +27,15 @@ export const projects = [
     },
     {
         id: 'checkout-flow',
+        image: 'assets/img/checkout-flow-preview.png',
+        tags: [
+            'React',
+            'TailwindCSS',
+            'TypeScript',
+            'UX',
+            'UI',
+
+        ],
         title: 'Checkout Flow',
         problem: 'Simular um fluxo de checkout realista sem backend, garantindo clareza de estados (idle, loading, success, error) e evitando comportamento confuso durante falhas simuladas.',
         decisions: 'Implementei controle global de estado com Context API, criei estados explícitos para cada fase do fluxo e adicionei possibilidade de cancelar confirmação durante loading. Simulei erros como network, timeout e payment_refused para tornar o fluxo resiliente.',
@@ -35,6 +53,14 @@ export const projects = [
     },
     {
         id: 'saas-onboarding-simulation',
+        image: 'assets/img/saas-onboarding-simulation-preview.png',
+        tags: [
+            'React',
+            'TailwindCSS',
+            'TypeScript',
+            'UX',
+            'UI',
+        ],
         title: 'SaaS Onboarding Simulation',
         problem: 'Criar uma experiência de onboarding curta e clara, evitando sobrecarga cognitiva e abandono precoce nos primeiros segundos de uso.',
         decisions: 'Dividi o fluxo em etapas progressivas, adicionei indicador de progresso discreto, permiti pular onboarding e implementei persistência via localStorage. Usei microcopy estratégica e Framer Motion para transições suaves.',
@@ -52,6 +78,14 @@ export const projects = [
     },
     {
         id: 'mini-login-system',
+        image: 'assets/img/mini-login-system-preview.png',
+        tags: [
+            'React',
+            'TailwindCSS',
+            'TypeScript',
+            'UX',
+            'UI',
+        ],
         title: 'Mini Login System',
         problem: 'Simular autenticação realista sem backend, garantindo proteção de rotas, expiração de sessão e mensagens contextuais claras.',
         decisions: 'Implementei  ProtectedRoute, controle de sessão com armazenamento local, mensagens dinâmicas de fluxo e feedback visual para erro de login. Adicionei simulação de expiração para tornar o fluxo mais realista.',
@@ -69,6 +103,14 @@ export const projects = [
     },
     {
         id: 'dashboard-de-metricas',
+        image: 'assets/img/dashboard-metricas-preview.png',
+        tags: [
+            'React',
+            'TailwindCSS',
+            'TypeScript',
+            'UX',
+            'UI',
+        ],
         title: 'Dashboard de Métricas',
         problem: 'Simular um painel de métricas com foco em leitura rápida, evitando excesso visual e garantindo interpretação clara dos dados.',
         decisions: 'Criei componentes desacoplados, utilizei cores semânticas para tendência (positivo/negativo), implementei skeleton loading e construí gráfico em SVG puro para controle total da renderização.',

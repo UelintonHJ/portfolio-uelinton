@@ -9,6 +9,45 @@
     opacity: 0;
     transform: translateY(12px);
     transition: opacity 0.25s ease, transform 0.25s ease;
+    overflow: hidden;
+    position: relative;
+    isolation: isolate;
+}
+
+.card::after {
+    content: "";
+    position: relative;
+    overflow: hidden;
+    inset: 0;
+    background: linear-gradient(
+        transparent,
+        rgba(0,0,0,.03)
+    );
+    opacity: 0;
+    transition: .3s;
+}
+
+.card:hover::after {
+    opacity: 1;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(
+        circle at top,
+        rgba(42,157,143,.10),
+        transparent 70%
+    );
+    opacity: 0;
+    transition: opacity .35s;
+    z-index: -1;
+}
+
+.card:hover::before {
+    opacity: 1;
 }
 
 .project-meta {
@@ -20,6 +59,8 @@
 }
 
 .project-preview {
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
     width: 100%;
     border-radius: 0.8rem;
     margin-bottom: 1.2rem;
@@ -27,11 +68,21 @@
     transition: 
         transform 0.3s ease,
         border-color 0.3s ease;
+    position: relative;
+}
+
+.card img {
+    filter: saturate(.95);
+}
+
+.card:hover img {
+    filter: saturate(1.1);
 }
 
 .card:hover .project-preview {
-    transform: scale(1.01);
+    transform: scale(1.03);
     border-color: var(--accent);
+    overflow: hidden;
 }
 
 .project-status {
@@ -122,9 +173,9 @@
 }
 
 .card .tags {
-    opacity: 0.25;
-    transform: translateY(4px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
 .card:hover .tags {
@@ -224,6 +275,21 @@
     line-height: 1.25;
 }
 
+.project-section span {
+    display: block;
+    font-size: .72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    opacity: .55;
+    margin-bottom: .3rem;
+}
+
+.project-section p {
+    font-size: .9rem;
+    line-height: 1.5;
+}
+
 .card p {
     opacity: 0.85;
     line-height: 1.6;
@@ -294,4 +360,24 @@
     font-family: monospace;
     font-size: .85rem;
     border: 1px solid var(--border);
+}
+
+.modal {
+    backdrop-filter: blur(8px);
+}
+
+.modal-content {
+    animation: modalIn .25s ease;
+}
+
+@keyframes modalIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px) scale(.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
 }

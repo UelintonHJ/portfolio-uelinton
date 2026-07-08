@@ -70,7 +70,8 @@
                 </h2>
 
                 <p class="subheadline">
-                    Desenvolvedor focado em construir interfaces previsíveis, escaláveis e orientadas à experiência do usuário.
+                    Desenvolvedor focado em construir interfaces previsíveis, escaláveis e orientadas à experiência do
+                    usuário.
                 </p>
 
                 <div class="hero-actions">
@@ -95,6 +96,12 @@
 
             <div class="hero-terminal">
                 <div class="terminal-header">
+                    <div class="terminal-actions">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    
                     terminal
                 </div>
 
@@ -188,24 +195,30 @@
         <p>
             Projetos desenvolvidos para explorar problemas reais de produto, estado e experiência do usuário.
         </p>
-
         <div class="cards">
-            <div class="card" data-category="HTML CSS JS API">
-
-                <div class="project-meta">
-                    <span class="project-status status-progress">
-                        • Em evolução
-                    </span>
-
-                    <span class="project-year">
-                        2026
-                    </span>
-                </div>
-
-                <img src="assets/img/product-list-preview.png" alt="Preview do projeto Product List"
+            <article class="card">
+                <img src="assets/img/product-list-preview.png" alt="Screenshot do projeto Product List"
                     class="project-preview">
 
-                <h3>Product List</h3>
+                <div class="project-content">
+                    <h3>Product List</h3>
+
+                    <section class="project-section">
+                        <span>Problema</span>
+
+                        <p>
+                            Organizar uma listagem de produtos com busca, filtros e paginação.
+                        </p>
+                    </section>
+
+                    <section class="project-section">
+                        <span>Resultado</span>
+
+                        <p>
+                            Navegação rápida com estado consistente e previsível.
+                        </p>
+                    </section>
+                </div>
 
                 <ul class="tags">
                     <li class="tag">HTML</li>
@@ -216,32 +229,34 @@
                     <li class="tag">UI</li>
                 </ul>
 
-                <p>
-                    Aplicação que consome API pública com busca, filtros, paginação e sincronização de estado com a
-                    URL.
-                </p>
-
-                <button class="btn-details details-btn" data-project-id="product-list">
-                    Ver estudo de caso
+                <button class="btn-details" data-project="product-list">
+                    Ver estudo completo
                 </button>
-            </div>
+            </article>
 
-            <div class="card" data-category="React TailwindCSS TypeScript">
-
-                <div class="project-meta">
-                    <span class="project-status status-active">
-                        • Ativo
-                    </span>
-
-                    <span class="project-year">
-                        2026
-                    </span>
-                </div>
-
-                <img src="assets/img/checkout-flow-preview.png" alt="Preview do projeto Checkout Flow"
+            <article class="card">
+                <img src="assets/img/checkout-flow-preview.png" alt="Screenshot do projeto Checkout Flow"
                     class="project-preview">
 
-                <h3>Checkout Flow</h3>
+                <div class="project-content">
+                    <h3>Checkout Flow</h3>
+
+                    <section class="project-section">
+                        <span>Problema</span>
+
+                        <p>
+                            Simular um checkout realista sem backend.
+                        </p>
+                    </section>
+
+                    <section class="project-section">
+                        <span>Resultado</span>
+
+                        <p>
+                            Estados visuais claros e previsíveis.
+                        </p>
+                    </section>
+                </div>
 
                 <ul class="tags">
                     <li class="tag">React</li>
@@ -251,14 +266,10 @@
                     <li class="tag">UI</li>
                 </ul>
 
-                <p>
-                    Simulação de fluxo de checkout com foco em controle de estado e redução de fricção.
-                </p>
-
-                <button class="btn-details details-btn" data-project-id="checkout-flow">
-                    Ver estudo de caso
+                <button class="btn-details" data-project="checkout-flow">
+                    Ver estudo completo
                 </button>
-            </div>
+            </article>
         </div>
     </section>
 
@@ -270,57 +281,30 @@
         </p>
 
         <div class="cards">
-            <div class="card" data-category="React TailwindCSS TypeScript">
-
-                <div class="project-meta">
-                    <span class="project-status status-active">
-                        • Ativo
-                    </span>
-
-                    <span class="project-year">
-                        2026
-                    </span>
-                </div>
-
+            <article class="card">
                 <img src="assets/img/saas-onboarding-simulation-preview.png"
-                    alt="Preview do projeto SaaS Onboarding Simulation" class="project-preview">
+                    alt="Screenshot do projeto SaaS Onboarding Simulation" class="project-preview">
 
-                <h3>SaaS Onboarding Simulation</h3>
+                <div class="project-content">
+                    <h3>SaaS Onboarding Simulation</h3>
 
-                <ul class="tags">
-                    <li class="tag">React</li>
-                    <li class="tag">TailwindCSS</li>
-                    <li class="tag">TypeScript</li>
-                    <li class="tag">UX</li>
-                    <li class="tag">UI</li>
-                </ul>
+                    <section class="project-section">
+                        <span>Problema</span>
 
-                <p>
-                    Simulação de onboarding para SaaS com foco em ativação do usuário.
-                </p>
+                        <p>
+                            Reduzir a complexidade dos primeiros passos de um novo usuário.
+                        </p>
+                    </section>
 
-                <button class="btn-details details-btn" data-project-id="saas-onboarding-simulation">
-                    Ver estudo de caso
-                </button>
-            </div>
+                    <section class="project-section">
+                        <span>Resultado</span>
 
-            <div class="card" data-category="React TailwindCSS TypeScript">
-
-                <div class="project-meta">
-                    <span class="project-status status-active">
-                        • Ativo
-                    </span>
-
-                    <span class="project-year">
-                        2026
-                    </span>
+                        <p>
+                            Onboarding progressivo com fluxo claro e menor fricção.
+                        </p>
+                    </section>
                 </div>
 
-                <img src="assets/img/mini-login-system-preview.png" alt="Preview do projeto Mini Login System"
-                    class="project-preview">
-
-                <h3>Mini Login System</h3>
-
                 <ul class="tags">
                     <li class="tag">React</li>
                     <li class="tag">TailwindCSS</li>
@@ -329,31 +313,71 @@
                     <li class="tag">UI</li>
                 </ul>
 
-                <p>
-                    Sistema de login fictício em React com foco em controle de sessão e proteção de rotas.
-                </p>
-
-                <button class="btn-details details-btn" data-project-id="mini-login-system">
-                    Ver estudo de caso
+                <button class="btn-details" data-project="saas-onboarding-simulation">
+                    Ver estudo completo
                 </button>
-            </div>
+            </article>
 
-            <div class="card" data-category="React TailwindCSS TypeScript">
+            <article class="card">
+                <img src="assets/img/mini-login-system-preview.png" alt="Screenshot do projeto Mini Login System"
+                    class="project-preview">
 
-                <div class="project-meta">
-                    <span class="project-status status-active">
-                        • Ativo
-                    </span>
+                <div class="project-content">
+                    <h3>Mini Login System</h3>
 
-                    <span class="project-year">
-                        2026
-                    </span>
+                    <section class="project-section">
+                        <span>Problema</span>
+
+                        <p>
+                            Simular autenticação com sessões e proteção de rotas.
+                        </p>
+                    </section>
+
+                    <section class="project-section">
+                        <span>Resultado</span>
+
+                        <p>
+                            Fluxo de login previsível com feedback para cada estado.
+                        </p>
+                    </section>
                 </div>
 
-                <img src="assets/img/dashboard-metricas-preview.png" alt="Preview do projeto Dashboard Métricas"
+                <ul class="tags">
+                    <li class="tag">React</li>
+                    <li class="tag">TailwindCSS</li>
+                    <li class="tag">TypeScript</li>
+                    <li class="tag">UX</li>
+                    <li class="tag">UI</li>
+                </ul>
+
+                <button class="btn-details" data-project="mini-login-system">
+                    Ver estudo completo
+                </button>
+            </article>
+
+            <article class="card">
+                <img src="assets/img/dashboard-metricas-preview.png" alt="Screenshot do projeto Dashboard de Métricas"
                     class="project-preview">
 
-                <h3>Dashboard de Métricas</h3>
+                <div class="project-content">
+                    <h3>Dashboard de Métricas</h3>
+
+                    <section class="project-section">
+                        <span>Problema</span>
+
+                        <p>
+                            Apresentar métricas de forma clara e fácil de interpretar.
+                        </p>
+                    </section>
+
+                    <section class="project-section">
+                        <span>Resultado</span>
+
+                        <p>
+                            Dashboard com leitura rápida e hierarquia visual consistente.
+                        </p>
+                    </section>
+                </div>
 
                 <ul class="tags">
                     <li class="tag">React</li>
@@ -363,14 +387,10 @@
                     <li class="tag">UI</li>
                 </ul>
 
-                <p>
-                    Dashboard de indicadores de negócio com foco em leitura rápida e hierarquia visual.
-                </p>
-
-                <button class="btn-details details-btn" data-project-id="dashboard-de-metricas">
-                    Ver estudo de caso
+                <button class="btn-details" data-project="dashboard-de-metricas">
+                    Ver estudo completo
                 </button>
-            </div>
+            </article>
         </div>
     </section>
 
@@ -446,7 +466,8 @@
         <div class="architecture-highlight">
             <strong>Objetivo:</strong>
             <p>
-                Construir um portfólio escalável utilizando os mesmos princípios de arquitetura que utilizo em aplicações reais.
+                Construir um portfólio escalável utilizando os mesmos princípios de arquitetura que utilizo em
+                aplicações reais.
             </p>
         </div>
 
@@ -455,7 +476,8 @@
                 <h3>Estado centralizado</h3>
 
                 <p>
-                    Modais e comportamentos globais são controlados através de um estado observável próprio inspirado no padrão Pub/Sub.
+                    Modais e comportamentos globais são controlados através de um estado observável próprio inspirado no
+                    padrão Pub/Sub.
                 </p>
 
                 <code>
@@ -506,7 +528,8 @@
                 <h3>Separação de responsabilidades</h3>
 
                 <p>
-                    Cada módulo possui uma responsabilidade específica: comportamento global, funcionalidades, utilitários e testes.
+                    Cada módulo possui uma responsabilidade específica: comportamento global, funcionalidades,
+                    utilitários e testes.
                 </p>
 
                 <code>
@@ -518,7 +541,8 @@
                 <h3>Performance consciente</h3>
 
                 <p>
-                    Uso de requestAnimationFrame, IntersectionObserver e renderização sob demanda para reduzir trabalho desnecessário da interface.
+                    Uso de requestAnimationFrame, IntersectionObserver e renderização sob demanda para reduzir trabalho
+                    desnecessário da interface.
                 </p>
 
                 <code>

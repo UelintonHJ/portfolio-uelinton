@@ -1,15 +1,15 @@
-.btns {
-    display: flex;
-    gap: 1rem;
-    margin-top: auto;
-    padding-top: 0.5rem;
-}
-
 .btn {
     position: relative;
     overflow: hidden;
     background: var(--accent);
     color: #f1faee;
+    transition: 
+        transform .2s,
+        box-shadow .2s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
 }
 
 .btn, .btn-outline {
@@ -64,6 +64,16 @@
 
 .btn-details:hover::after {
     transform: scaleX(1);
+}
+
+.btn-details::before {
+    content: "→";
+    margin-right: .45rem;
+    transition: .25s;
+}
+
+.card:hover .btn-details::before {
+    transform: translateX(4px);
 }
 
 .btn-details:focus-visible {
