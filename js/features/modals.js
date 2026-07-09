@@ -1,6 +1,7 @@
 import { UI } from '../core/ui.js'
+import { engineeringDetails } from '../data/engineering.js'
 
-const modals = { project: null, article: null }
+const modals = { project: null, article: null, engineering: null }
 
 let lastFocusedElement = null
 
@@ -29,6 +30,7 @@ export const Modal = {
 export function initModals() {
     modals.project = document.querySelector('.modal-project')
     modals.article = document.querySelector('.modal-article')
+    modals.engineering = document.querySelector(".modal-engineering")
 
     if (!modals.project || !modals.article) {
         console.error('Modal elements not found')
@@ -37,32 +39,35 @@ export function initModals() {
 
     const projectClose = modals.project.querySelector('.modal-close')
     const articleClose = modals.article.querySelector('.modal-close')
-
-    projectClose?.addEventListener('click', () => {
-        Modal.close()
-    })
-
-    articleClose?.addEventListener('click', () => {
-        Modal.close()
-    })
+    const engineeringClose = modals.engineering.querySelector('.modal-close')
 
     document.addEventListener('keydown', (event) => {
         if (event.key === 'Escape' && UI.state.modal.isOpen) {
-            Modal.close()
+            Modal.close();
         }
-    })
+    });
 
-    modals.project.addEventListener('click', (event) => {
-        if (event.target === modals.project) {
-            Modal.close()
-        }
-    })
+    document.querySelectorAll(".engineering-card").forEach(card => {
+        card.addEventListener("click", () => {
+            const id = card.dataset.engineering;
 
-    modals.article.addEventListener('click', (event) => {
-        if (event.target === modals.article) {
-            Modal.close()
-        }
-    })
+            Modal.open("engineering", engineeringDetails[id]);
+        });
+    });
+
+    Object.values(modals).forEach(modal => {
+        modal
+            ?.querySelector('.modal-close')
+            ?.addEventListener('click', Modal.close);
+    });
+
+    Object.values(modals).forEach(modal => {
+        modal?.addEventListener('click', (event) => {
+            if(event.target === modal) {
+                Modal.close();
+            }
+        });
+    });
 }
 
 UI.subscribe(({ modal }) => {
@@ -81,7 +86,8 @@ UI.subscribe(({ modal }) => {
 
     const renderers = {
         project: renderProject,
-        article: renderArticle
+        article: renderArticle,
+        engineering: renderEngineering
     }
 
     renderers[modal.type]?.(
@@ -108,20 +114,22 @@ function renderProject(el, data) {
         '.modal-repo': 'repo'
     }
 
-    Object.entries(textFields).forEach(([selector, key]) => {
-        const element = el.querySelector(selector)
+    function updateFields(el, fields, callback) {
+        Object.entries(fields).forEach(([selector, key]) => {
+            const element = el.querySelector(selector);
 
-        if (!element) return
+            if (!element) return;
 
-        element.textContent = data[key]
-    })
+            callback(element, key);
+        });
+    }
 
-    Object.entries(linkFields).forEach(([selector, key]) => {
-        const element = el.querySelector(selector)
+    updateFields(el, textFields, (element, key) => {
+        element.textContent = data[key];
+    });
 
-        if (!element) return
-
-        element.href = data[key]
+    updateFields(el, linkFields, (element, key) => {
+        element.href = data[key];
     })
 
     const roadmap = el.querySelector('.modal-roadmap')
@@ -137,8 +145,16 @@ function renderProject(el, data) {
 }
 
 function renderArticle(el, data) {
-    el.querySelector('.modal-article-title').textContent = data.title
-    el.querySelector('.modal-article-content').innerHTML = data.content
+    el.querySelector('.modal-article-title').textContent = data.title;
+    el.querySelector('.modal-article-content').innerHTML = data.content;
+}
+
+function renderEngineering(el, data) {
+    const title = el.querySelector('.modal-engineering-title');
+    const content = el.querySelector('.modal-engineering-content');
+
+    title.textContent = data.title;
+    content.innerHTML = data.content;
 }
 
 function open(el) {
