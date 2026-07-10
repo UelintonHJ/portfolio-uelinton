@@ -11,6 +11,7 @@
 @import './components/cards.css';
 @import './components/modal.css';
 @import './components/theme-toggle.css';
+@import './components/article-card.css';
 
 @import './pages/home.css';
 @import './pages/article.css';

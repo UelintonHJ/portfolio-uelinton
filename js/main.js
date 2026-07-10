@@ -7,6 +7,7 @@ import { initFilters } from './features/filters.js';
 import { initModals } from './features/modals.js';
 import { initNavigation } from './features/navigation.js';
 import { initProjects } from './features/projects.js';
+import { renderArticles } from './features/articles.js';
 
 import { runTests } from './tests/run-tests.js';
 
@@ -18,6 +19,7 @@ initFilters();
 initModals();
 initNavigation();
 initProjects();
+renderArticles();
 
 if (
     location.hostname === 'localhost' ||
