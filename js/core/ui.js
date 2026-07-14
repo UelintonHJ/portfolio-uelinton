@@ -8,6 +8,11 @@ export const UI = {
     },
 
     listeners: new Set(),
+    
+    subscribe(listener) {
+        this.listeners.add(listener)
+        return () => this.listeners.delete(listener)
+    },
 
     setState(newState) {
         this.state = {
@@ -15,15 +20,10 @@ export const UI = {
             ...newState
         }
 
-        this.notify()
+        this.notifyListeners();
     },
 
-    subscribe(fn) {
-        this.listeners.add(fn)
-        return () => this.listeners.delete(fn)
-    },
-
-    notify() {
-        this.listeners.forEach(fn => fn(this.state))
+    notifyListeners() {
+        this.listeners.forEach(listener => listener(this.state))
     }
 }
