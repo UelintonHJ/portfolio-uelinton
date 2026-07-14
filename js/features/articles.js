@@ -2,7 +2,7 @@ import { articles } from "../data/articles.js";
 
 const articleContainer = document.querySelector(".articles-container");
 
-export function renderArticles() {
+export function initArticles() {
     if (!articleContainer) return;
 
     articleContainer.innerHTML = articles.map(article => {
