@@ -8,17 +8,18 @@ export function initTheme() {
     const MOON_ICON_SVG = `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="64" height="64" viewBox="0 0 24 24" style="color: rgb(74, 85, 101);"><path fill="currentColor" d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5s5-2.24 5-5s-2.24-5-5-5M2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1m18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1M11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1m0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1M5.99 4.58a.996.996 0 0 0-1.41 0a.996.996 0 0 0 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41zm12.37 12.37a.996.996 0 0 0-1.41 0a.996.996 0 0 0 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0a.996.996 0 0 0 0-1.41zm1.06-10.96a.996.996 0 0 0 0-1.41a.996.996 0 0 0-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0zM7.05 18.36a.996.996 0 0 0 0-1.41a.996.996 0 0 0-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0z"></path></svg>`;
     const DARK_THEME = 'dark';
     const LIGHT_THEME = 'light';
+    const THEME_STORAGE_KEY = 'theme';
 
     function initializeTheme() {
-        const prefersDark = window.matchMedia('(prefers-color-scheme: DARK_THEME)').matches;
-        const savedTheme = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia(`(prefers-color-scheme: ${DARK_THEME})`).matches;
+        const savedTheme = localStorage.getItem(THEME_STORAGE_KEY);
 
         setTheme(savedTheme ?? (prefersDark ? DARK_THEME : LIGHT_THEME));
     }
 
     function setTheme(theme) {
         root.setAttribute('data-theme', theme);
-        localStorage.setItem('theme', theme);
+        localStorage.setItem(THEME_STORAGE_KEY, theme);
 
         themeToggle.setAttribute('aria-pressed', theme === DARK_THEME);
         themeToggle.innerHTML = theme === DARK_THEME ? SUN_ICON_SVG : MOON_ICON_SVG;
@@ -29,6 +30,8 @@ export function initTheme() {
         const nextTheme = currentTheme === DARK_THEME ? LIGHT_THEME : DARK_THEME;
         setTheme(nextTheme);
     }
+
+    initializeTheme();
 
     themeToggle.addEventListener('click', onThemeToggle);
 }
