@@ -5,16 +5,16 @@ export function initHeader() {
     let isShrunk = false;
     let ticking = false;
 
-    const shrinkThreshold = 60;
-    const expandThreshold = 20;
+    const SHRINK_THRESHOLD = 60;
+    const EXPAND_THRESHOLD = 20;
 
-    function update() {
-        const scroll = window.scrollY;
+    function updateHeader() {
+        const scrollPosition = window.scrollY;
 
-        if (!isShrunk && scroll > shrinkThreshold) {
+        if (!isShrunk && scrollPosition > SHRINK_THRESHOLD) {
             header.classList.add('shrink');
             isShrunk = true;
-        } else if (isShrunk && scroll < expandThreshold) {
+        } else if (isShrunk && scrollPosition < EXPAND_THRESHOLD) {
             header.classList.remove('shrink');
             isShrunk = false;
         }
@@ -22,10 +22,12 @@ export function initHeader() {
         ticking = false;
     }
 
-    window.addEventListener('scroll', () => {
+    function onScroll() {
         if (!ticking) {
-            requestAnimationFrame(update);
+            requestAnimationFrame(updateHeader);
             ticking = true;
         }
-    });
+    }
+    
+    window.addEventListener('scroll', onScroll);
 }
