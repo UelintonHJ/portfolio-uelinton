@@ -102,7 +102,7 @@ export const projects = [
         repo: 'https://github.com/UelintonHJ/mini-login-system'
     },
     {
-        id: 'dashboard-de-metricas',
+        id: 'metrics-dashboard',
         image: 'assets/img/dashboard-metricas-preview.png',
         tags: [
             'React',

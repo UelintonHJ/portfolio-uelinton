@@ -19,7 +19,7 @@ export function renderArticles() {
                         <p>${article.description}</p>
 
                         <footer class="article-meta">
-                            <span>${article.publishedAat}</span>
+                            <span>${article.publishedAt}</span>
                         </footer>
                     </div>
                 </a>
