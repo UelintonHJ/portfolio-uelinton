@@ -1,6 +1,6 @@
-export const engineeringDetails = {
-    componentization: {
-        title: "Componentização",
+export const engineeringDetails = Object.freeze({
+    componentization: Object.freeze({
+        title: 'Componentização',
         content: `
             <p>
                 Não enxergo componentes apenas como blocos reutilizáveis. Cada componente deve representar uma responsabilidade clara dentro da interface.
@@ -26,12 +26,11 @@ export const engineeringDetails = {
 
             <p>
                 O objetivo não é criar centenas de componentes, mas facilitar manutenção e evolução do sistema.
-            </p>
-        `
-    },
+            </p>`
+    }),
 
-    performance: {
-        title: "Performance",
+    performance: Object.freeze({
+        title: 'Performance',
         content: `
             <p>
                 Performance não é apenas sobre velocidade de carregamento. Ela está diretamente relacionada à percepção do usuário e à eficiência com que a aplicação utiliza seus recursos.
@@ -59,12 +58,11 @@ export const engineeringDetails = {
 
             <p>
                 O objetivo não é otimizar tudo antecipadamente, mas identificar gargalos reais e melhorar a experiência onde existe impacto para o usuário.
-            </p>
-        `
-    },
+            </p>`
+    }),
 
-    scalability: {
-        title: "Escalabilidade",
+    scalability: Object.freeze({
+        title: 'Escalabilidade',
         content: `
             <p>
                 Escalabilidade não significa apenas suportar mais usuários ou mais funcionalidades. Também significa permitir que o código continue evoluindo sem aumentar sua complexidade de forma descontrolada.
@@ -92,12 +90,11 @@ export const engineeringDetails = {
 
             <p>
                 O objetivo é construir aplicações preparadas para crescer, onde novas funcionalidades possam ser adicionadas sem comprometer a organização existente.
-            </p>
-        `
-    },
+            </p>`
+    }),
 
-    accessibility: {
-        title: "Acessibilidade",
+    accessibility: Object.freeze({
+        title: 'Acessibilidade',
         content: `
             <p>
                 Acessibilidade faz parte da qualidade de uma interface. Uma aplicação bem construída deve considerar diferentes formas de interação e diferentes necessidades dos usuários.
@@ -125,7 +122,6 @@ export const engineeringDetails = {
 
             <p>
                 O objetivo é criar interfaces que sejam compreensíveis, utilizáveis e acessíveis para o maior número possível de pessoas.
-            </p>
-        `
-    }
-}
+            </p>`
+    })
+});
