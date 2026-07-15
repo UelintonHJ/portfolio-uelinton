@@ -1,11 +1,11 @@
-import { articles } from "../data/articles.js";
-
-const articleContainer = document.querySelector(".articles-container");
+import { articles } from '../data/articles.js';
 
 export function initArticles() {
-    if (!articleContainer) return;
+    const articlesContainer = document.querySelector('.articles-container');
 
-    articleContainer.innerHTML = articles.map(article => {
+    if (!articlesContainer) return;
+
+    function renderArticle(article) {
         return `
             <article class="article-card">
                 <a href="${article.link}">
@@ -25,5 +25,7 @@ export function initArticles() {
                 </a>
             </article>
         `;
-    }).join("");
+    }
+
+    articlesContainer.innerHTML = articles.map(renderArticle).join('');
 }
