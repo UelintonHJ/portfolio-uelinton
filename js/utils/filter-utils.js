@@ -1,8 +1,10 @@
+const ALL_CATEGORY = 'all';
+
 export function shouldShowCard(cardCategories, selectedCategory) {
-    const categories = cardCategories.split(' ')
+    const categories = cardCategories.split(' ');
 
     return (
-        selectedCategory === 'all' ||
+        selectedCategory === ALL_CATEGORY ||
         categories.includes(selectedCategory)
-    )
+    );
 }
