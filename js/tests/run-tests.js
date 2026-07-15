@@ -1,9 +1,9 @@
-import { runFilterTests } from "./filters.test.js";
+import { runFilterTests } from './filters.test.js';
 
 export function runTests() {
-    console.group('Portfolio Self Checks')
+    console.group('Portfolio Self Checks');
 
-    runFilterTests()
+    runFilterTests();
 
-    console.groupEnd()
+    console.groupEnd();
 }
