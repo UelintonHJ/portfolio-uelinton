@@ -1,56 +1,56 @@
 [data-theme="dark"] header {
-    background: rgba(10, 17, 40, 0.8);
+    background: rgba(10, 17, 40, .8);
 }
 
 [data-theme="dark"] header.shrink {
-    background: rgba(10, 17, 40, 0.95);
+    background: rgba(10, 17, 40, .95);
 }
 
 [data-theme="dark"] .filter-btn {
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    color: rgba(241, 250, 238, 0.85);
+    background: rgba(255, 255, 255, .06);
+    border: 1px solid rgba(255, 255, 255, .12);
+    color: rgba(241, 250, 238, .85);
     backdrop-filter: blur(6px);
 }
 
 [data-theme="dark"] .filter-btn.active {
     background: var(--accent);
-    color: #F1FAEE;
+    color: var(--text);
     border-color: var(--accent);
-    box-shadow: 0 4px 12px rgba(42, 157, 143, 0.35);
+    box-shadow: 0 4px 12px rgba(42, 157, 143, .35);
 }
 
 [data-theme="dark"] .filter-btn:hover {
     border-color: var(--accent);
-    background: rgba(42, 157, 143, 0.15);
+    background: rgba(42, 157, 143, .15);
 }
 
 [data-theme="dark"] .card-featured {
     background: linear-gradient(
         180deg,
-        rgba(42, 157, 143, 0.15),
-        rgba(255, 255, 255, 0.04)
+        rgba(42, 157, 143, .15),
+        rgba(255, 255, 255, .04)
     );
-    border-color: rgba(42, 157, 143, 0.4);
+    border-color: rgba(42, 157, 143, .4);
 }
 
 [data-theme="dark"] .card-featured::before {
-    color: rgba(241, 250, 238, 0.6);
+    color: rgba(241, 250, 238, .6);
 }
 
 [data-theme="dark"] .card-institutional {
-    background: rgba(255, 255, 255, 0.03);
-    border-color: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, .03);
+    border-color: rgba(255, 255, 255, .1);
 }
 
 [data-theme="dark"] .card-institutional::before {
-    color: rgba(241, 250, 238, 0.55);
+    color: rgba(241, 250, 238, .55);
 }
 
 [data-theme="dark"] .card-institutional .tag {
-    background: rgba(42, 157, 143, 0.1);
-    color: rgba(241, 250, 238, 0.85);
-    border: 1px solid rgba(42, 157, 143, 0.25);
+    background: rgba(42, 157, 143, .1);
+    color: rgba(241, 250, 238, .85);
+    border: 1px solid rgba(42, 157, 143, .25);
 }
 
 [data-theme="dark"] .card-institutional .btn {
@@ -59,13 +59,13 @@
 }
 
 [data-theme="dark"] .card-institutional .decision {
-    border-left-color: rgba(42, 157, 143, 0.7);
+    border-left-color: rgba(42, 157, 143, .7);
 }
 
 [data-theme="dark"] .tag {
-    background: rgba(255, 255, 255, 0.06);
-    color: rgba(241, 250, 238, 0.85);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, .06);
+    color: rgba(241, 250, 238, .85);
+    border: 1px solid rgba(255, 255, 255, .08);
 }
 
 [data-theme="dark"] .architecture code {
@@ -73,19 +73,19 @@
 }
 
 [data-theme="dark"] .footer {
-    background: rgba(10, 17, 40, 0.9);
+    background: rgba(10, 17, 40, .9);
     border-top: 1px solid var(--border);
 }
 
 [data-theme="dark"] .modal-content {
-    background: rgba(15, 23, 42, 0.95);
-    border-color: rgba(255, 255, 255, 0.08);
+    background: rgba(15, 23, 42, .95);
+    border-color: rgba(255, 255, 255, .08);
 }
 
 [data-theme="dark"] .modal-close {
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(0, 0, 0, 0.18);
-    color: rgba(241, 250, 238, 0.85);
+    background: rgba(255, 255, 255, .06);
+    border: 1px solid rgba(0, 0, 0, .18);
+    color: rgba(241, 250, 238, .85);
 }
 
 [data-theme="dark"] .modal-close:hover {
@@ -95,8 +95,8 @@
 }
 
 @media (max-width: 768px) {
-     [data-theme="dark"] .nav-list {
-        background: rgba(10, 17, 40, 0.95);
-        border-color: rgba(255, 255, 255, 0.1);
+    [data-theme="dark"] .nav-list {
+        background: rgba(10, 17, 40, .95);
+        border-color: rgba(255, 255, 255, .1);
     }
 }
