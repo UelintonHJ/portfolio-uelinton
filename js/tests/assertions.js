@@ -1,7 +1,7 @@
 export function assert(description, condition) {
     if (condition) {
-        console.log(`✅ ${description}`)
+        console.log(`✅ ${description}`);
     } else {
-        console.error(`❌ ${description}`)
+        console.error(`❌ ${description}`);
     }
 }
