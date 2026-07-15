@@ -1,34 +1,48 @@
-import { shouldShowCard } from "../utils/filter-utils.js";
+import { shouldShowCard } from '../utils/filter-utils.js';
 
-function setupFilter(buttonsSelector, cardsSelector) {
+function initializeFilterGroup(buttonsSelector, cardsSelector) {
     const buttons = document.querySelectorAll(buttonsSelector);
     const cards = document.querySelectorAll(cardsSelector);
 
     if (!buttons.length || !cards.length) return;
 
-    buttons.forEach(btn => {
-        btn.addEventListener('click', () => {
-            buttons.forEach(b => {
-                b.classList.remove('active');
-                b.setAttribute('aria-pressed', 'false');
-            });
+    function onFilterClick(event, buttons, cards) {
+        const activeButton = event.currentTarget;
 
-            btn.classList.add('active');
-            btn.setAttribute('aria-pressed', 'true');
+        updateActiveButtons(buttons, activeButton);
 
-            const category = btn.dataset.category;
+        const selectedCategory = activeButton.dataset.category;
 
-            cards.forEach(card => {
-                const shouldShow = shouldShowCard(
-                    card.dataset.category || '', category
-                )
+        updateVisibleCards(cards, selectedCategory);
+    }
 
-                card.classList.toggle('is-hidden', !shouldShow);
-            });
+    function updateActiveButtons(buttons, activeButton) {
+        buttons.forEach(button => {
+            button.classList.remove('active');
+            button.setAttribute('aria-pressed', 'false');
         });
+
+        activeButton.classList.add('active');
+        activeButton.setAttribute('aria-pressed', 'true');
+    }
+
+    function updateVisibleCards(cards, selectedCategory) {
+        cards.forEach(card => {
+            const shouldShow = shouldShowCard(
+                card.dataset.category || '', selectedCategory
+            );
+
+            card.classList.toggle('is-hidden', !shouldShow);
+        });
+    }
+
+    buttons.forEach(button => {
+        button.addEventListener('click', event =>
+            onFilterClick(event, buttons, cards)
+        );
     });
 }
 
 export function initFilters() {
-    setupFilter('.project-filters .filter-btn', '.projects .card');
+    initializeFilterGroup('.project-filters .filter-btn', '.projects .card');
 }
