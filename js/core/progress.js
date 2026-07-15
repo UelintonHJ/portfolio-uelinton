@@ -1,5 +1,7 @@
+import { qs } from '../utils/dom.js';
+
 export function initProgress() {
-    const progressBar = document.querySelector(".reading-progress");
+    const progressBar = qs(".reading-progress");
 
     if (!progressBar) return;
 

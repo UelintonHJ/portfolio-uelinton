@@ -1,5 +1,7 @@
+import { qsa } from '../utils/dom.js';
+
 export function initObservers() {
-    const cards = document.querySelectorAll('.card');
+    const cards = qsa('.card');
 
     if (!cards.length) return;
 

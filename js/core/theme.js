@@ -1,5 +1,7 @@
+import { qs } from '../utils/dom.js';
+
 export function initTheme() {
-    const themeToggle = document.querySelector('.theme-toggle');
+    const themeToggle = qs('.theme-toggle');
     const root = document.documentElement;
 
     if (!themeToggle) return;

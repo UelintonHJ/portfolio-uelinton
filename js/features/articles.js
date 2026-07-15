@@ -1,7 +1,8 @@
 import { articles } from '../data/articles.js';
+import { qs } from '../utils/dom.js';
 
 export function initArticles() {
-    const articlesContainer = document.querySelector('.articles-container');
+    const articlesContainer = qs('.articles-container');
 
     if (!articlesContainer) return;
 

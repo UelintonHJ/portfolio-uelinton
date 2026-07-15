@@ -1,8 +1,9 @@
 import { shouldShowCard } from '../utils/filter-utils.js';
+import { qsa } from '../utils/dom.js';
 
 function initializeFilterGroup(buttonsSelector, cardsSelector) {
-    const buttons = document.querySelectorAll(buttonsSelector);
-    const cards = document.querySelectorAll(cardsSelector);
+    const buttons = qsa(buttonsSelector);
+    const cards = qsa(cardsSelector);
 
     if (!buttons.length || !cards.length) return;
 

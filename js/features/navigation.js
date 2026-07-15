@@ -1,6 +1,8 @@
+import { qs } from '../utils/dom.js';
+
 export function initNavigation() {
-    const navToggle = document.querySelector('.nav-toggle');
-    const navList = document.querySelector('.nav-list');
+    const navToggle = qs('.nav-toggle');
+    const navList = qs('.nav-list');
 
     if (!navToggle || !navList) return;
 

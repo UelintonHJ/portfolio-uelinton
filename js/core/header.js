@@ -1,5 +1,7 @@
+import { qs } from '../utils/dom.js';
+
 export function initHeader() {
-    const header = document.querySelector('header');
+    const header = qs('header');
     if (!header) return;
 
     let isShrunk = false;

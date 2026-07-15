@@ -1,8 +1,9 @@
 import { Modal } from './modals.js';
 import { projects } from '../data/projects.js';
+import { qsa } from '../utils/dom.js';
 
 export function initProjects() {
-    document.querySelectorAll('.btn-details').forEach(button => {
+    qsa('.btn-details').forEach(button => {
         button.addEventListener('click', onProjectDetailsClick);
     });
 

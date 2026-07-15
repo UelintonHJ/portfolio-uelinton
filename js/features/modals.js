@@ -1,5 +1,6 @@
-import { UI } from '../core/ui.js'
-import { engineeringDetails } from '../data/engineering.js'
+import { UI } from '../core/ui.js';
+import { engineeringDetails } from '../data/engineering.js';
+import { qs, qsa } from '../utils/dom.js';
 
 const modals = { project: null, article: null, engineering: null }
 
@@ -28,9 +29,9 @@ export const Modal = {
 }
 
 export function initModals() {
-    modals.project = document.querySelector('.modal-project');
-    modals.article = document.querySelector('.modal-article');
-    modals.engineering = document.querySelector('.modal-engineering');
+    modals.project = qs('.modal-project');
+    modals.article = qs('.modal-article');
+    modals.engineering = qs('.modal-engineering');
 
     if (!modals.project || !modals.article || !modals.engineering) {
         console.error('Modal elements not found');
@@ -54,7 +55,7 @@ function onKeyDown(event) {
 }
 
 function registerEngineeringCards() {
-    document.querySelectorAll('.engineering-card').forEach(card => {
+    qsa('.engineering-card').forEach(card => {
         card.addEventListener('click', onEngineeringCardClick);
     });
 }
@@ -68,8 +69,7 @@ function onEngineeringCardClick(event) {
 
 function registerCloseButtons() {
     Object.values(modals).forEach(modal => {
-        modal
-            ?.querySelector('.modal-close')
+        qs('.modal-close', modal)
             ?.addEventListener('click', Modal.close);
     });
 }
@@ -137,7 +137,7 @@ function renderProject(el, data) {
         element.href = data[key];
     });
 
-    const roadmap = el.querySelector('.modal-roadmap')
+    const roadmap = qs('.modal-roadmap', el)
     roadmap.innerHTML = '';
 
     if (data.roadmap?.length) {
@@ -151,7 +151,7 @@ function renderProject(el, data) {
 
 function updateFields(el, fields, callback) {
     Object.entries(fields).forEach(([selector, key]) => {
-        const element = el.querySelector(selector);
+        const element = qs(selector, el);
 
         if (!element) return;
 
@@ -160,13 +160,13 @@ function updateFields(el, fields, callback) {
 }
 
 function renderArticle(el, data) {
-    el.querySelector('.modal-article-title').textContent = data.title;
-    el.querySelector('.modal-article-content').innerHTML = data.content;
+    qs('.modal-article-title', el).textContent = data.title;
+    qs('.modal-article-content', el).innerHTML = data.content;
 }
 
 function renderEngineering(el, data) {
-    el.querySelector('.modal-engineering-title').textContent = data.title;
-    el.querySelector('.modal-engineering-content').innerHTML = data.content;
+    qs('.modal-engineering-title', el).textContent = data.title;
+    qs('.modal-engineering-content', el).innerHTML = data.content;
 }
 
 function open(el) {
@@ -177,8 +177,8 @@ function open(el) {
     el.classList.add('open');
     el.setAttribute('aria-hidden', 'false');
 
-    const first = el.querySelector(
-        'button, a[href], input, textarea, select, [tabindex]:not([tabindex="-1"])'
+    const first = qs(
+        'button, a[href], input, textarea, select, [tabindex]:not([tabindex="-1"])', el
     );
 
     first?.focus();
