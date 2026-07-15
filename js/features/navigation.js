@@ -4,8 +4,10 @@ export function initNavigation() {
 
     if (!navToggle || !navList) return;
 
-    navToggle.addEventListener('click', () => {
-        const isOpen = navList.classList.toggle('open');
+    navToggle.addEventListener('click', () => onNavToogle(navToggle, navList));
+}
+
+function onNavToogle (navToggle, navList) {
+    const isOpen = navList.classList.toggle('open');
         navToggle.setAttribute('aria-expanded', isOpen);
-    });
 }
