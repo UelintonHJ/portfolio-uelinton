@@ -4,15 +4,16 @@
     background: var(--accent);
     color: #f1faee;
     transition: 
-        transform .2s,
-        box-shadow .2s;
+        transform 0.2s,
+        box-shadow 0.2s;
 }
 
 .btn:hover {
     transform: translateY(-2px);
 }
 
-.btn, .btn-outline {
+.btn, 
+.btn-outline {
     padding: 0.45rem 0.9rem;
     border-radius: 0.6rem;
     text-decoration: none;
@@ -36,6 +37,7 @@
 
 .btn-details {
     align-self: flex-start;
+    position: relative;
     margin-top: auto;
     padding: 0.5rem 0;
     background: transparent;
@@ -45,12 +47,11 @@
     letter-spacing: 0.4px;
     color: var(--accent);
     cursor: pointer;
-    position: relative;
     transition: opacity 0.2s ease;
 }
 
 .btn-details::after {
-    content: "";
+    content: '';
     position: absolute;
     left: 0;
     bottom: -2px;
@@ -67,9 +68,9 @@
 }
 
 .btn-details::before {
-    content: "→";
-    margin-right: .45rem;
-    transition: .25s;
+    content: '→';
+    margin-right: 0.45rem;
+    transition: 0.25s;
 }
 
 .card:hover .btn-details::before {
@@ -90,7 +91,10 @@
     font-size: 0.8rem;
     font-weight: 600;
     letter-spacing: 0.4px;
-    transition: all 0.2s ease;
+    transition: 
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease;
 }
 
 .filter-btn.active {
