@@ -1,16 +1,16 @@
 .card {
+    position: relative; 
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
     background: var(--surface);
     border: 1px solid var(--border);
     padding: 1.8rem;
     border-radius: 1rem;
     backdrop-filter: blur(8px);
-    display: flex;
-    flex-direction: column;
     opacity: 0;
     transform: translateY(12px);
-    transition: opacity 0.25s ease, transform 0.25s ease;
-    overflow: hidden;
-    position: relative;
+    transition: opacity 0.25s ease, transform 0.25s ease;    
     isolation: isolate;
 }
 
@@ -18,13 +18,12 @@
     content: "";
     position: relative;
     overflow: hidden;
-    inset: 0;
     background: linear-gradient(
         transparent,
-        rgba(0,0,0,.03)
+        rgba(0, 0, 0, 0.03)
     );
     opacity: 0;
-    transition: .3s;
+    transition: opacity 0.3s ease;
 }
 
 .card:hover::after {
@@ -34,15 +33,14 @@
 .card::before {
     content: "";
     position: absolute;
-    inset: 0;
     border-radius: inherit;
     background: radial-gradient(
         circle at top,
-        rgba(42,157,143,.10),
+        rgba(42, 157, 143, 0.10),
         transparent 70%
     );
     opacity: 0;
-    transition: opacity .35s;
+    transition: opacity 0.35s;
     z-index: -1;
 }
 
@@ -72,7 +70,7 @@
 }
 
 .card img {
-    filter: saturate(.95);
+    filter: saturate(0.95);
 }
 
 .card:hover img {
@@ -141,7 +139,7 @@
 }
 
 .card-featured::before {
-    content: "Projeto principal";
+    content: 'Projeto principal';
     display: inline-block;
     margin-bottom: 0.6rem;
     font-size: 0.75rem;
@@ -213,7 +211,7 @@
 }
 
 .persona::before {
-    content: "Persona";
+    content: 'Persona';
     display: block;
     font-size: 0.7rem;
     text-transform: uppercase;
@@ -232,7 +230,7 @@
 }
 
 .user-story::before {
-    content: "User Story";
+    content: 'User Story';
     display: block;
     font-size: 0.7rem;
     text-transform: uppercase;
@@ -280,13 +278,13 @@
     font-size: .72rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: .08em;
-    opacity: .55;
-    margin-bottom: .3rem;
+    letter-spacing: 0.08em;
+    opacity: 0.55;
+    margin-bottom: 0.3rem;
 }
 
 .project-section p {
-    font-size: .9rem;
+    font-size: 0.9rem;
     line-height: 1.5;
 }
 
@@ -326,7 +324,7 @@
 }
 
 .card-institutional::before {
-    content: "Projeto institucional";
+    content: 'Projeto institucional';
     display: inline-block;
     margin-bottom: 0.6rem;
     font-size: 0.7rem;
@@ -342,7 +340,7 @@
 }
 
 .architecture .card::before {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
@@ -354,11 +352,11 @@
 .architecture code {
     display: inline-block;
     margin-top: auto;
-    padding: .8rem 1rem;
-    border-radius: .6rem;
-    background: rgba(0, 0, 0, .08);
+    padding: 0.8rem 1rem;
+    border-radius: 0.6rem;
+    background: rgba(0, 0, 0, 0.08);
     font-family: monospace;
-    font-size: .85rem;
+    font-size: 0.85rem;
     border: 1px solid var(--border);
 }
 
@@ -367,13 +365,13 @@
 }
 
 .modal-content {
-    animation: modalIn .25s ease;
+    animation: modalIn 0.25s ease;
 }
 
 @keyframes modalIn {
     from {
         opacity: 0;
-        transform: translateY(15px) scale(.98);
+        transform: translateY(15px) scale(0.98);
     }
 
     to {
